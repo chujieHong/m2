@@ -1,0 +1,25 @@
+{
+  "source_answers_sha256": "8147005363e9321aa5ad35a6932760e486699180460980f9611963ee2b5540d4",
+  "label_source": "assistant_reviewed",
+  "human_review_status": "pending_review",
+  "cases": [
+    {
+      "id": "single_hop_001",
+      "refused": false,
+      "context_sufficient": true,
+      "reason": "回答明确给出 private；实际片段 [1] 直接提供答案。"
+    },
+    {
+      "id": "multi_hop_004",
+      "refused": false,
+      "context_sufficient": null,
+      "reason": "回答明确给出可以。片段支持 Object public-read 的读取资格，但缺少预标注的 ACL 优先规则；充分性边界留待审核，不把覆盖率 50% 自动当成资料不足。"
+    },
+    {
+      "id": "unanswerable_001",
+      "refused": true,
+      "context_sufficient": false,
+      "reason": "回答仅为资料未说明；本次三个实际片段均未提供价格。"
+    }
+  ]
+}

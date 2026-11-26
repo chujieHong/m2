@@ -1,0 +1,287 @@
+{
+  "baseline_version": "day8-v1",
+  "prepared_on": "2026-10-13",
+  "configuration": {
+    "dataset_version": "v1",
+    "case_count": 100,
+    "cases_sha256": "9004268fc205cbc983219f2a1c6c4c11ccd7c8bc70f698da33067818217e0bbb",
+    "corpus_sha256": "f46d689479eced71d5a6cfdcc9417766c9901dc3d28bacc5fc64986e64c20571",
+    "collection": "day6_oss_v1_bge_small_zh",
+    "collection_count": 53,
+    "embedding_model": "BAAI/bge-small-zh-v1.5",
+    "embedding_dimensions": 512,
+    "chunk_body_size": 400,
+    "overlap": 0,
+    "generation_top_k": 3,
+    "model": "deepseek-flash",
+    "generation_options": {
+      "temperature": 0.0,
+      "max_tokens": 512
+    },
+    "judge_rubric_sha256": "ad50dc2ec1decd85de017c0d526888c170c1fa6ed0f9cfcbef27b880f9ebf8c0"
+  },
+  "retrieval": {
+    "scored_count": 90,
+    "unscored_count": 10,
+    "label_basis": "必要事实对应的片段 ID 标注，非全部语义相关性穷尽标注",
+    "results": [
+      {
+        "k": 3,
+        "mean_recall": 0.8037037037037037,
+        "mrr": 0.787037037037037,
+        "mean_ndcg": 0.7507185573068412,
+        "report_path": "D:\\develop\\m2\\data\\eval_results\\day6_oss_v1_bge_small_zh_oss_cases_100_top3_metrics3.json"
+      },
+      {
+        "k": 5,
+        "mean_recall": 0.8962962962962964,
+        "mrr": 0.8031481481481482,
+        "mean_ndcg": 0.7943798639175816,
+        "report_path": "D:\\develop\\m2\\data\\eval_results\\day6_oss_v1_bge_small_zh_oss_cases_100_top5_metrics5.json"
+      },
+      {
+        "k": 10,
+        "mean_recall": 0.9537037037037036,
+        "mrr": 0.8057716049382716,
+        "mean_ndcg": 0.8172255063899463,
+        "report_path": "D:\\develop\\m2\\data\\eval_results\\day6_oss_v1_bge_small_zh_oss_cases_100_top10_metrics10.json"
+      },
+      {
+        "k": 20,
+        "mean_recall": 0.9833333333333333,
+        "mrr": 0.8057716049382716,
+        "mean_ndcg": 0.8267494993855702,
+        "report_path": "D:\\develop\\m2\\data\\eval_results\\day6_oss_v1_bge_small_zh_oss_cases_100_top20_metrics20.json"
+      }
+    ]
+  },
+  "generation_custom": {
+    "correctness": {
+      "scored_count": 100,
+      "mean_score": 1.91,
+      "score_counts": {
+        "0": 3,
+        "1": 3,
+        "2": 94
+      },
+      "full_score_fraction": {
+        "numerator": 94,
+        "denominator": 100,
+        "rate": 0.94
+      }
+    },
+    "faithfulness": {
+      "scored_count": 100,
+      "mean_score": 1.96,
+      "score_counts": {
+        "0": 1,
+        "1": 2,
+        "2": 97
+      },
+      "full_score_fraction": {
+        "numerator": 97,
+        "denominator": 100,
+        "rate": 0.97
+      }
+    },
+    "relevance": {
+      "scored_count": 100,
+      "mean_score": 2.0,
+      "score_counts": {
+        "0": 0,
+        "1": 0,
+        "2": 100
+      },
+      "full_score_fraction": {
+        "numerator": 100,
+        "denominator": 100,
+        "rate": 1.0
+      }
+    }
+  },
+  "generation_category_summary": {
+    "comparison": {
+      "selected_count": 15,
+      "scored_count": 15,
+      "mean_scores": {
+        "correctness": 1.7333333333333334,
+        "faithfulness": 2.0,
+        "relevance": 2.0
+      }
+    },
+    "multi_hop": {
+      "selected_count": 20,
+      "scored_count": 20,
+      "mean_scores": {
+        "correctness": 1.95,
+        "faithfulness": 1.9,
+        "relevance": 2.0
+      }
+    },
+    "single_hop": {
+      "selected_count": 40,
+      "scored_count": 40,
+      "mean_scores": {
+        "correctness": 1.9,
+        "faithfulness": 1.95,
+        "relevance": 2.0
+      }
+    },
+    "table_numeric": {
+      "selected_count": 15,
+      "scored_count": 15,
+      "mean_scores": {
+        "correctness": 2.0,
+        "faithfulness": 2.0,
+        "relevance": 2.0
+      }
+    },
+    "unanswerable": {
+      "selected_count": 10,
+      "scored_count": 10,
+      "mean_scores": {
+        "correctness": 2.0,
+        "faithfulness": 2.0,
+        "relevance": 2.0
+      }
+    }
+  },
+  "refusals": {
+    "corpus_unanswerable": {
+      "numerator": 10,
+      "denominator": 10,
+      "rate": 1.0
+    },
+    "corpus_answerable": {
+      "numerator": 4,
+      "denominator": 90,
+      "rate": 0.044444444444444446
+    },
+    "partial_answer_count": 4,
+    "label_source": "assistant_reviewed"
+  },
+  "latency": {
+    "generation_call_p50_seconds": 0.8326928999995289,
+    "sample_count": 100,
+    "scope": "保存片段后计时，含M1非流式调用及返回结果处理；不含检索、向量化、模型初始化或裁判评分",
+    "full_rag_p50_seconds": null,
+    "time_to_first_token_seconds": null
+  },
+  "generation_tokens": {
+    "input": 34936,
+    "cache_hit": 4480,
+    "cache_miss": 30456,
+    "output": 3179
+  },
+  "generation_cost_estimate": {
+    "prices": {
+      "checked_on": "2026-10-13",
+      "unit": "USD per million tokens",
+      "source": "https://api-docs.deepseek.com/quick_start/pricing/",
+      "off_peak": {
+        "cache_hit": 0.003,
+        "cache_miss": 0.15,
+        "output": 0.6
+      },
+      "peak": {
+        "cache_hit": 0.006,
+        "cache_miss": 0.3,
+        "output": 1.2
+      }
+    },
+    "total_100_usd": {
+      "off_peak": 0.006489239999999999,
+      "peak": 0.012978479999999999
+    },
+    "mean_per_question_usd": {
+      "off_peak": 6.489239999999999e-05,
+      "peak": 0.00012978479999999998
+    },
+    "scope": "只估算100次答案生成；不含开发探针、裁判、RAGAS、重试与本地机器成本；不是实际账单",
+    "limitation": "用本次核对价格与保存的缓存用量重估；无逐请求开始UTC时间，列全低峰/全高峰两种假设"
+  },
+  "ragas_small_examples": {
+    "faithfulness": 1.0,
+    "faithfulness_case_count": 1,
+    "answer_relevancy": [
+      {
+        "id": "original",
+        "origin": "saved_real_response",
+        "answer_relevancy": 0.9759414195845756
+      },
+      {
+        "id": "wrong_fact",
+        "origin": "assistant_written_counterexample",
+        "answer_relevancy": 0.9759414195845756
+      },
+      {
+        "id": "wrong_topic",
+        "origin": "assistant_written_counterexample",
+        "answer_relevancy": 0.7310565410931881
+      }
+    ],
+    "scope": "小样例与教学反例，不是100题RAGAS整体指标"
+  },
+  "ai_review": {
+    "case_count": 39,
+    "dimension_agreement": {
+      "correctness": {
+        "matched": 35,
+        "compared": 39,
+        "rate": 0.8974358974358975
+      },
+      "faithfulness": {
+        "matched": 36,
+        "compared": 39,
+        "rate": 0.9230769230769231
+      },
+      "relevance": {
+        "matched": 35,
+        "compared": 39,
+        "rate": 0.8974358974358975
+      }
+    },
+    "all_three_agreement": {
+      "matched": 31,
+      "compared": 39,
+      "rate": 0.7948717948717948
+    },
+    "scope": "AI交叉审核，不是独立人工校准"
+  },
+  "sources": {
+    "manifest": {
+      "path": "D:\\develop\\m2\\examples\\day6\\manifest.json",
+      "sha256": "f0df4982950b9eb4b4b244dd6bfb3be4c2ee7b91b91439214520606fb0bda755"
+    },
+    "retrieval": {
+      "path": "D:\\develop\\m2\\examples\\day7\\retrieval_baseline.json",
+      "sha256": "d98141c7f6a52ed22f97fc6f405a2f4095042539d7d17552de2ad20644bad1e2"
+    },
+    "answers": {
+      "path": "D:\\develop\\m2\\data\\eval_results\\day7_answers_100_top3.json",
+      "sha256": "7dd1abef62d22c499ccbc3d96ccb1cf561e3a1299e378fdf91a60cc91c1df688"
+    },
+    "generation": {
+      "path": "D:\\develop\\m2\\data\\eval_results\\day7_generation_summary_100_top3_format.json",
+      "sha256": "8fbb95d6d2da7d1747698e56ba8f89e729a1637cfd30db48f424fb63c89e47a6"
+    },
+    "ai_review": {
+      "path": "D:\\develop\\m2\\data\\eval_results\\day7_ai_judge_agreement_39.json",
+      "sha256": "73a52a7385f16e18134af1b57c730bec2126ba98ddabbc12224af20dd3b4b93c"
+    },
+    "ragas_faithfulness": {
+      "path": "D:\\develop\\m2\\data\\eval_results\\ragas_faithfulness_single_hop_001_numbered.json",
+      "sha256": "e0350cf71ee4d423fed3e9aa3f17ae8681228ae098750a80705440a77b2f9131"
+    },
+    "ragas_relevancy": {
+      "path": "D:\\develop\\m2\\data\\eval_results\\ragas_relevancy_comparison.json",
+      "sha256": "77f2a66967c51694a942b27cba3aaa5a83c18f0357a459b27b1302669d6574f0"
+    }
+  },
+  "remaining": [
+    "统一配置与实验入口",
+    "完整RAG端到端延迟",
+    "实际账单核对",
+    "独立人工校准或独立测试集"
+  ]
+}

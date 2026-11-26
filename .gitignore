@@ -1,0 +1,40 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# ---- 密钥（绝对不能进 git）----
+.env
+
+# ---- 数据与索引（体积大、可再生）----
+data/
+*.db
+*.sqlite
+*.sqlite3
+
+# ---- 工具缓存 ----
+.mypy_cache/
+.pytest_cache/
+.pytest-*/
+.mypy-*/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# ---- 编辑器 ----
+.vscode/
+.idea/
+
+# ---- 实验输出（但 experiments/ 的结论表格要进 git）----
+!experiments/
+
+# Local outputs and personal learning handoffs
+output/
+tmp/
+scripts/out*.txt
+个人学习计划.txt
+AI学习辅导说明.md
+HANDOFF.md
+Day13复盘.md

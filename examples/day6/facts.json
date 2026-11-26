@@ -1,0 +1,314 @@
+[
+  {
+    "id": "B01",
+    "title": "Bucket 默认权限",
+    "text": "Bucket ACL 的默认权限值是 private。",
+    "source_url": "https://help.aliyun.com/zh/oss/user-guide/oss-bucket-acl"
+  },
+  {
+    "id": "B02",
+    "title": "Object 未指定 ACL",
+    "text": "上传 Object 时未指定自己的 ACL，它会继承所属 Bucket 的 ACL。",
+    "source_url": "https://help.aliyun.com/zh/oss/user-guide/oss-bucket-acl"
+  },
+  {
+    "id": "B03",
+    "title": "Bucket 私有资格",
+    "text": "Bucket ACL 为 private 时，读写资格限于 Bucket 所有者及获得授权的用户。",
+    "source_url": "https://help.aliyun.com/zh/oss/user-guide/oss-bucket-acl"
+  },
+  {
+    "id": "B04",
+    "title": "Bucket 公共读资格",
+    "text": "Bucket ACL 为 public-read 时，匿名用户有读取资格，写入仍需要所有者或授权用户资格。",
+    "source_url": "https://help.aliyun.com/zh/oss/user-guide/oss-bucket-acl"
+  },
+  {
+    "id": "B05",
+    "title": "Bucket 公共读写资格",
+    "text": "Bucket ACL 为 public-read-write 时，匿名用户具有读取和写入资格。",
+    "source_url": "https://help.aliyun.com/zh/oss/user-guide/oss-bucket-acl"
+  },
+  {
+    "id": "B06",
+    "title": "Bucket 初始阻止开关",
+    "text": "创建 Bucket 时默认开启阻止公共访问，Bucket ACL 此时只能设置为 private。",
+    "source_url": "https://help.aliyun.com/zh/oss/user-guide/oss-bucket-acl"
+  },
+  {
+    "id": "O01",
+    "title": "Object 默认权限",
+    "text": "Object ACL 的默认值是 default，表示继承所属 Bucket 的 ACL。",
+    "source_url": "https://help.aliyun.com/zh/oss/user-guide/object-acl"
+  },
+  {
+    "id": "O02",
+    "title": "两种 ACL 的范围",
+    "text": "Object ACL 控制单个文件，Bucket ACL 控制存储空间级别的权限。",
+    "source_url": "https://help.aliyun.com/zh/oss/user-guide/object-acl"
+  },
+  {
+    "id": "O03",
+    "title": "Object 私有资格",
+    "text": "Object ACL 为 private 时，读写资格限于 Object 所有者及获得授权的用户。",
+    "source_url": "https://help.aliyun.com/zh/oss/user-guide/object-acl"
+  },
+  {
+    "id": "O04",
+    "title": "Object 公共读资格",
+    "text": "Object ACL 为 public-read 时，匿名用户有读取资格，但没有写入资格。",
+    "source_url": "https://help.aliyun.com/zh/oss/user-guide/object-acl"
+  },
+  {
+    "id": "O05",
+    "title": "Object 公共读写资格",
+    "text": "Object ACL 为 public-read-write 时，匿名用户具有读取和写入资格。",
+    "source_url": "https://help.aliyun.com/zh/oss/user-guide/object-acl"
+  },
+  {
+    "id": "O06",
+    "title": "Object 独立 ACL",
+    "text": "Object 设置了非 default 的 ACL 时，ACL 判定采用 Object 的设置，而不继承 Bucket ACL。",
+    "source_url": "https://help.aliyun.com/zh/oss/user-guide/object-acl"
+  },
+  {
+    "id": "O07",
+    "title": "阻止开关下的 Object ACL",
+    "text": "Bucket 开启阻止公共访问时，Object ACL 可以设置为 private 或 default；设置公开 ACL 前需先关闭阻止公共访问。",
+    "source_url": "https://help.aliyun.com/zh/oss/user-guide/object-acl"
+  },
+  {
+    "id": "O08",
+    "title": "私有文件临时分享",
+    "text": "可用具有指定有效期的预签名 URL 临时分享私有 Object，无需修改 Object ACL。",
+    "source_url": "https://help.aliyun.com/zh/oss/user-guide/object-acl"
+  },
+  {
+    "id": "P01",
+    "title": "阻止公开权限",
+    "text": "开启阻止公共访问后，Bucket Policy 和 ACL 中已有的公开访问权限会被忽略，也不能创建新的公开访问权限。",
+    "source_url": "https://help.aliyun.com/zh/oss/user-guide/block-public-access/"
+  },
+  {
+    "id": "P02",
+    "title": "关闭阻止开关",
+    "text": "关闭阻止公共访问后，已有公开权限配置恢复生效，并允许创建新的公开访问权限。",
+    "source_url": "https://help.aliyun.com/zh/oss/user-guide/block-public-access/"
+  },
+  {
+    "id": "P03",
+    "title": "配置维度",
+    "text": "阻止公共访问可配置在 OSS 全局、Bucket、接入点、对象 FC 接入点四个维度。",
+    "source_url": "https://help.aliyun.com/zh/oss/user-guide/block-public-access/"
+  },
+  {
+    "id": "P04",
+    "title": "配置层级",
+    "text": "阻止公共访问从高到低的层级为 OSS 全局、Bucket、接入点、对象 FC 接入点；上层开启时，下层关闭也不能放行公共访问。",
+    "source_url": "https://help.aliyun.com/zh/oss/user-guide/block-public-access/"
+  },
+  {
+    "id": "P05",
+    "title": "Bucket 放行前提",
+    "text": "若要允许单个 Bucket 的公共访问，需要同时关闭 OSS 全局和该 Bucket 的阻止公共访问。",
+    "source_url": "https://help.aliyun.com/zh/oss/user-guide/block-public-access/"
+  },
+  {
+    "id": "P06",
+    "title": "接入点放行前提",
+    "text": "若要允许单个接入点的公共访问，需要关闭 OSS 全局、关联 Bucket 和该接入点的阻止公共访问。",
+    "source_url": "https://help.aliyun.com/zh/oss/user-guide/block-public-access/"
+  },
+  {
+    "id": "P07",
+    "title": "复制时 ACL 保留",
+    "text": "复制时，源或目标 Bucket 是否开启阻止公共访问，不会改变复制前后的 Object ACL。",
+    "source_url": "https://help.aliyun.com/zh/oss/user-guide/block-public-access/"
+  },
+  {
+    "id": "P08",
+    "title": "目标 Bucket 的阻止规则",
+    "text": "目标 Bucket 开启阻止公共访问时，复制得到的 Object 即使带有公开 ACL，仍不能公共访问。",
+    "source_url": "https://help.aliyun.com/zh/oss/user-guide/block-public-access/"
+  },
+  {
+    "id": "U01",
+    "title": "初始化分片任务",
+    "text": "上传 Part 前，先调用 InitiateMultipartUpload 获取 uploadId。",
+    "source_url": "https://help.aliyun.com/zh/oss/developer-reference/uploadpart"
+  },
+  {
+    "id": "U02",
+    "title": "重复分片号",
+    "text": "同一上传任务中，用相同 partNumber 上传新数据会覆盖该编号的旧 Part。",
+    "source_url": "https://help.aliyun.com/zh/oss/developer-reference/uploadpart"
+  },
+  {
+    "id": "U03",
+    "title": "分片校验返回头",
+    "text": "UploadPart 把服务器收到的 Part 数据的 MD5 值放在 ETag 响应头中返回。",
+    "source_url": "https://help.aliyun.com/zh/oss/developer-reference/uploadpart"
+  },
+  {
+    "id": "U04",
+    "title": "大小校验阶段",
+    "text": "UploadPart 阶段不立即校验分片大小，CompleteMultipartUpload 阶段才做该校验。",
+    "source_url": "https://help.aliyun.com/zh/oss/developer-reference/uploadpart"
+  },
+  {
+    "id": "U05",
+    "title": "上传分片权限",
+    "text": "UploadPart 对应的权限 Action 是 oss:PutObject。",
+    "source_url": "https://help.aliyun.com/zh/oss/developer-reference/uploadpart"
+  },
+  {
+    "id": "U06",
+    "title": "上传必选字段",
+    "text": "UploadPart 的 partNumber 和 uploadId 都是必选请求字段。",
+    "source_url": "https://help.aliyun.com/zh/oss/developer-reference/uploadpart"
+  },
+  {
+    "id": "U07",
+    "title": "编号越界错误",
+    "text": "partNumber 超出 1～10000 时，UploadPart 的错误码为 InvalidArgument，HTTP 状态码为 400。",
+    "source_url": "https://help.aliyun.com/zh/oss/developer-reference/uploadpart"
+  },
+  {
+    "id": "U08",
+    "title": "上传任务不存在",
+    "text": "分片上传 ID 不存在时，UploadPart 的错误码为 NoSuchUpload，HTTP 状态码为 404。",
+    "source_url": "https://help.aliyun.com/zh/oss/developer-reference/uploadpart"
+  },
+  {
+    "id": "V01",
+    "title": "版本控制默认状态",
+    "text": "Bucket 版本控制默认未开启，状态包括未开启、开启和暂停。",
+    "source_url": "https://help.aliyun.com/zh/oss/user-guide/overview-78/"
+  },
+  {
+    "id": "V02",
+    "title": "不可回到未开启",
+    "text": "版本控制开启后不能返回未开启状态；可以暂停，但还需满足保留策略等对状态变更的限制。",
+    "source_url": "https://help.aliyun.com/zh/oss/user-guide/overview-78/"
+  },
+  {
+    "id": "V03",
+    "title": "开启后的覆盖",
+    "text": "版本控制开启时，覆盖同名 Object 会生成新版本，已有历史版本不受影响。",
+    "source_url": "https://help.aliyun.com/zh/oss/user-guide/overview-78/"
+  },
+  {
+    "id": "V04",
+    "title": "暂停后的覆盖",
+    "text": "版本控制暂停时，新上传的 Object 使用 null 版本；再次上传同名文件会覆盖暂停期的同名版本，但保留暂停前的历史版本。",
+    "source_url": "https://help.aliyun.com/zh/oss/user-guide/overview-78/"
+  },
+  {
+    "id": "V05",
+    "title": "开启后的版本标识",
+    "text": "版本控制开启时，Object 的每个版本都有唯一的 versionId。",
+    "source_url": "https://help.aliyun.com/zh/oss/user-guide/overview-78/"
+  },
+  {
+    "id": "V06",
+    "title": "普通删除与标记",
+    "text": "版本控制开启时，DELETE 未指定 versionId 会添加删除标记作为当前版本，原有数据版本不被该操作永久删除。",
+    "source_url": "https://help.aliyun.com/zh/oss/manage-objects-in-a-versioning-enabled-bucket"
+  },
+  {
+    "id": "V07",
+    "title": "标记作为当前版本",
+    "text": "当 Object 当前版本为删除标记时，读取当前版本的 GET 请求返回 404。",
+    "source_url": "https://help.aliyun.com/zh/oss/user-guide/delete-marker"
+  },
+  {
+    "id": "V08",
+    "title": "删除标记后恢复",
+    "text": "已有数据历史版本时，指定 versionId 删除当前删除标记后，最近的数据历史版本成为当前版本，Object 恢复可访问。",
+    "source_url": "https://help.aliyun.com/zh/oss/user-guide/delete-marker"
+  },
+  {
+    "id": "L01",
+    "title": "生命周期规则数量",
+    "text": "单个 Bucket 最多配置 1000 条生命周期规则。",
+    "source_url": "https://help.aliyun.com/zh/oss/lifecycle-rules-based-on-the-last-modified-time"
+  },
+  {
+    "id": "L02",
+    "title": "生命周期覆盖语义",
+    "text": "PutBucketLifecycle 覆盖已有规则；保留旧规则并追加新规则时，应先获取旧配置，再合并新规则，最后提交完整配置。",
+    "source_url": "https://help.aliyun.com/zh/oss/lifecycle-rules-based-on-the-last-modified-time"
+  },
+  {
+    "id": "V09",
+    "title": "永久删除指定版本",
+    "text": "通过 versionId 删除指定数据版本是永久删除，该版本不能通过版本控制恢复。",
+    "source_url": "https://help.aliyun.com/zh/oss/manage-objects-in-a-versioning-enabled-bucket"
+  },
+  {
+    "id": "V10",
+    "title": "暂停后的下载",
+    "text": "版本控制暂停时，GET 未指定 versionId 返回当前版本；指定 versionId 可下载对应的历史版本。",
+    "source_url": "https://help.aliyun.com/zh/oss/user-guide/manage-objects-in-a-versioning-suspended-bucket"
+  },
+  {
+    "id": "V11",
+    "title": "未开启时覆盖",
+    "text": "未开启版本控制时，同名 Object 被直接覆盖，旧内容不能通过版本控制恢复。",
+    "source_url": "https://help.aliyun.com/zh/oss/user-guide/overview-78/"
+  },
+  {
+    "id": "L03",
+    "title": "当前文件过期起点",
+    "text": "基于最后修改时间的生命周期规则中，当前版本的过期天数从 Object 最后修改时间开始计算。",
+    "source_url": "https://help.aliyun.com/zh/oss/lifecycle-rules-based-on-the-last-modified-time"
+  },
+  {
+    "id": "L04",
+    "title": "历史文件过期起点",
+    "text": "非当前版本过期天数从该版本成为非当前版本的时间开始计算，而不是原文件的最后修改时间。",
+    "source_url": "https://help.aliyun.com/zh/oss/lifecycle-rules-based-on-the-last-modified-time"
+  },
+  {
+    "id": "W01",
+    "title": "保护期数据版本",
+    "text": "保留策略保护期内的 Object 数据版本不能被修改或删除，生命周期也不能删除这些受保护版本；允许上传同名 Object 生成受保护的新版本。",
+    "source_url": "https://help.aliyun.com/zh/oss/user-guide/oss-retention-policies"
+  },
+  {
+    "id": "W02",
+    "title": "删除标记不受保护",
+    "text": "保留策略不保护删除标记，删除标记可以被清理。",
+    "source_url": "https://help.aliyun.com/zh/oss/user-guide/oss-retention-policies"
+  },
+  {
+    "id": "W03",
+    "title": "锁定后暂停限制",
+    "text": "锁定保留策略后，版本控制不能从开启切换到暂停。",
+    "source_url": "https://help.aliyun.com/zh/oss/user-guide/oss-retention-policies"
+  },
+  {
+    "id": "W04",
+    "title": "保护下恢复开启",
+    "text": "已暂停版本控制的 Bucket 开启保留策略后，仍允许把版本控制恢复为开启。",
+    "source_url": "https://help.aliyun.com/zh/oss/user-guide/oss-retention-policies"
+  },
+  {
+    "id": "A01",
+    "title": "列举分片权限",
+    "text": "ListParts 对应的权限 Action 是 oss:ListParts。",
+    "source_url": "https://help.aliyun.com/zh/oss/developer-reference/listparts"
+  },
+  {
+    "id": "TU",
+    "title": "UploadPart 数值约束",
+    "text": "| 项目 | 要求 | 适用范围 |\n| --- | --- | --- |\n| partNumber | 1～10000，包含端点 | 正整数编号 |\n| 普通 Part 最小值 | 100 KB | 除最后一片外 |\n| 最后一片最小值 | 可以小于 100 KB | 仅最后一片 |\n| 单片最大值 | 5 GB | 所有 Part |",
+    "source_url": "https://help.aliyun.com/zh/oss/developer-reference/uploadpart"
+  },
+  {
+    "id": "TL",
+    "title": "ListParts 参数与返回字段",
+    "text": "| 参数或字段 | 定义 |\n| --- | --- |\n| max-parts | 默认 1000，最大 1000 |\n| part-number-marker | 只返回编号大于该值的 Part，不包含该编号本身 |\n| 返回顺序 | 按 Part 编号升序 |\n| IsTruncated=true | 本次没有返回全部结果 |\n| NextPartNumberMarker | 未列举完时，用作下一次请求的起始标记 |",
+    "source_url": "https://help.aliyun.com/zh/oss/developer-reference/listparts"
+  }
+]

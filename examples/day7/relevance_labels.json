@@ -1,0 +1,381 @@
+{
+  "collection": "day6_oss_v1_bge_small_zh",
+  "collection_count": 53,
+  "cases_sha256": "9004268fc205cbc983219f2a1c6c4c11ccd7c8bc70f698da33067818217e0bbb",
+  "label_basis": "由必要证据的事实 ID 映射到当前固定索引，是标注集合而非所有语义相关候选的穷尽标注。",
+  "fact_to_chunk": {
+    "B01": "day6-oss-1",
+    "B02": "day6-oss-2",
+    "B03": "day6-oss-3",
+    "B04": "day6-oss-4",
+    "B05": "day6-oss-5",
+    "B06": "day6-oss-6",
+    "O01": "day6-oss-7",
+    "O02": "day6-oss-8",
+    "O03": "day6-oss-9",
+    "O04": "day6-oss-10",
+    "O05": "day6-oss-11",
+    "O06": "day6-oss-12",
+    "O07": "day6-oss-13",
+    "O08": "day6-oss-14",
+    "P01": "day6-oss-15",
+    "P02": "day6-oss-16",
+    "P03": "day6-oss-17",
+    "P04": "day6-oss-18",
+    "P05": "day6-oss-19",
+    "P06": "day6-oss-20",
+    "P07": "day6-oss-21",
+    "P08": "day6-oss-22",
+    "U01": "day6-oss-23",
+    "U02": "day6-oss-24",
+    "U03": "day6-oss-25",
+    "U04": "day6-oss-26",
+    "U05": "day6-oss-27",
+    "U06": "day6-oss-28",
+    "U07": "day6-oss-29",
+    "U08": "day6-oss-30",
+    "V01": "day6-oss-31",
+    "V02": "day6-oss-32",
+    "V03": "day6-oss-33",
+    "V04": "day6-oss-34",
+    "V05": "day6-oss-35",
+    "V06": "day6-oss-36",
+    "V07": "day6-oss-37",
+    "V08": "day6-oss-38",
+    "L01": "day6-oss-39",
+    "L02": "day6-oss-40",
+    "V09": "day6-oss-41",
+    "V10": "day6-oss-42",
+    "V11": "day6-oss-43",
+    "L03": "day6-oss-44",
+    "L04": "day6-oss-45",
+    "W01": "day6-oss-46",
+    "W02": "day6-oss-47",
+    "W03": "day6-oss-48",
+    "W04": "day6-oss-49",
+    "A01": "day6-oss-50",
+    "TU": "day6-oss-51",
+    "TL": "day6-oss-52"
+  },
+  "relevant_ids_by_case": {
+    "single_hop_001": [
+      "day6-oss-1"
+    ],
+    "single_hop_002": [
+      "day6-oss-2"
+    ],
+    "single_hop_003": [
+      "day6-oss-3"
+    ],
+    "single_hop_004": [
+      "day6-oss-4"
+    ],
+    "single_hop_005": [
+      "day6-oss-5"
+    ],
+    "single_hop_006": [
+      "day6-oss-6"
+    ],
+    "single_hop_007": [
+      "day6-oss-7"
+    ],
+    "single_hop_008": [
+      "day6-oss-8"
+    ],
+    "single_hop_009": [
+      "day6-oss-9"
+    ],
+    "single_hop_010": [
+      "day6-oss-10"
+    ],
+    "single_hop_011": [
+      "day6-oss-11"
+    ],
+    "single_hop_012": [
+      "day6-oss-12"
+    ],
+    "single_hop_013": [
+      "day6-oss-13"
+    ],
+    "single_hop_014": [
+      "day6-oss-14"
+    ],
+    "single_hop_015": [
+      "day6-oss-15"
+    ],
+    "single_hop_016": [
+      "day6-oss-16"
+    ],
+    "single_hop_017": [
+      "day6-oss-17"
+    ],
+    "single_hop_018": [
+      "day6-oss-18"
+    ],
+    "single_hop_019": [
+      "day6-oss-19"
+    ],
+    "single_hop_020": [
+      "day6-oss-20"
+    ],
+    "single_hop_021": [
+      "day6-oss-21"
+    ],
+    "single_hop_022": [
+      "day6-oss-22"
+    ],
+    "single_hop_023": [
+      "day6-oss-23"
+    ],
+    "single_hop_024": [
+      "day6-oss-24"
+    ],
+    "single_hop_025": [
+      "day6-oss-25"
+    ],
+    "single_hop_026": [
+      "day6-oss-26"
+    ],
+    "single_hop_027": [
+      "day6-oss-27"
+    ],
+    "single_hop_028": [
+      "day6-oss-28"
+    ],
+    "single_hop_029": [
+      "day6-oss-29"
+    ],
+    "single_hop_030": [
+      "day6-oss-30"
+    ],
+    "single_hop_031": [
+      "day6-oss-31"
+    ],
+    "single_hop_032": [
+      "day6-oss-32"
+    ],
+    "single_hop_033": [
+      "day6-oss-33"
+    ],
+    "single_hop_034": [
+      "day6-oss-34"
+    ],
+    "single_hop_035": [
+      "day6-oss-35"
+    ],
+    "single_hop_036": [
+      "day6-oss-36"
+    ],
+    "single_hop_037": [
+      "day6-oss-37"
+    ],
+    "single_hop_038": [
+      "day6-oss-38"
+    ],
+    "single_hop_039": [
+      "day6-oss-39"
+    ],
+    "single_hop_040": [
+      "day6-oss-40"
+    ],
+    "multi_hop_001": [
+      "day6-oss-2",
+      "day6-oss-4"
+    ],
+    "multi_hop_002": [
+      "day6-oss-1",
+      "day6-oss-2",
+      "day6-oss-3"
+    ],
+    "multi_hop_003": [
+      "day6-oss-7",
+      "day6-oss-5"
+    ],
+    "multi_hop_004": [
+      "day6-oss-12",
+      "day6-oss-10"
+    ],
+    "multi_hop_005": [
+      "day6-oss-12",
+      "day6-oss-9"
+    ],
+    "multi_hop_006": [
+      "day6-oss-10",
+      "day6-oss-15"
+    ],
+    "multi_hop_007": [
+      "day6-oss-10",
+      "day6-oss-18"
+    ],
+    "multi_hop_008": [
+      "day6-oss-10",
+      "day6-oss-20"
+    ],
+    "multi_hop_009": [
+      "day6-oss-21",
+      "day6-oss-10",
+      "day6-oss-15"
+    ],
+    "multi_hop_010": [
+      "day6-oss-16",
+      "day6-oss-10"
+    ],
+    "multi_hop_011": [
+      "day6-oss-36",
+      "day6-oss-37"
+    ],
+    "multi_hop_012": [
+      "day6-oss-36",
+      "day6-oss-38"
+    ],
+    "multi_hop_013": [
+      "day6-oss-33",
+      "day6-oss-36",
+      "day6-oss-38"
+    ],
+    "multi_hop_014": [
+      "day6-oss-34",
+      "day6-oss-42"
+    ],
+    "multi_hop_015": [
+      "day6-oss-41",
+      "day6-oss-42"
+    ],
+    "multi_hop_016": [
+      "day6-oss-36",
+      "day6-oss-47",
+      "day6-oss-38"
+    ],
+    "multi_hop_017": [
+      "day6-oss-45",
+      "day6-oss-46"
+    ],
+    "multi_hop_018": [
+      "day6-oss-46",
+      "day6-oss-33"
+    ],
+    "multi_hop_019": [
+      "day6-oss-44",
+      "day6-oss-45"
+    ],
+    "multi_hop_020": [
+      "day6-oss-26",
+      "day6-oss-51"
+    ],
+    "comparison_001": [
+      "day6-oss-1",
+      "day6-oss-7"
+    ],
+    "comparison_002": [
+      "day6-oss-8"
+    ],
+    "comparison_003": [
+      "day6-oss-4",
+      "day6-oss-5"
+    ],
+    "comparison_004": [
+      "day6-oss-10",
+      "day6-oss-11"
+    ],
+    "comparison_005": [
+      "day6-oss-7",
+      "day6-oss-12"
+    ],
+    "comparison_006": [
+      "day6-oss-15",
+      "day6-oss-16"
+    ],
+    "comparison_007": [
+      "day6-oss-18"
+    ],
+    "comparison_008": [
+      "day6-oss-19",
+      "day6-oss-20"
+    ],
+    "comparison_009": [
+      "day6-oss-21",
+      "day6-oss-22"
+    ],
+    "comparison_010": [
+      "day6-oss-43",
+      "day6-oss-33"
+    ],
+    "comparison_011": [
+      "day6-oss-33",
+      "day6-oss-34",
+      "day6-oss-35"
+    ],
+    "comparison_012": [
+      "day6-oss-36",
+      "day6-oss-41"
+    ],
+    "comparison_013": [
+      "day6-oss-46",
+      "day6-oss-47"
+    ],
+    "comparison_014": [
+      "day6-oss-44",
+      "day6-oss-45"
+    ],
+    "comparison_015": [
+      "day6-oss-27",
+      "day6-oss-50"
+    ],
+    "table_numeric_001": [
+      "day6-oss-51"
+    ],
+    "table_numeric_002": [
+      "day6-oss-51"
+    ],
+    "table_numeric_003": [
+      "day6-oss-51"
+    ],
+    "table_numeric_004": [
+      "day6-oss-51"
+    ],
+    "table_numeric_005": [
+      "day6-oss-51"
+    ],
+    "table_numeric_006": [
+      "day6-oss-51"
+    ],
+    "table_numeric_007": [
+      "day6-oss-51"
+    ],
+    "table_numeric_008": [
+      "day6-oss-51"
+    ],
+    "table_numeric_009": [
+      "day6-oss-51"
+    ],
+    "table_numeric_010": [
+      "day6-oss-52"
+    ],
+    "table_numeric_011": [
+      "day6-oss-52"
+    ],
+    "table_numeric_012": [
+      "day6-oss-52"
+    ],
+    "table_numeric_013": [
+      "day6-oss-52"
+    ],
+    "table_numeric_014": [
+      "day6-oss-52"
+    ],
+    "table_numeric_015": [
+      "day6-oss-51",
+      "day6-oss-52"
+    ],
+    "unanswerable_001": [],
+    "unanswerable_002": [],
+    "unanswerable_003": [],
+    "unanswerable_004": [],
+    "unanswerable_005": [],
+    "unanswerable_006": [],
+    "unanswerable_007": [],
+    "unanswerable_008": [],
+    "unanswerable_009": [],
+    "unanswerable_010": []
+  }
+}

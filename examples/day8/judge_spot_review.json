@@ -1,0 +1,176 @@
+{
+  "reviewer_type": "assistant",
+  "scope": "5 targeted follow-up reviews of suspected judge mistakes, not all 200 answers or independent human calibration",
+  "original_aggregate_unchanged": true,
+  "cases": [
+    {
+      "top_k": 3,
+      "id": "comparison_007",
+      "question": "OSS 全局阻止开关和 Bucket 开关不一致时，哪个层级优先？",
+      "answer": "资料未说明。",
+      "documents": [
+        "Day 6 OSS 评测资料 v1 > B06 Bucket 初始阻止开关\n创建 Bucket 时默认开启阻止公共访问，Bucket ACL 此时只能设置为 private。\n来源：https://help.aliyun.com/zh/oss/user-guide/oss-bucket-acl",
+        "Day 6 OSS 评测资料 v1 > O07 阻止开关下的 Object ACL\nBucket 开启阻止公共访问时，Object ACL 可以设置为 private 或 default；设置公开 ACL 前需先关闭阻止公共访问。\n来源：https://help.aliyun.com/zh/oss/user-guide/object-acl",
+        "Day 6 OSS 评测资料 v1 > P02 关闭阻止开关\n关闭阻止公共访问后，已有公开权限配置恢复生效，并允许创建新的公开访问权限。\n来源：https://help.aliyun.com/zh/oss/user-guide/block-public-access/"
+      ],
+      "judge_scores": {
+        "correctness": {
+          "score": 0,
+          "reason": "参考答案明确说明OSS全局优先，而回答称资料未说明，未提供可回答题所需的答案，核心结论缺失。"
+        },
+        "faithfulness": {
+          "score": 0,
+          "reason": "实际片段[1][2][3]均未直接说明全局阻止开关与Bucket开关不一致时的优先级，但回答仅称资料未说明；由于参考答案表明该问题有明确答案，且题面要求判断层级优先，此拒答不符合合理拒答条件，核心事实未获支持。"
+        },
+        "relevance": {
+          "score": 2,
+          "reason": "回答直接针对当前问题作出拒答，未转向其他问题或夹杂无关内容，按规则相关性记2分。"
+        }
+      },
+      "assistant_scores": {
+        "correctness": 0,
+        "faithfulness": 2,
+        "relevance": 2
+      },
+      "reason": "当前片段未说明层级优先，拒答符合实际上下文。裁判在忠实度理由中使用参考答案的可回答性，违反资料与参考答案分工。",
+      "batch_sha256": "77f9f9f09b691160f7ccdfe5dacfccd0f0d487de125c5b9b17dc5e8c1136b079",
+      "judgment_sha256": "a2e62b71b71df6d20cb1e270446c479abca9de21416debd530cc9cbfcc11d403"
+    },
+    {
+      "top_k": 5,
+      "id": "multi_hop_003",
+      "question": "假设公共访问未被阻止且没有其他限制：Bucket 是 public-read-write，Object ACL 为 default，匿名用户可以读写它吗？",
+      "answer": "可以。Bucket ACL 为 public-read-write 时，匿名用户具有读取和写入资格 [1]；题设公共访问未被阻止且没有其他限制，因此匿名用户可以读写它。资料未说明 Object ACL 为 default 时是否会覆盖 Bucket 的 public-read-write 资格。",
+      "documents": [
+        "Day 6 OSS 评测资料 v1 > B05 Bucket 公共读写资格\nBucket ACL 为 public-read-write 时，匿名用户具有读取和写入资格。\n来源：https://help.aliyun.com/zh/oss/user-guide/oss-bucket-acl",
+        "Day 6 OSS 评测资料 v1 > O05 Object 公共读写资格\nObject ACL 为 public-read-write 时，匿名用户具有读取和写入资格。\n来源：https://help.aliyun.com/zh/oss/user-guide/object-acl",
+        "Day 6 OSS 评测资料 v1 > O04 Object 公共读资格\nObject ACL 为 public-read 时，匿名用户有读取资格，但没有写入资格。\n来源：https://help.aliyun.com/zh/oss/user-guide/object-acl",
+        "Day 6 OSS 评测资料 v1 > B04 Bucket 公共读资格\nBucket ACL 为 public-read 时，匿名用户有读取资格，写入仍需要所有者或授权用户资格。\n来源：https://help.aliyun.com/zh/oss/user-guide/oss-bucket-acl",
+        "Day 6 OSS 评测资料 v1 > O07 阻止开关下的 Object ACL\nBucket 开启阻止公共访问时，Object ACL 可以设置为 private 或 default；设置公开 ACL 前需先关闭阻止公共访问。\n来源：https://help.aliyun.com/zh/oss/user-guide/object-acl"
+      ],
+      "judge_scores": {
+        "correctness": {
+          "score": 2,
+          "reason": "核心结论正确：Bucket 为 public-read-write 且公共访问未被阻止时，匿名用户可读写；Object ACL 为 default 继承 Bucket 权限，与参考答案一致。"
+        },
+        "faithfulness": {
+          "score": 2,
+          "reason": "回答引用片段[1]支持 Bucket public-read-write 时匿名用户可读写；题面前提说明公共访问未被阻止且无其他限制，因此结论由实际片段和题面支持。关于 Object ACL 为 default 是否覆盖 Bucket 资格，回答仅称资料未说明，未编造无依据结论。"
+        },
+        "relevance": {
+          "score": 2,
+          "reason": "回答直接针对匿名用户能否读写该 Bucket 的问题，紧扣对象与任务。"
+        }
+      },
+      "assistant_scores": {
+        "correctness": 2,
+        "faithfulness": 1,
+        "relevance": 2
+      },
+      "reason": "默认Object继承Bucket的规则仍未检索到；先断言可读写，再承认default规则未说明，不能使关键结论获得依据。",
+      "batch_sha256": "361038e319a0800e479d24e12a953db67a7b99d9246f3eca74499e127cc747d8",
+      "judgment_sha256": "5149bc0fd55b67c47ff551b6f1359bf9dfe7b4b7b6af45022fe83ff89925986a"
+    },
+    {
+      "top_k": 5,
+      "id": "multi_hop_011",
+      "question": "版本控制开启时，对文件执行未指定 versionId 的 DELETE，随后不指定版本读当前文件，会发生什么？",
+      "answer": "版本控制开启时，对文件执行未指定 versionId 的 DELETE，会添加删除标记作为当前版本，原有数据版本不会被该操作永久删除 [2]。随后不指定版本读当前文件时，由于当前版本是删除标记，读取会表现为该文件不存在（即返回 404 或等效的“未找到”结果）。",
+      "documents": [
+        "Day 6 OSS 评测资料 v1 > V04 暂停后的覆盖\n版本控制暂停时，新上传的 Object 使用 null 版本；再次上传同名文件会覆盖暂停期的同名版本，但保留暂停前的历史版本。\n来源：https://help.aliyun.com/zh/oss/user-guide/overview-78/",
+        "Day 6 OSS 评测资料 v1 > V06 普通删除与标记\n版本控制开启时，DELETE 未指定 versionId 会添加删除标记作为当前版本，原有数据版本不被该操作永久删除。\n来源：https://help.aliyun.com/zh/oss/manage-objects-in-a-versioning-enabled-bucket",
+        "Day 6 OSS 评测资料 v1 > P07 复制时 ACL 保留\n复制时，源或目标 Bucket 是否开启阻止公共访问，不会改变复制前后的 Object ACL。\n来源：https://help.aliyun.com/zh/oss/user-guide/block-public-access/",
+        "Day 6 OSS 评测资料 v1 > V11 未开启时覆盖\n未开启版本控制时，同名 Object 被直接覆盖，旧内容不能通过版本控制恢复。\n来源：https://help.aliyun.com/zh/oss/user-guide/overview-78/",
+        "Day 6 OSS 评测资料 v1 > V03 开启后的覆盖\n版本控制开启时，覆盖同名 Object 会生成新版本，已有历史版本不受影响。\n来源：https://help.aliyun.com/zh/oss/user-guide/overview-78/"
+      ],
+      "judge_scores": {
+        "correctness": {
+          "score": 2,
+          "reason": "核心结论正确：未指定 versionId 的 DELETE 会添加删除标记作为当前版本，随后不指定版本读取当前文件会因当前版本为删除标记而返回 404/未找到，与参考答案一致。"
+        },
+        "faithfulness": {
+          "score": 2,
+          "reason": "删除标记作为当前版本、原有数据版本不被永久删除由片段[2]直接支持；由当前版本是删除标记推出不指定版本读取表现为文件不存在，属于基于片段[2]规则的有效推理。"
+        },
+        "relevance": {
+          "score": 2,
+          "reason": "直接回应了版本控制开启时未指定 versionId 删除后不指定版本读取当前文件的结果，紧扣问题对象与任务。"
+        }
+      },
+      "assistant_scores": {
+        "correctness": 2,
+        "faithfulness": 1,
+        "relevance": 2
+      },
+      "reason": "实际五个片段没有当前版本GET与404响应规则；确切返回404不能仅由存在删除标记推导。",
+      "batch_sha256": "361038e319a0800e479d24e12a953db67a7b99d9246f3eca74499e127cc747d8",
+      "judgment_sha256": "5149bc0fd55b67c47ff551b6f1359bf9dfe7b4b7b6af45022fe83ff89925986a"
+    },
+    {
+      "top_k": 3,
+      "id": "comparison_012",
+      "question": "开启版本控制时，未指定版本的普通 DELETE 与指定数据版本的 DELETE 有何区别？",
+      "answer": "开启版本控制时，未指定版本的普通 DELETE 会添加删除标记作为当前版本，原有数据版本不会被该操作永久删除 [2]；而指定数据版本的 DELETE 会删除该指定版本，资料未说明其是否添加删除标记或是否可恢复。",
+      "documents": [
+        "Day 6 OSS 评测资料 v1 > V11 未开启时覆盖\n未开启版本控制时，同名 Object 被直接覆盖，旧内容不能通过版本控制恢复。\n来源：https://help.aliyun.com/zh/oss/user-guide/overview-78/",
+        "Day 6 OSS 评测资料 v1 > V06 普通删除与标记\n版本控制开启时，DELETE 未指定 versionId 会添加删除标记作为当前版本，原有数据版本不被该操作永久删除。\n来源：https://help.aliyun.com/zh/oss/manage-objects-in-a-versioning-enabled-bucket",
+        "Day 6 OSS 评测资料 v1 > V03 开启后的覆盖\n版本控制开启时，覆盖同名 Object 会生成新版本，已有历史版本不受影响。\n来源：https://help.aliyun.com/zh/oss/user-guide/overview-78/"
+      ],
+      "judge_scores": {
+        "correctness": {
+          "score": 2,
+          "reason": "核心结论正确：未指定版本的普通 DELETE 添加删除标记且不永久删除原有数据版本；指定版本的 DELETE 删除该指定版本。与参考答案一致，且对资料未说明的部分作了合理限定。"
+        },
+        "faithfulness": {
+          "score": 2,
+          "reason": "前半句由片段[2]直接支持；后半句“指定数据版本的 DELETE 会删除该指定版本”可由片段[2]中“未指定 versionId 会添加删除标记、原有数据版本不被永久删除”的对比规则有效推理得出，且回答明确说明资料未说明是否添加删除标记或可恢复，未编造无依据内容。"
+        },
+        "relevance": {
+          "score": 2,
+          "reason": "直接回应当前问题，紧扣未指定版本 DELETE 与指定版本 DELETE 的区别，未夹杂无关内容。"
+        }
+      },
+      "assistant_scores": {
+        "correctness": 1,
+        "faithfulness": 1,
+        "relevance": 1
+      },
+      "reason": "回答没有完整说明指定数据版本会永久删除；实际资料只说明未指定版本时的操作，不能通过反向推理得到指定版本的完整行为。",
+      "batch_sha256": "77f9f9f09b691160f7ccdfe5dacfccd0f0d487de125c5b9b17dc5e8c1136b079",
+      "judgment_sha256": "a2e62b71b71df6d20cb1e270446c479abca9de21416debd530cc9cbfcc11d403"
+    },
+    {
+      "top_k": 3,
+      "id": "comparison_004",
+      "question": "按 ACL 定义，Object public-read 和 public-read-write 对匿名用户的权限有何不同？",
+      "answer": "按 ACL 定义，资料未说明 Object ACL 为 public-read 时匿名用户的权限；资料仅说明 Object ACL 为 public-read-write 时，匿名用户具有读取和写入资格 [2]。因此，就本次资料而言，无法说明 Object public-read 与 public-read-write 对匿名用户权限的具体不同。",
+      "documents": [
+        "Day 6 OSS 评测资料 v1 > B05 Bucket 公共读写资格\nBucket ACL 为 public-read-write 时，匿名用户具有读取和写入资格。\n来源：https://help.aliyun.com/zh/oss/user-guide/oss-bucket-acl",
+        "Day 6 OSS 评测资料 v1 > O05 Object 公共读写资格\nObject ACL 为 public-read-write 时，匿名用户具有读取和写入资格。\n来源：https://help.aliyun.com/zh/oss/user-guide/object-acl",
+        "Day 6 OSS 评测资料 v1 > B04 Bucket 公共读资格\nBucket ACL 为 public-read 时，匿名用户有读取资格，写入仍需要所有者或授权用户资格。\n来源：https://help.aliyun.com/zh/oss/user-guide/oss-bucket-acl"
+      ],
+      "judge_scores": {
+        "correctness": {
+          "score": 0,
+          "reason": "参考答案明确为“前者只读，后者可读写”，即 Object public-read 对匿名用户只读、public-read-write 可读写；回答却称资料未说明 public-read 权限并无法说明二者不同，核心结论错误，未给出题目所需答案。"
+        },
+        "faithfulness": {
+          "score": 2,
+          "reason": "回答仅基于实际片段[2]说明 public-read-write 时匿名用户具有读取和写入资格，并指出片段中未提供 Object public-read 的权限说明；未编造无依据事实，也未与片段矛盾。"
+        },
+        "relevance": {
+          "score": 2,
+          "reason": "回答直接针对 Object public-read 与 public-read-write 对匿名用户权限差异这一当前问题作出回应，虽为拒答式说明，但未转向其他对象或问题。"
+        }
+      },
+      "assistant_scores": {
+        "correctness": 1,
+        "faithfulness": 2,
+        "relevance": 1
+      },
+      "reason": "已正确回答public-read-write一半，并明确另一半资料缺失；应区分部分回答与完全拒答，不能把正确性直接记0。",
+      "batch_sha256": "77f9f9f09b691160f7ccdfe5dacfccd0f0d487de125c5b9b17dc5e8c1136b079",
+      "judgment_sha256": "a2e62b71b71df6d20cb1e270446c479abca9de21416debd530cc9cbfcc11d403"
+    }
+  ]
+}

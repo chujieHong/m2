@@ -1,0 +1,61 @@
+{
+  "description": "助手编写的虚构教学样例，用于检查裁判对评分维度的区分，不是独立人工校准集。预设分数不发送给裁判。",
+  "label_source": "assistant_authored",
+  "human_review_status": "pending_review",
+  "cases": [
+    {
+      "id": "correct",
+      "question": "教学服务 A 的发票多久开具？",
+      "assumptions": "所有内容均为虚构教学规则。",
+      "documents": ["教学服务 A：申请发票后 2 个工作日内开具。", "教学服务 A：退款审核通过后 3 个工作日内到账。"],
+      "answer": "申请发票后 2 个工作日内开具。[1]",
+      "reference_answer": "申请发票后 2 个工作日内开具。",
+      "expected_scores": {"correctness": 2, "faithfulness": 2, "relevance": 2}
+    },
+    {
+      "id": "wrong_number",
+      "question": "教学服务 A 的发票多久开具？",
+      "assumptions": "所有内容均为虚构教学规则。",
+      "documents": ["教学服务 A：申请发票后 2 个工作日内开具。"],
+      "answer": "申请发票后 7 个工作日内开具。[1]",
+      "reference_answer": "申请发票后 2 个工作日内开具。",
+      "expected_scores": {"correctness": 0, "faithfulness": 0, "relevance": 2}
+    },
+    {
+      "id": "wrong_task",
+      "question": "教学服务 A 的发票多久开具？",
+      "assumptions": "所有内容均为虚构教学规则。",
+      "documents": ["教学服务 A：申请发票后 2 个工作日内开具。", "教学服务 A：退款审核通过后 3 个工作日内到账。"],
+      "answer": "退款审核通过后 3 个工作日内到账。[2]",
+      "reference_answer": "申请发票后 2 个工作日内开具。",
+      "expected_scores": {"correctness": 0, "faithfulness": 2, "relevance": 0}
+    },
+    {
+      "id": "reference_is_not_evidence",
+      "question": "教学服务 A 的发票多久开具？",
+      "assumptions": "所有内容均为虚构教学规则。",
+      "documents": ["教学服务 A：退款审核通过后 3 个工作日内到账。"],
+      "answer": "申请发票后 2 个工作日内开具。",
+      "reference_answer": "申请发票后 2 个工作日内开具。",
+      "expected_scores": {"correctness": 2, "faithfulness": 0, "relevance": 2}
+    },
+    {
+      "id": "partial_answer",
+      "question": "教学服务 A 的发票多久开具，退款审核通过后多久到账？",
+      "assumptions": "所有内容均为虚构教学规则。",
+      "documents": ["教学服务 A：申请发票后 2 个工作日内开具。", "教学服务 A：退款审核通过后 3 个工作日内到账。"],
+      "answer": "申请发票后 2 个工作日内开具。[1]",
+      "reference_answer": "发票在申请后 2 个工作日内开具；退款审核通过后 3 个工作日内到账。",
+      "expected_scores": {"correctness": 1, "faithfulness": 2, "relevance": 1}
+    },
+    {
+      "id": "unnecessary_refusal",
+      "question": "教学服务 A 的发票多久开具？",
+      "assumptions": "所有内容均为虚构教学规则。",
+      "documents": ["教学服务 A：申请发票后 2 个工作日内开具。"],
+      "answer": "资料未说明。",
+      "reference_answer": "申请发票后 2 个工作日内开具。",
+      "expected_scores": {"correctness": 0, "faithfulness": 0, "relevance": 2}
+    }
+  ]
+}

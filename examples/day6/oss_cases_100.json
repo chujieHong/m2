@@ -1,0 +1,1971 @@
+[
+  {
+    "id": "single_hop_001",
+    "category": "single_hop",
+    "question": "Bucket ACL 默认是什么权限值？",
+    "answerable": true,
+    "expected_answer": "private。",
+    "required_evidence": [
+      "Bucket ACL 的默认权限值是 private。"
+    ],
+    "evidence_ids": [
+      "B01"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/user-guide/oss-bucket-acl"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "single_hop_002",
+    "category": "single_hop",
+    "question": "上传 Object 时不指定它自己的 ACL，会采用什么权限？",
+    "answerable": true,
+    "expected_answer": "继承所属 Bucket 的 ACL。",
+    "required_evidence": [
+      "上传 Object 时未指定自己的 ACL，它会继承所属 Bucket 的 ACL。"
+    ],
+    "evidence_ids": [
+      "B02"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/user-guide/oss-bucket-acl"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "single_hop_003",
+    "category": "single_hop",
+    "question": "按 private 的 ACL 定义，谁有 Bucket 内文件的读写资格？",
+    "answerable": true,
+    "expected_answer": "Bucket 所有者及获得授权的用户。",
+    "required_evidence": [
+      "Bucket ACL 为 private 时，读写资格限于 Bucket 所有者及获得授权的用户。"
+    ],
+    "evidence_ids": [
+      "B03"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/user-guide/oss-bucket-acl"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "single_hop_004",
+    "category": "single_hop",
+    "question": "按 Bucket public-read 定义，匿名用户有哪些读写资格？",
+    "answerable": true,
+    "expected_answer": "可以读取，但没有写入资格。",
+    "required_evidence": [
+      "Bucket ACL 为 public-read 时，匿名用户有读取资格，写入仍需要所有者或授权用户资格。"
+    ],
+    "evidence_ids": [
+      "B04"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/user-guide/oss-bucket-acl"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "single_hop_005",
+    "category": "single_hop",
+    "question": "按 Bucket public-read-write 定义，匿名用户有哪些读写资格？",
+    "answerable": true,
+    "expected_answer": "读取和写入资格都具备。",
+    "required_evidence": [
+      "Bucket ACL 为 public-read-write 时，匿名用户具有读取和写入资格。"
+    ],
+    "evidence_ids": [
+      "B05"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/user-guide/oss-bucket-acl"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "single_hop_006",
+    "category": "single_hop",
+    "question": "新建 Bucket 的默认阻止公共访问状态及此时允许的 Bucket ACL 是什么？",
+    "answerable": true,
+    "expected_answer": "默认开启，Bucket ACL 只能设置为 private。",
+    "required_evidence": [
+      "创建 Bucket 时默认开启阻止公共访问，Bucket ACL 此时只能设置为 private。"
+    ],
+    "evidence_ids": [
+      "B06"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/user-guide/oss-bucket-acl"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "single_hop_007",
+    "category": "single_hop",
+    "question": "Object ACL 的默认值是什么，含义是什么？",
+    "answerable": true,
+    "expected_answer": "default，继承所属 Bucket 的 ACL。",
+    "required_evidence": [
+      "Object ACL 的默认值是 default，表示继承所属 Bucket 的 ACL。"
+    ],
+    "evidence_ids": [
+      "O01"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/user-guide/object-acl"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "single_hop_008",
+    "category": "single_hop",
+    "question": "只给一个文件单独设置权限，应关注哪一种 ACL？",
+    "answerable": true,
+    "expected_answer": "Object ACL。",
+    "required_evidence": [
+      "Object ACL 控制单个文件，Bucket ACL 控制存储空间级别的权限。"
+    ],
+    "evidence_ids": [
+      "O02"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/user-guide/object-acl"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "single_hop_009",
+    "category": "single_hop",
+    "question": "按 Object private 定义，文件读写资格属于谁？",
+    "answerable": true,
+    "expected_answer": "Object 所有者及获得授权的用户。",
+    "required_evidence": [
+      "Object ACL 为 private 时，读写资格限于 Object 所有者及获得授权的用户。"
+    ],
+    "evidence_ids": [
+      "O03"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/user-guide/object-acl"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "single_hop_010",
+    "category": "single_hop",
+    "question": "按 Object public-read 定义，匿名用户可以写入吗？",
+    "answerable": true,
+    "expected_answer": "不能写入，只有读取资格。",
+    "required_evidence": [
+      "Object ACL 为 public-read 时，匿名用户有读取资格，但没有写入资格。"
+    ],
+    "evidence_ids": [
+      "O04"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/user-guide/object-acl"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "single_hop_011",
+    "category": "single_hop",
+    "question": "按 Object public-read-write 定义，匿名用户有写入资格吗？",
+    "answerable": true,
+    "expected_answer": "有，并具有读取资格。",
+    "required_evidence": [
+      "Object ACL 为 public-read-write 时，匿名用户具有读取和写入资格。"
+    ],
+    "evidence_ids": [
+      "O05"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/user-guide/object-acl"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "single_hop_012",
+    "category": "single_hop",
+    "question": "Object 有非 default 的 ACL 时，ACL 判定采用哪一级设置？",
+    "answerable": true,
+    "expected_answer": "采用 Object 的设置。",
+    "required_evidence": [
+      "Object 设置了非 default 的 ACL 时，ACL 判定采用 Object 的设置，而不继承 Bucket ACL。"
+    ],
+    "evidence_ids": [
+      "O06"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/user-guide/object-acl"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "single_hop_013",
+    "category": "single_hop",
+    "question": "Bucket 开启阻止公共访问时，可以给 Object 设置哪些 ACL 值？",
+    "answerable": true,
+    "expected_answer": "private 或 default。",
+    "required_evidence": [
+      "Bucket 开启阻止公共访问时，Object ACL 可以设置为 private 或 default；设置公开 ACL 前需先关闭阻止公共访问。"
+    ],
+    "evidence_ids": [
+      "O07"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/user-guide/object-acl"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "single_hop_014",
+    "category": "single_hop",
+    "question": "资料给出的临时分享私有 Object 且无需改 ACL 的方式是什么？",
+    "answerable": true,
+    "expected_answer": "使用有指定有效期的预签名 URL。",
+    "required_evidence": [
+      "可用具有指定有效期的预签名 URL 临时分享私有 Object，无需修改 Object ACL。"
+    ],
+    "evidence_ids": [
+      "O08"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/user-guide/object-acl"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "single_hop_015",
+    "category": "single_hop",
+    "question": "开启阻止公共访问后，已有公开权限和新建公开权限分别怎样处理？",
+    "answerable": true,
+    "expected_answer": "已有公开权限被忽略，也不能创建新的公开权限。",
+    "required_evidence": [
+      "开启阻止公共访问后，Bucket Policy 和 ACL 中已有的公开访问权限会被忽略，也不能创建新的公开访问权限。"
+    ],
+    "evidence_ids": [
+      "P01"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/user-guide/block-public-access/"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "single_hop_016",
+    "category": "single_hop",
+    "question": "关闭阻止公共访问后，已有公开权限如何处理？",
+    "answerable": true,
+    "expected_answer": "恢复生效。",
+    "required_evidence": [
+      "关闭阻止公共访问后，已有公开权限配置恢复生效，并允许创建新的公开访问权限。"
+    ],
+    "evidence_ids": [
+      "P02"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/user-guide/block-public-access/"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "single_hop_017",
+    "category": "single_hop",
+    "question": "阻止公共访问支持配置在哪四个维度？",
+    "answerable": true,
+    "expected_answer": "OSS 全局、Bucket、接入点、对象 FC 接入点。",
+    "required_evidence": [
+      "阻止公共访问可配置在 OSS 全局、Bucket、接入点、对象 FC 接入点四个维度。"
+    ],
+    "evidence_ids": [
+      "P03"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/user-guide/block-public-access/"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "single_hop_018",
+    "category": "single_hop",
+    "question": "阻止公共访问的层级从高到低如何排列？",
+    "answerable": true,
+    "expected_answer": "OSS 全局、Bucket、接入点、对象 FC 接入点。",
+    "required_evidence": [
+      "阻止公共访问从高到低的层级为 OSS 全局、Bucket、接入点、对象 FC 接入点；上层开启时，下层关闭也不能放行公共访问。"
+    ],
+    "evidence_ids": [
+      "P04"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/user-guide/block-public-access/"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "single_hop_019",
+    "category": "single_hop",
+    "question": "解除单个 Bucket 的公共访问阻止，需要关闭哪些层级？",
+    "answerable": true,
+    "expected_answer": "OSS 全局和该 Bucket。",
+    "required_evidence": [
+      "若要允许单个 Bucket 的公共访问，需要同时关闭 OSS 全局和该 Bucket 的阻止公共访问。"
+    ],
+    "evidence_ids": [
+      "P05"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/user-guide/block-public-access/"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "single_hop_020",
+    "category": "single_hop",
+    "question": "解除接入点的公共访问阻止，需要关闭哪些层级？",
+    "answerable": true,
+    "expected_answer": "OSS 全局、关联 Bucket 和该接入点。",
+    "required_evidence": [
+      "若要允许单个接入点的公共访问，需要关闭 OSS 全局、关联 Bucket 和该接入点的阻止公共访问。"
+    ],
+    "evidence_ids": [
+      "P06"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/user-guide/block-public-access/"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "single_hop_021",
+    "category": "single_hop",
+    "question": "复制时，源或目标 Bucket 的阻止公共访问开关会改变 Object ACL 吗？",
+    "answerable": true,
+    "expected_answer": "不会改变复制前后的 Object ACL。",
+    "required_evidence": [
+      "复制时，源或目标 Bucket 是否开启阻止公共访问，不会改变复制前后的 Object ACL。"
+    ],
+    "evidence_ids": [
+      "P07"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/user-guide/block-public-access/"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "single_hop_022",
+    "category": "single_hop",
+    "question": "目标 Bucket 开启阻止公共访问时，复制来的公开 ACL 文件能否公共访问？",
+    "answerable": true,
+    "expected_answer": "不能。",
+    "required_evidence": [
+      "目标 Bucket 开启阻止公共访问时，复制得到的 Object 即使带有公开 ACL，仍不能公共访问。"
+    ],
+    "evidence_ids": [
+      "P08"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/user-guide/block-public-access/"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "single_hop_023",
+    "category": "single_hop",
+    "question": "上传 Part 前，用什么接口取得 uploadId？",
+    "answerable": true,
+    "expected_answer": "InitiateMultipartUpload。",
+    "required_evidence": [
+      "上传 Part 前，先调用 InitiateMultipartUpload 获取 uploadId。"
+    ],
+    "evidence_ids": [
+      "U01"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/developer-reference/uploadpart"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "single_hop_024",
+    "category": "single_hop",
+    "question": "同一任务再次上传相同 partNumber，会怎样处理旧分片？",
+    "answerable": true,
+    "expected_answer": "覆盖该编号的旧 Part。",
+    "required_evidence": [
+      "同一上传任务中，用相同 partNumber 上传新数据会覆盖该编号的旧 Part。"
+    ],
+    "evidence_ids": [
+      "U02"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/developer-reference/uploadpart"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "single_hop_025",
+    "category": "single_hop",
+    "question": "UploadPart 的 ETag 响应头记录哪种数据的 MD5？",
+    "answerable": true,
+    "expected_answer": "服务器收到的 Part 数据的 MD5。",
+    "required_evidence": [
+      "UploadPart 把服务器收到的 Part 数据的 MD5 值放在 ETag 响应头中返回。"
+    ],
+    "evidence_ids": [
+      "U03"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/developer-reference/uploadpart"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "single_hop_026",
+    "category": "single_hop",
+    "question": "分片大小是在哪个阶段校验的？",
+    "answerable": true,
+    "expected_answer": "CompleteMultipartUpload 阶段。",
+    "required_evidence": [
+      "UploadPart 阶段不立即校验分片大小，CompleteMultipartUpload 阶段才做该校验。"
+    ],
+    "evidence_ids": [
+      "U04"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/developer-reference/uploadpart"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "single_hop_027",
+    "category": "single_hop",
+    "question": "UploadPart 对应哪一个权限 Action？",
+    "answerable": true,
+    "expected_answer": "oss:PutObject。",
+    "required_evidence": [
+      "UploadPart 对应的权限 Action 是 oss:PutObject。"
+    ],
+    "evidence_ids": [
+      "U05"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/developer-reference/uploadpart"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "single_hop_028",
+    "category": "single_hop",
+    "question": "UploadPart 的 partNumber 和 uploadId 是否都是必选字段？",
+    "answerable": true,
+    "expected_answer": "都是必选字段。",
+    "required_evidence": [
+      "UploadPart 的 partNumber 和 uploadId 都是必选请求字段。"
+    ],
+    "evidence_ids": [
+      "U06"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/developer-reference/uploadpart"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "single_hop_029",
+    "category": "single_hop",
+    "question": "partNumber 越界时的错误码和 HTTP 状态码是什么？",
+    "answerable": true,
+    "expected_answer": "InvalidArgument，400。",
+    "required_evidence": [
+      "partNumber 超出 1～10000 时，UploadPart 的错误码为 InvalidArgument，HTTP 状态码为 400。"
+    ],
+    "evidence_ids": [
+      "U07"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/developer-reference/uploadpart"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "single_hop_030",
+    "category": "single_hop",
+    "question": "上传任务 ID 不存在时的错误码和 HTTP 状态码是什么？",
+    "answerable": true,
+    "expected_answer": "NoSuchUpload，404。",
+    "required_evidence": [
+      "分片上传 ID 不存在时，UploadPart 的错误码为 NoSuchUpload，HTTP 状态码为 404。"
+    ],
+    "evidence_ids": [
+      "U08"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/developer-reference/uploadpart"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "single_hop_031",
+    "category": "single_hop",
+    "question": "Bucket 版本控制默认处于什么状态？",
+    "answerable": true,
+    "expected_answer": "未开启。",
+    "required_evidence": [
+      "Bucket 版本控制默认未开启，状态包括未开启、开启和暂停。"
+    ],
+    "evidence_ids": [
+      "V01"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/user-guide/overview-78/"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "single_hop_032",
+    "category": "single_hop",
+    "question": "已经开启版本控制的 Bucket 能直接回到未开启状态吗？",
+    "answerable": true,
+    "expected_answer": "不能。",
+    "required_evidence": [
+      "版本控制开启后不能返回未开启状态；可以暂停，但还需满足保留策略等对状态变更的限制。"
+    ],
+    "evidence_ids": [
+      "V02"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/user-guide/overview-78/"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "single_hop_033",
+    "category": "single_hop",
+    "question": "版本控制开启时，覆盖同名 Object 会不会破坏历史版本？",
+    "answerable": true,
+    "expected_answer": "不会；生成新版本，历史版本不受影响。",
+    "required_evidence": [
+      "版本控制开启时，覆盖同名 Object 会生成新版本，已有历史版本不受影响。"
+    ],
+    "evidence_ids": [
+      "V03"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/user-guide/overview-78/"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "single_hop_034",
+    "category": "single_hop",
+    "question": "版本控制暂停后，再次上传同名文件会影响暂停前的历史版本吗？",
+    "answerable": true,
+    "expected_answer": "不会，但会覆盖暂停期的同名 null 版本。",
+    "required_evidence": [
+      "版本控制暂停时，新上传的 Object 使用 null 版本；再次上传同名文件会覆盖暂停期的同名版本，但保留暂停前的历史版本。"
+    ],
+    "evidence_ids": [
+      "V04"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/user-guide/overview-78/"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "single_hop_035",
+    "category": "single_hop",
+    "question": "版本控制开启时，区分同一 Object 不同版本使用什么标识？",
+    "answerable": true,
+    "expected_answer": "唯一的 versionId。",
+    "required_evidence": [
+      "版本控制开启时，Object 的每个版本都有唯一的 versionId。"
+    ],
+    "evidence_ids": [
+      "V05"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/user-guide/overview-78/"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "single_hop_036",
+    "category": "single_hop",
+    "question": "版本控制开启时，不指定 versionId 的 DELETE 会怎样处理 Object？",
+    "answerable": true,
+    "expected_answer": "添加删除标记作为当前版本，不永久删除原有数据版本。",
+    "required_evidence": [
+      "版本控制开启时，DELETE 未指定 versionId 会添加删除标记作为当前版本，原有数据版本不被该操作永久删除。"
+    ],
+    "evidence_ids": [
+      "V06"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/manage-objects-in-a-versioning-enabled-bucket"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "single_hop_037",
+    "category": "single_hop",
+    "question": "当前版本是删除标记时，读取当前版本的 GET 返回什么状态？",
+    "answerable": true,
+    "expected_answer": "404。",
+    "required_evidence": [
+      "当 Object 当前版本为删除标记时，读取当前版本的 GET 请求返回 404。"
+    ],
+    "evidence_ids": [
+      "V07"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/user-guide/delete-marker"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "single_hop_038",
+    "category": "single_hop",
+    "question": "保留数据历史版本的情况下，删除当前删除标记后哪个版本成为当前版本？",
+    "answerable": true,
+    "expected_answer": "最近的数据历史版本。",
+    "required_evidence": [
+      "已有数据历史版本时，指定 versionId 删除当前删除标记后，最近的数据历史版本成为当前版本，Object 恢复可访问。"
+    ],
+    "evidence_ids": [
+      "V08"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/user-guide/delete-marker"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "single_hop_039",
+    "category": "single_hop",
+    "question": "单个 Bucket 的生命周期规则数上限是多少？",
+    "answerable": true,
+    "expected_answer": "1000 条。",
+    "required_evidence": [
+      "单个 Bucket 最多配置 1000 条生命周期规则。"
+    ],
+    "evidence_ids": [
+      "L01"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/lifecycle-rules-based-on-the-last-modified-time"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "single_hop_040",
+    "category": "single_hop",
+    "question": "PutBucketLifecycle 是追加规则还是覆盖规则？",
+    "answerable": true,
+    "expected_answer": "覆盖；追加时需先获取旧配置并合并后提交。",
+    "required_evidence": [
+      "PutBucketLifecycle 覆盖已有规则；保留旧规则并追加新规则时，应先获取旧配置，再合并新规则，最后提交完整配置。"
+    ],
+    "evidence_ids": [
+      "L02"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/lifecycle-rules-based-on-the-last-modified-time"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "multi_hop_001",
+    "category": "multi_hop",
+    "question": "假设阻止公共访问已关闭且没有其他限制：Bucket 为 public-read，Object 未指定 ACL，匿名用户能写入这个 Object 吗？",
+    "answerable": true,
+    "expected_answer": "不能；Object 继承 public-read，只给匿名用户读取资格。",
+    "required_evidence": [
+      "上传 Object 时未指定自己的 ACL，它会继承所属 Bucket 的 ACL。",
+      "Bucket ACL 为 public-read 时，匿名用户有读取资格，写入仍需要所有者或授权用户资格。"
+    ],
+    "evidence_ids": [
+      "B02",
+      "B04"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/user-guide/oss-bucket-acl"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+    "reasoning_note": "需要应用并串联所列规则；覆盖率只检查证据，未评分推理结果。"
+  },
+  {
+    "id": "multi_hop_002",
+    "category": "multi_hop",
+    "question": "只按 ACL 规则判断：Bucket 使用默认 ACL，Object 也未指定自己的 ACL，匿名用户能读取它吗？",
+    "answerable": true,
+    "expected_answer": "不能；Bucket 默认 private，Object 继承它，private 不给匿名用户读取资格。",
+    "required_evidence": [
+      "Bucket ACL 的默认权限值是 private。",
+      "上传 Object 时未指定自己的 ACL，它会继承所属 Bucket 的 ACL。",
+      "Bucket ACL 为 private 时，读写资格限于 Bucket 所有者及获得授权的用户。"
+    ],
+    "evidence_ids": [
+      "B01",
+      "B02",
+      "B03"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/user-guide/oss-bucket-acl"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+    "reasoning_note": "需要应用并串联所列规则；覆盖率只检查证据，未评分推理结果。"
+  },
+  {
+    "id": "multi_hop_003",
+    "category": "multi_hop",
+    "question": "假设公共访问未被阻止且没有其他限制：Bucket 是 public-read-write，Object ACL 为 default，匿名用户可以读写它吗？",
+    "answerable": true,
+    "expected_answer": "可以；default 继承 Bucket 的公开读写资格。",
+    "required_evidence": [
+      "Object ACL 的默认值是 default，表示继承所属 Bucket 的 ACL。",
+      "Bucket ACL 为 public-read-write 时，匿名用户具有读取和写入资格。"
+    ],
+    "evidence_ids": [
+      "O01",
+      "B05"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/user-guide/object-acl",
+      "https://help.aliyun.com/zh/oss/user-guide/oss-bucket-acl"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+    "reasoning_note": "需要应用并串联所列规则；覆盖率只检查证据，未评分推理结果。"
+  },
+  {
+    "id": "multi_hop_004",
+    "category": "multi_hop",
+    "question": "假设公共访问未被阻止且没有其他限制：Bucket private，但 Object 独立设为 public-read，匿名用户可以读取文件吗？",
+    "answerable": true,
+    "expected_answer": "可以；独立 Object ACL 生效，public-read 给匿名用户读取资格。",
+    "required_evidence": [
+      "Object 设置了非 default 的 ACL 时，ACL 判定采用 Object 的设置，而不继承 Bucket ACL。",
+      "Object ACL 为 public-read 时，匿名用户有读取资格，但没有写入资格。"
+    ],
+    "evidence_ids": [
+      "O06",
+      "O04"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/user-guide/object-acl"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+    "reasoning_note": "需要应用并串联所列规则；覆盖率只检查证据，未评分推理结果。"
+  },
+  {
+    "id": "multi_hop_005",
+    "category": "multi_hop",
+    "question": "假设没有其他授权或限制：Bucket public-read，但 Object 独立设为 private，匿名用户可以读这个文件吗？",
+    "answerable": true,
+    "expected_answer": "不能；独立 Object ACL 为 private，不给匿名用户读取资格。",
+    "required_evidence": [
+      "Object 设置了非 default 的 ACL 时，ACL 判定采用 Object 的设置，而不继承 Bucket ACL。",
+      "Object ACL 为 private 时，读写资格限于 Object 所有者及获得授权的用户。"
+    ],
+    "evidence_ids": [
+      "O06",
+      "O03"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/user-guide/object-acl"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+    "reasoning_note": "需要应用并串联所列规则；覆盖率只检查证据，未评分推理结果。"
+  },
+  {
+    "id": "multi_hop_006",
+    "category": "multi_hop",
+    "question": "Object 已设为 public-read，但其 Bucket 开启阻止公共访问，匿名读取是否仍可用？",
+    "answerable": true,
+    "expected_answer": "不可用；public-read 的公开读取权限被阻止公共访问忽略。",
+    "required_evidence": [
+      "Object ACL 为 public-read 时，匿名用户有读取资格，但没有写入资格。",
+      "开启阻止公共访问后，Bucket Policy 和 ACL 中已有的公开访问权限会被忽略，也不能创建新的公开访问权限。"
+    ],
+    "evidence_ids": [
+      "O04",
+      "P01"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/user-guide/object-acl",
+      "https://help.aliyun.com/zh/oss/user-guide/block-public-access/"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+    "reasoning_note": "需要应用并串联所列规则；覆盖率只检查证据，未评分推理结果。"
+  },
+  {
+    "id": "multi_hop_007",
+    "category": "multi_hop",
+    "question": "Object 为 public-read，Bucket 关闭阻止开关但 OSS 全局开关仍开启，匿名读取可以放行吗？",
+    "answerable": true,
+    "expected_answer": "不能；上层阻止开关覆盖下层放行，即使 ACL 有公开读取资格。",
+    "required_evidence": [
+      "Object ACL 为 public-read 时，匿名用户有读取资格，但没有写入资格。",
+      "阻止公共访问从高到低的层级为 OSS 全局、Bucket、接入点、对象 FC 接入点；上层开启时，下层关闭也不能放行公共访问。"
+    ],
+    "evidence_ids": [
+      "O04",
+      "P04"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/user-guide/object-acl",
+      "https://help.aliyun.com/zh/oss/user-guide/block-public-access/"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+    "reasoning_note": "需要应用并串联所列规则；覆盖率只检查证据，未评分推理结果。"
+  },
+  {
+    "id": "multi_hop_008",
+    "category": "multi_hop",
+    "question": "Object 为 public-read，全局和 Bucket 阻止开关已关闭，但访问所用接入点仍开启阻止公共访问，经此接入点能匿名读吗？",
+    "answerable": true,
+    "expected_answer": "不能；接入点放行还需关闭它自身的阻止开关。",
+    "required_evidence": [
+      "Object ACL 为 public-read 时，匿名用户有读取资格，但没有写入资格。",
+      "若要允许单个接入点的公共访问，需要关闭 OSS 全局、关联 Bucket 和该接入点的阻止公共访问。"
+    ],
+    "evidence_ids": [
+      "O04",
+      "P06"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/user-guide/object-acl",
+      "https://help.aliyun.com/zh/oss/user-guide/block-public-access/"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+    "reasoning_note": "需要应用并串联所列规则；覆盖率只检查证据，未评分推理结果。"
+  },
+  {
+    "id": "multi_hop_009",
+    "category": "multi_hop",
+    "question": "public-read Object 被复制到开启阻止公共访问的目标 Bucket；既然复制没改 ACL，匿名读取一定仍可用吗？",
+    "answerable": true,
+    "expected_answer": "不一定且本条件下不可用；ACL 保留为公开读，但公开资格被目标阻止开关忽略。",
+    "required_evidence": [
+      "复制时，源或目标 Bucket 是否开启阻止公共访问，不会改变复制前后的 Object ACL。",
+      "Object ACL 为 public-read 时，匿名用户有读取资格，但没有写入资格。",
+      "开启阻止公共访问后，Bucket Policy 和 ACL 中已有的公开访问权限会被忽略，也不能创建新的公开访问权限。"
+    ],
+    "evidence_ids": [
+      "P07",
+      "O04",
+      "P01"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/user-guide/block-public-access/",
+      "https://help.aliyun.com/zh/oss/user-guide/object-acl"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+    "reasoning_note": "需要应用并串联所列规则；覆盖率只检查证据，未评分推理结果。"
+  },
+  {
+    "id": "multi_hop_010",
+    "category": "multi_hop",
+    "question": "某 public-read Object 先被公共访问开关阻止，随后所有相关阻止开关都关闭；假设无其他限制，匿名读取会恢复吗？",
+    "answerable": true,
+    "expected_answer": "会；关闭开关恢复公开配置，public-read 提供匿名读取资格。",
+    "required_evidence": [
+      "关闭阻止公共访问后，已有公开权限配置恢复生效，并允许创建新的公开访问权限。",
+      "Object ACL 为 public-read 时，匿名用户有读取资格，但没有写入资格。"
+    ],
+    "evidence_ids": [
+      "P02",
+      "O04"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/user-guide/block-public-access/",
+      "https://help.aliyun.com/zh/oss/user-guide/object-acl"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+    "reasoning_note": "需要应用并串联所列规则；覆盖率只检查证据，未评分推理结果。"
+  },
+  {
+    "id": "multi_hop_011",
+    "category": "multi_hop",
+    "question": "版本控制开启时，对文件执行未指定 versionId 的 DELETE，随后不指定版本读当前文件，会发生什么？",
+    "answerable": true,
+    "expected_answer": "删除产生当前删除标记，因此当前版本 GET 返回 404。",
+    "required_evidence": [
+      "版本控制开启时，DELETE 未指定 versionId 会添加删除标记作为当前版本，原有数据版本不被该操作永久删除。",
+      "当 Object 当前版本为删除标记时，读取当前版本的 GET 请求返回 404。"
+    ],
+    "evidence_ids": [
+      "V06",
+      "V07"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/manage-objects-in-a-versioning-enabled-bucket",
+      "https://help.aliyun.com/zh/oss/user-guide/delete-marker"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+    "reasoning_note": "需要应用并串联所列规则；覆盖率只检查证据，未评分推理结果。"
+  },
+  {
+    "id": "multi_hop_012",
+    "category": "multi_hop",
+    "question": "版本控制开启且保留历史数据时，先普通删除文件，再指定版本删除新产生的当前删除标记，原数据可以恢复访问吗？",
+    "answerable": true,
+    "expected_answer": "可以；普通删除不永久删除数据版本，清理当前标记使最近历史数据版本恢复为当前版本。",
+    "required_evidence": [
+      "版本控制开启时，DELETE 未指定 versionId 会添加删除标记作为当前版本，原有数据版本不被该操作永久删除。",
+      "已有数据历史版本时，指定 versionId 删除当前删除标记后，最近的数据历史版本成为当前版本，Object 恢复可访问。"
+    ],
+    "evidence_ids": [
+      "V06",
+      "V08"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/manage-objects-in-a-versioning-enabled-bucket",
+      "https://help.aliyun.com/zh/oss/user-guide/delete-marker"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+    "reasoning_note": "需要应用并串联所列规则；覆盖率只检查证据，未评分推理结果。"
+  },
+  {
+    "id": "multi_hop_013",
+    "category": "multi_hop",
+    "question": "无保留策略限制时，版本开启的文件先从 A 覆盖为 B，再普通删除，然后删除当前删除标记，最近恢复的内容是 A 还是 B？",
+    "answerable": true,
+    "expected_answer": "B；覆盖生成 B 版本且保留 A，普通删除保留数据，删除标记后恢复最近数据版本 B。",
+    "required_evidence": [
+      "版本控制开启时，覆盖同名 Object 会生成新版本，已有历史版本不受影响。",
+      "版本控制开启时，DELETE 未指定 versionId 会添加删除标记作为当前版本，原有数据版本不被该操作永久删除。",
+      "已有数据历史版本时，指定 versionId 删除当前删除标记后，最近的数据历史版本成为当前版本，Object 恢复可访问。"
+    ],
+    "evidence_ids": [
+      "V03",
+      "V06",
+      "V08"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/user-guide/overview-78/",
+      "https://help.aliyun.com/zh/oss/manage-objects-in-a-versioning-enabled-bucket",
+      "https://help.aliyun.com/zh/oss/user-guide/delete-marker"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+    "reasoning_note": "需要应用并串联所列规则；覆盖率只检查证据，未评分推理结果。"
+  },
+  {
+    "id": "multi_hop_014",
+    "category": "multi_hop",
+    "question": "暂停版本控制时同名文件先上传 A 后上传 B，再执行未指定 versionId 的 GET，会读到哪个内容？",
+    "answerable": true,
+    "expected_answer": "B；暂停期同名 null 版本被 B 覆盖，未指定版本的 GET 读当前版本。",
+    "required_evidence": [
+      "版本控制暂停时，新上传的 Object 使用 null 版本；再次上传同名文件会覆盖暂停期的同名版本，但保留暂停前的历史版本。",
+      "版本控制暂停时，GET 未指定 versionId 返回当前版本；指定 versionId 可下载对应的历史版本。"
+    ],
+    "evidence_ids": [
+      "V04",
+      "V10"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/user-guide/overview-78/",
+      "https://help.aliyun.com/zh/oss/user-guide/manage-objects-in-a-versioning-suspended-bucket"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+    "reasoning_note": "需要应用并串联所列规则；覆盖率只检查证据，未评分推理结果。"
+  },
+  {
+    "id": "multi_hop_015",
+    "category": "multi_hop",
+    "question": "无保留策略限制时，暂停版本 Bucket 的某历史版本被指定 versionId 永久删除；能再靠下载这个 versionId 恢复它吗？",
+    "answerable": true,
+    "expected_answer": "不能；指定版本已永久删除，按该 versionId 下载不能恢复已删除版本。",
+    "required_evidence": [
+      "通过 versionId 删除指定数据版本是永久删除，该版本不能通过版本控制恢复。",
+      "版本控制暂停时，GET 未指定 versionId 返回当前版本；指定 versionId 可下载对应的历史版本。"
+    ],
+    "evidence_ids": [
+      "V09",
+      "V10"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/manage-objects-in-a-versioning-enabled-bucket",
+      "https://help.aliyun.com/zh/oss/user-guide/manage-objects-in-a-versioning-suspended-bucket"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+    "reasoning_note": "需要应用并串联所列规则；覆盖率只检查证据，未评分推理结果。"
+  },
+  {
+    "id": "multi_hop_016",
+    "category": "multi_hop",
+    "question": "版本控制与保留策略同时开启，数据还在保护期：普通删除后清理当前删除标记，是否必须先删除受保护数据版本才能恢复访问？",
+    "answerable": true,
+    "expected_answer": "不必；普通删除保留数据，标记不受保留策略保护，清理当前标记即可让最近历史数据版本恢复访问。",
+    "required_evidence": [
+      "版本控制开启时，DELETE 未指定 versionId 会添加删除标记作为当前版本，原有数据版本不被该操作永久删除。",
+      "保留策略不保护删除标记，删除标记可以被清理。",
+      "已有数据历史版本时，指定 versionId 删除当前删除标记后，最近的数据历史版本成为当前版本，Object 恢复可访问。"
+    ],
+    "evidence_ids": [
+      "V06",
+      "W02",
+      "V08"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/manage-objects-in-a-versioning-enabled-bucket",
+      "https://help.aliyun.com/zh/oss/user-guide/oss-retention-policies",
+      "https://help.aliyun.com/zh/oss/user-guide/delete-marker"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+    "reasoning_note": "需要应用并串联所列规则；覆盖率只检查证据，未评分推理结果。"
+  },
+  {
+    "id": "multi_hop_017",
+    "category": "multi_hop",
+    "question": "某受保护的历史版本已达到配置的非当前版本过期天数，但仍在保留策略保护期，生命周期可以立即永久删除它吗？",
+    "answerable": true,
+    "expected_answer": "不能；非当前版本达到过期阈值不解除保留策略对数据版本的保护。",
+    "required_evidence": [
+      "非当前版本过期天数从该版本成为非当前版本的时间开始计算，而不是原文件的最后修改时间。",
+      "保留策略保护期内的 Object 数据版本不能被修改或删除，生命周期也不能删除这些受保护版本；允许上传同名 Object 生成受保护的新版本。"
+    ],
+    "evidence_ids": [
+      "L04",
+      "W01"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/lifecycle-rules-based-on-the-last-modified-time",
+      "https://help.aliyun.com/zh/oss/user-guide/oss-retention-policies"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+    "reasoning_note": "需要应用并串联所列规则；覆盖率只检查证据，未评分推理结果。"
+  },
+  {
+    "id": "multi_hop_018",
+    "category": "multi_hop",
+    "question": "保留策略保护期内且版本控制开启时，上传同名新内容一定是在修改已有受保护版本吗？",
+    "answerable": true,
+    "expected_answer": "不是；可以生成新的受保护版本，开启版本控制的覆盖保留历史版本。",
+    "required_evidence": [
+      "保留策略保护期内的 Object 数据版本不能被修改或删除，生命周期也不能删除这些受保护版本；允许上传同名 Object 生成受保护的新版本。",
+      "版本控制开启时，覆盖同名 Object 会生成新版本，已有历史版本不受影响。"
+    ],
+    "evidence_ids": [
+      "W01",
+      "V03"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/user-guide/oss-retention-policies",
+      "https://help.aliyun.com/zh/oss/user-guide/overview-78/"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+    "reasoning_note": "需要应用并串联所列规则；覆盖率只检查证据，未评分推理结果。"
+  },
+  {
+    "id": "multi_hop_019",
+    "category": "multi_hop",
+    "question": "历史版本最后修改是 20 天前，但 5 天前才成为非当前版本；非当前过期阈值为 10 天，达到阈值还差几天？",
+    "answerable": true,
+    "expected_answer": "还差 5 天；非当前版本从成为历史版本起算，不能按最后修改时间当作当前版本规则计算；达到阈值不保证任务当刻执行完。",
+    "required_evidence": [
+      "基于最后修改时间的生命周期规则中，当前版本的过期天数从 Object 最后修改时间开始计算。",
+      "非当前版本过期天数从该版本成为非当前版本的时间开始计算，而不是原文件的最后修改时间。"
+    ],
+    "evidence_ids": [
+      "L03",
+      "L04"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/lifecycle-rules-based-on-the-last-modified-time"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+    "reasoning_note": "需要应用并串联所列规则；覆盖率只检查证据，未评分推理结果。"
+  },
+  {
+    "id": "multi_hop_020",
+    "category": "multi_hop",
+    "question": "一个非最后分片为 50 KB，UploadPart 返回成功就能证明最终大小校验一定通过吗？",
+    "answerable": true,
+    "expected_answer": "不能；普通分片最小 100 KB，大小在 CompleteMultipartUpload 阶段才校验。",
+    "required_evidence": [
+      "UploadPart 阶段不立即校验分片大小，CompleteMultipartUpload 阶段才做该校验。",
+      "| 普通 Part 最小值 | 100 KB | 除最后一片外 |"
+    ],
+    "evidence_ids": [
+      "U04",
+      "TU"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/developer-reference/uploadpart"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+    "reasoning_note": "需要应用并串联所列规则；覆盖率只检查证据，未评分推理结果。"
+  },
+  {
+    "id": "comparison_001",
+    "category": "comparison",
+    "question": "Bucket ACL 和 Object ACL 默认值有何不同？",
+    "answerable": true,
+    "expected_answer": "Bucket 默认 private，Object 默认 default 并继承 Bucket。",
+    "required_evidence": [
+      "Bucket ACL 的默认权限值是 private。",
+      "Object ACL 的默认值是 default，表示继承所属 Bucket 的 ACL。"
+    ],
+    "evidence_ids": [
+      "B01",
+      "O01"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/user-guide/oss-bucket-acl",
+      "https://help.aliyun.com/zh/oss/user-guide/object-acl"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "comparison_002",
+    "category": "comparison",
+    "question": "Bucket ACL 与 Object ACL 的权限控制范围有什么区别？",
+    "answerable": true,
+    "expected_answer": "前者是存储空间级别，后者是单个文件。",
+    "required_evidence": [
+      "Object ACL 控制单个文件，Bucket ACL 控制存储空间级别的权限。"
+    ],
+    "evidence_ids": [
+      "O02"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/user-guide/object-acl"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "comparison_003",
+    "category": "comparison",
+    "question": "按 ACL 定义，Bucket public-read 与 public-read-write 对匿名写入资格有什么区别？",
+    "answerable": true,
+    "expected_answer": "public-read 不允许匿名写入，public-read-write 允许。",
+    "required_evidence": [
+      "Bucket ACL 为 public-read 时，匿名用户有读取资格，写入仍需要所有者或授权用户资格。",
+      "Bucket ACL 为 public-read-write 时，匿名用户具有读取和写入资格。"
+    ],
+    "evidence_ids": [
+      "B04",
+      "B05"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/user-guide/oss-bucket-acl"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "comparison_004",
+    "category": "comparison",
+    "question": "按 ACL 定义，Object public-read 和 public-read-write 对匿名用户的权限有何不同？",
+    "answerable": true,
+    "expected_answer": "前者只读，后者可读写。",
+    "required_evidence": [
+      "Object ACL 为 public-read 时，匿名用户有读取资格，但没有写入资格。",
+      "Object ACL 为 public-read-write 时，匿名用户具有读取和写入资格。"
+    ],
+    "evidence_ids": [
+      "O04",
+      "O05"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/user-guide/object-acl"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "comparison_005",
+    "category": "comparison",
+    "question": "Object ACL 为 default 与非 default 时，采用权限的来源有什么区别？",
+    "answerable": true,
+    "expected_answer": "default 继承 Bucket；非 default 采用 Object 的独立设置。",
+    "required_evidence": [
+      "Object ACL 的默认值是 default，表示继承所属 Bucket 的 ACL。",
+      "Object 设置了非 default 的 ACL 时，ACL 判定采用 Object 的设置，而不继承 Bucket ACL。"
+    ],
+    "evidence_ids": [
+      "O01",
+      "O06"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/user-guide/object-acl"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "comparison_006",
+    "category": "comparison",
+    "question": "开启和关闭阻止公共访问，对已有公开权限的作用有何不同？",
+    "answerable": true,
+    "expected_answer": "开启时忽略已有公开权限；关闭后恢复其生效。",
+    "required_evidence": [
+      "开启阻止公共访问后，Bucket Policy 和 ACL 中已有的公开访问权限会被忽略，也不能创建新的公开访问权限。",
+      "关闭阻止公共访问后，已有公开权限配置恢复生效，并允许创建新的公开访问权限。"
+    ],
+    "evidence_ids": [
+      "P01",
+      "P02"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/user-guide/block-public-access/"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "comparison_007",
+    "category": "comparison",
+    "question": "OSS 全局阻止开关和 Bucket 开关不一致时，哪个层级优先？",
+    "answerable": true,
+    "expected_answer": "OSS 全局优先；上层开启不能靠下层关闭放行。",
+    "required_evidence": [
+      "阻止公共访问从高到低的层级为 OSS 全局、Bucket、接入点、对象 FC 接入点；上层开启时，下层关闭也不能放行公共访问。"
+    ],
+    "evidence_ids": [
+      "P04"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/user-guide/block-public-access/"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "comparison_008",
+    "category": "comparison",
+    "question": "解除 Bucket 与接入点的公共访问阻止，所需关闭的层级有什么区别？",
+    "answerable": true,
+    "expected_answer": "Bucket 需关闭全局和 Bucket；接入点还需关闭接入点本身。",
+    "required_evidence": [
+      "若要允许单个 Bucket 的公共访问，需要同时关闭 OSS 全局和该 Bucket 的阻止公共访问。",
+      "若要允许单个接入点的公共访问，需要关闭 OSS 全局、关联 Bucket 和该接入点的阻止公共访问。"
+    ],
+    "evidence_ids": [
+      "P05",
+      "P06"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/user-guide/block-public-access/"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "comparison_009",
+    "category": "comparison",
+    "question": "复制时 Object ACL 保持不变，与目标 Bucket 中实际能否公共访问，是不是同一件事？",
+    "answerable": true,
+    "expected_answer": "不是；ACL 可以保持公开，但目标开了阻止公共访问仍不可公共访问。",
+    "required_evidence": [
+      "复制时，源或目标 Bucket 是否开启阻止公共访问，不会改变复制前后的 Object ACL。",
+      "目标 Bucket 开启阻止公共访问时，复制得到的 Object 即使带有公开 ACL，仍不能公共访问。"
+    ],
+    "evidence_ids": [
+      "P07",
+      "P08"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/user-guide/block-public-access/"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "comparison_010",
+    "category": "comparison",
+    "question": "未开启和开启版本控制时，同名覆盖对旧内容的影响有何不同？",
+    "answerable": true,
+    "expected_answer": "未开启直接覆盖且不能通过版本控制恢复；开启生成新版本并保留历史。",
+    "required_evidence": [
+      "未开启版本控制时，同名 Object 被直接覆盖，旧内容不能通过版本控制恢复。",
+      "版本控制开启时，覆盖同名 Object 会生成新版本，已有历史版本不受影响。"
+    ],
+    "evidence_ids": [
+      "V11",
+      "V03"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/user-guide/overview-78/"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "comparison_011",
+    "category": "comparison",
+    "question": "开启与暂停版本控制时，再次上传同名文件的版本行为有何区别？",
+    "answerable": true,
+    "expected_answer": "开启生成新的唯一版本；暂停期同名 null 版本会被后续上传覆盖，暂停前历史仍保留。",
+    "required_evidence": [
+      "版本控制开启时，覆盖同名 Object 会生成新版本，已有历史版本不受影响。",
+      "版本控制暂停时，新上传的 Object 使用 null 版本；再次上传同名文件会覆盖暂停期的同名版本，但保留暂停前的历史版本。",
+      "版本控制开启时，Object 的每个版本都有唯一的 versionId。"
+    ],
+    "evidence_ids": [
+      "V03",
+      "V04",
+      "V05"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/user-guide/overview-78/"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "comparison_012",
+    "category": "comparison",
+    "question": "开启版本控制时，未指定版本的普通 DELETE 与指定数据版本的 DELETE 有何区别？",
+    "answerable": true,
+    "expected_answer": "前者产生删除标记并保留数据；后者永久删除指定版本。",
+    "required_evidence": [
+      "版本控制开启时，DELETE 未指定 versionId 会添加删除标记作为当前版本，原有数据版本不被该操作永久删除。",
+      "通过 versionId 删除指定数据版本是永久删除，该版本不能通过版本控制恢复。"
+    ],
+    "evidence_ids": [
+      "V06",
+      "V09"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/manage-objects-in-a-versioning-enabled-bucket"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "comparison_013",
+    "category": "comparison",
+    "question": "保留策略对数据版本与删除标记的保护有何区别？",
+    "answerable": true,
+    "expected_answer": "保护期内数据版本不能修改删除，删除标记不受此保护。",
+    "required_evidence": [
+      "保留策略保护期内的 Object 数据版本不能被修改或删除，生命周期也不能删除这些受保护版本；允许上传同名 Object 生成受保护的新版本。",
+      "保留策略不保护删除标记，删除标记可以被清理。"
+    ],
+    "evidence_ids": [
+      "W01",
+      "W02"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/user-guide/oss-retention-policies"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "comparison_014",
+    "category": "comparison",
+    "question": "当前版本和非当前版本的生命周期过期天数，计算起点有何区别？",
+    "answerable": true,
+    "expected_answer": "当前版本按最后修改时间；非当前版本按成为非当前版本的时间。",
+    "required_evidence": [
+      "基于最后修改时间的生命周期规则中，当前版本的过期天数从 Object 最后修改时间开始计算。",
+      "非当前版本过期天数从该版本成为非当前版本的时间开始计算，而不是原文件的最后修改时间。"
+    ],
+    "evidence_ids": [
+      "L03",
+      "L04"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/lifecycle-rules-based-on-the-last-modified-time"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "comparison_015",
+    "category": "comparison",
+    "question": "UploadPart 与 ListParts 所需的权限 Action 有何不同？",
+    "answerable": true,
+    "expected_answer": "UploadPart 用 oss:PutObject；ListParts 用 oss:ListParts。",
+    "required_evidence": [
+      "UploadPart 对应的权限 Action 是 oss:PutObject。",
+      "ListParts 对应的权限 Action 是 oss:ListParts。"
+    ],
+    "evidence_ids": [
+      "U05",
+      "A01"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/developer-reference/uploadpart",
+      "https://help.aliyun.com/zh/oss/developer-reference/listparts"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "table_numeric_001",
+    "category": "table_numeric",
+    "question": "partNumber 的编号范围是什么，端点包括在内吗？",
+    "answerable": true,
+    "expected_answer": "1 到 10000，包含端点。",
+    "required_evidence": [
+      "| partNumber | 1～10000，包含端点 | 正整数编号 |"
+    ],
+    "evidence_ids": [
+      "TU"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/developer-reference/uploadpart"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "table_numeric_002",
+    "category": "table_numeric",
+    "question": "只检查编号约束，partNumber=0 是否有效？",
+    "answerable": true,
+    "expected_answer": "无效，最小编号为 1。",
+    "required_evidence": [
+      "| partNumber | 1～10000，包含端点 | 正整数编号 |"
+    ],
+    "evidence_ids": [
+      "TU"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/developer-reference/uploadpart"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "table_numeric_003",
+    "category": "table_numeric",
+    "question": "只检查编号约束，partNumber=10000 是否有效？",
+    "answerable": true,
+    "expected_answer": "有效，10000 是包含在内的上限。",
+    "required_evidence": [
+      "| partNumber | 1～10000，包含端点 | 正整数编号 |"
+    ],
+    "evidence_ids": [
+      "TU"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/developer-reference/uploadpart"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "table_numeric_004",
+    "category": "table_numeric",
+    "question": "只检查编号约束，partNumber=10001 是否有效？",
+    "answerable": true,
+    "expected_answer": "无效，超过 10000。",
+    "required_evidence": [
+      "| partNumber | 1～10000，包含端点 | 正整数编号 |"
+    ],
+    "evidence_ids": [
+      "TU"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/developer-reference/uploadpart"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "table_numeric_005",
+    "category": "table_numeric",
+    "question": "只检查大小约束，一个不是最后一片的 50 KB Part 是否合规？",
+    "answerable": true,
+    "expected_answer": "不合规，普通 Part 至少 100 KB。",
+    "required_evidence": [
+      "| 普通 Part 最小值 | 100 KB | 除最后一片外 |"
+    ],
+    "evidence_ids": [
+      "TU"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/developer-reference/uploadpart"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "table_numeric_006",
+    "category": "table_numeric",
+    "question": "只检查大小约束，一个不是最后一片的 100 KB Part 是否达到最小值？",
+    "answerable": true,
+    "expected_answer": "达到最小值。",
+    "required_evidence": [
+      "| 普通 Part 最小值 | 100 KB | 除最后一片外 |"
+    ],
+    "evidence_ids": [
+      "TU"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/developer-reference/uploadpart"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "table_numeric_007",
+    "category": "table_numeric",
+    "question": "仅就最小大小约束而言，最后一片为 50 KB 是否允许？",
+    "answerable": true,
+    "expected_answer": "允许，最后一片可以小于 100 KB。",
+    "required_evidence": [
+      "| 最后一片最小值 | 可以小于 100 KB | 仅最后一片 |"
+    ],
+    "evidence_ids": [
+      "TU"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/developer-reference/uploadpart"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "table_numeric_008",
+    "category": "table_numeric",
+    "question": "只检查大小约束，一个 6 GB Part 是否合规？",
+    "answerable": true,
+    "expected_answer": "不合规，单片上限为 5 GB。",
+    "required_evidence": [
+      "| 单片最大值 | 5 GB | 所有 Part |"
+    ],
+    "evidence_ids": [
+      "TU"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/developer-reference/uploadpart"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "table_numeric_009",
+    "category": "table_numeric",
+    "question": "普通非末尾 Part 的最小和最大大小分别是多少？",
+    "answerable": true,
+    "expected_answer": "最小 100 KB，最大 5 GB。",
+    "required_evidence": [
+      "| 普通 Part 最小值 | 100 KB | 除最后一片外 |",
+      "| 单片最大值 | 5 GB | 所有 Part |"
+    ],
+    "evidence_ids": [
+      "TU"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/developer-reference/uploadpart"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "table_numeric_010",
+    "category": "table_numeric",
+    "question": "ListParts 的 max-parts 默认值和最大值分别是多少？",
+    "answerable": true,
+    "expected_answer": "默认和最大都为 1000。",
+    "required_evidence": [
+      "| max-parts | 默认 1000，最大 1000 |"
+    ],
+    "evidence_ids": [
+      "TL"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/developer-reference/listparts"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "table_numeric_011",
+    "category": "table_numeric",
+    "question": "max-parts 能否设置为 1500 来一次列出更多 Part？",
+    "answerable": true,
+    "expected_answer": "不能，最大值为 1000。",
+    "required_evidence": [
+      "| max-parts | 默认 1000，最大 1000 |"
+    ],
+    "evidence_ids": [
+      "TL"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/developer-reference/listparts"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "table_numeric_012",
+    "category": "table_numeric",
+    "question": "part-number-marker=100 时，会返回编号恰好为 100 的 Part 吗？",
+    "answerable": true,
+    "expected_answer": "不会，只返回编号大于 100 的 Part。",
+    "required_evidence": [
+      "| part-number-marker | 只返回编号大于该值的 Part，不包含该编号本身 |"
+    ],
+    "evidence_ids": [
+      "TL"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/developer-reference/listparts"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "table_numeric_013",
+    "category": "table_numeric",
+    "question": "若结果中有编号 9、2、5，ListParts 按什么次序返回？",
+    "answerable": true,
+    "expected_answer": "按编号升序，即 2、5、9。",
+    "required_evidence": [
+      "| 返回顺序 | 按 Part 编号升序 |"
+    ],
+    "evidence_ids": [
+      "TL"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/developer-reference/listparts"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "table_numeric_014",
+    "category": "table_numeric",
+    "question": "IsTruncated=true 时是否已经列举完？下一次请求使用哪个字段提供的标记？",
+    "answerable": true,
+    "expected_answer": "没有列举完；使用 NextPartNumberMarker 提供的标记。",
+    "required_evidence": [
+      "| IsTruncated=true | 本次没有返回全部结果 |",
+      "| NextPartNumberMarker | 未列举完时，用作下一次请求的起始标记 |"
+    ],
+    "evidence_ids": [
+      "TL"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/developer-reference/listparts"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "table_numeric_015",
+    "category": "table_numeric",
+    "question": "partNumber 允许到 10000，是否意味着 ListParts 可以一次返回 10000 条？请给出一次返回上限。",
+    "answerable": true,
+    "expected_answer": "不意味着；一次返回最多 1000 条。",
+    "required_evidence": [
+      "| partNumber | 1～10000，包含端点 | 正整数编号 |",
+      "| max-parts | 默认 1000，最大 1000 |"
+    ],
+    "evidence_ids": [
+      "TU",
+      "TL"
+    ],
+    "source_urls": [
+      "https://help.aliyun.com/zh/oss/developer-reference/uploadpart",
+      "https://help.aliyun.com/zh/oss/developer-reference/listparts"
+    ],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。"
+  },
+  {
+    "id": "unanswerable_001",
+    "category": "unanswerable",
+    "question": "OSS 标准存储在杭州每 GB 每月的具体价格是多少？",
+    "answerable": false,
+    "expected_answer": "资料未说明。",
+    "required_evidence": [],
+    "evidence_ids": [],
+    "source_urls": [],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+    "unanswerable_reason": "资料没有具体地域价格。"
+  },
+  {
+    "id": "unanswerable_002",
+    "category": "unanswerable",
+    "question": "分片上传每秒保证至少达到多少 MB？",
+    "answerable": false,
+    "expected_answer": "资料未说明。",
+    "required_evidence": [],
+    "evidence_ids": [],
+    "source_urls": [],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+    "unanswerable_reason": "资料没有最低速度保证。"
+  },
+  {
+    "id": "unanswerable_003",
+    "category": "unanswerable",
+    "question": "所有账号允许的最大并发 UploadPart 数是多少？",
+    "answerable": false,
+    "expected_answer": "资料未说明。",
+    "required_evidence": [],
+    "evidence_ids": [],
+    "source_urls": [],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+    "unanswerable_reason": "资料没有账号并发上限。"
+  },
+  {
+    "id": "unanswerable_004",
+    "category": "unanswerable",
+    "question": "删除标记会在创建后固定多少小时自动消失？",
+    "answerable": false,
+    "expected_answer": "资料未说明。",
+    "required_evidence": [],
+    "evidence_ids": [],
+    "source_urls": [],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+    "unanswerable_reason": "资料没有固定自动清理时长，不能把手动删除规则当成定时清理。"
+  },
+  {
+    "id": "unanswerable_005",
+    "category": "unanswerable",
+    "question": "预签名 URL 的最大允许有效期是多少秒？",
+    "answerable": false,
+    "expected_answer": "资料未说明。",
+    "required_evidence": [],
+    "evidence_ids": [],
+    "source_urls": [],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+    "unanswerable_reason": "资料只提到指定有效期，没有给出最大值。"
+  },
+  {
+    "id": "unanswerable_006",
+    "category": "unanswerable",
+    "question": "我的 uploadId abc123 现在是否存在？",
+    "answerable": false,
+    "expected_answer": "资料未说明。",
+    "required_evidence": [],
+    "evidence_ids": [],
+    "source_urls": [],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+    "unanswerable_reason": "资料没有用户上传任务的实时状态。"
+  },
+  {
+    "id": "unanswerable_007",
+    "category": "unanswerable",
+    "question": "我今天产生了多少 GB 的 OSS 外网流量？",
+    "answerable": false,
+    "expected_answer": "资料未说明。",
+    "required_evidence": [],
+    "evidence_ids": [],
+    "source_urls": [],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+    "unanswerable_reason": "资料没有用户账户的流量数据。"
+  },
+  {
+    "id": "unanswerable_008",
+    "category": "unanswerable",
+    "question": "一个 Object 最多能保留多少个历史版本？",
+    "answerable": false,
+    "expected_answer": "资料未说明。",
+    "required_evidence": [],
+    "evidence_ids": [],
+    "source_urls": [],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+    "unanswerable_reason": "资料没有版本数量上限。"
+  },
+  {
+    "id": "unanswerable_009",
+    "category": "unanswerable",
+    "question": "这个 Bucket 的当前 ACL 实际设置是什么？",
+    "answerable": false,
+    "expected_answer": "资料未说明。",
+    "required_evidence": [],
+    "evidence_ids": [],
+    "source_urls": [],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+    "unanswerable_reason": "资料描述规则，没有该 Bucket 的实际配置。"
+  },
+  {
+    "id": "unanswerable_010",
+    "category": "unanswerable",
+    "question": "昨天是哪位用户修改了我的 Object ACL？",
+    "answerable": false,
+    "expected_answer": "资料未说明。",
+    "required_evidence": [],
+    "evidence_ids": [],
+    "source_urls": [],
+    "split": "development",
+    "review_status": "assistant_reviewed",
+    "common_assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+    "unanswerable_reason": "资料没有该用户的操作审计记录。"
+  }
+]

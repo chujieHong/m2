@@ -1,0 +1,62 @@
+[
+  {
+    "id": "oss_default_acl",
+    "question": "Bucket ACL 的默认权限值是什么？",
+    "answerable": true,
+    "expected_answer": "private。",
+    "required_evidence": [
+      "Bucket ACL 的默认权限值是 private。"
+    ],
+    "category": "single_fact"
+  },
+  {
+    "id": "oss_public_acl_comparison",
+    "question": "按照资料中的 ACL 权限定义，public-read 和 public-read-write 对匿名用户的写入资格有何区别？",
+    "answerable": true,
+    "expected_answer": "public-read 不给匿名用户写入资格；public-read-write 给匿名用户读写资格。",
+    "required_evidence": [
+      "public-read 允许匿名用户读取，但写入资格仍限于 Bucket 所有者及获得授权的用户。",
+      "public-read-write 将读取和写入都开放给匿名用户。"
+    ],
+    "category": "comparison"
+  },
+  {
+    "id": "oss_object_inheritance",
+    "question": "上传文件时没有指定 Object ACL，它会采用什么权限？",
+    "answerable": true,
+    "expected_answer": "继承 Bucket ACL。",
+    "required_evidence": [
+      "上传 Object 时没有指定它的 ACL，该 Object 的访问权限会继承 Bucket ACL。"
+    ],
+    "category": "single_fact"
+  },
+  {
+    "id": "oss_public_access_prerequisite",
+    "question": "创建 Bucket 后，设置 public-read 之前需要关闭什么功能？",
+    "answerable": true,
+    "expected_answer": "先关闭阻止公共访问。",
+    "required_evidence": [
+      "若要配置 public-read 或 public-read-write，需要先关闭阻止公共访问。"
+    ],
+    "category": "single_fact"
+  },
+  {
+    "id": "oss_inherited_public_read",
+    "question": "假设已关闭阻止公共访问且没有其他访问限制：Bucket ACL 为 public-read，上传 Object 时未指定 ACL。仅按资料中的 ACL 规则判断，匿名用户可以读取和写入该 Object 吗？",
+    "answerable": true,
+    "expected_answer": "Object 继承 Bucket 的 public-read，因此匿名用户可以读取，但没有写入资格。",
+    "required_evidence": [
+      "上传 Object 时没有指定它的 ACL，该 Object 的访问权限会继承 Bucket ACL。",
+      "public-read 允许匿名用户读取，但写入资格仍限于 Bucket 所有者及获得授权的用户。"
+    ],
+    "category": "multi_hop"
+  },
+  {
+    "id": "oss_storage_price_unknown",
+    "question": "OSS 标准存储每 GB 每月多少钱？",
+    "answerable": false,
+    "expected_answer": "这份资料未说明。",
+    "required_evidence": [],
+    "category": "unanswerable"
+  }
+]

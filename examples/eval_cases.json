@@ -1,0 +1,82 @@
+[
+  {
+    "id": "refund_deadline",
+    "question": "购买后多久以内可以申请退款？",
+    "answerable": true,
+    "expected_answer": "购买后 7 天内可以申请退款。",
+    "required_evidence": [
+      "用户可在购买后 7 天内申请退款。"
+    ],
+    "category": "single_fact"
+  },
+  {
+    "id": "refund_conditions_and_time",
+    "question": "退款有哪些条件，审核通过后多久能到账？",
+    "answerable": true,
+    "expected_answer": "购买后 7 天内可以申请退款，累计使用时长超过 2 小时的订单不支持退款；审核通过后 3 个工作日内原路退回。",
+    "required_evidence": [
+      "用户可在购买后 7 天内申请退款。",
+      "累计使用时长超过 2 小时的订单不支持退款。",
+      "审核通过后，退款将在 3 个工作日内原路退回。"
+    ],
+    "category": "multiple_facts"
+  },
+  {
+    "id": "invoice_eligibility_and_time",
+    "question": "什么时候可以申请电子发票，申请后多久开具？",
+    "answerable": true,
+    "expected_answer": "订单支付成功后可以申请电子发票，申请后的 2 个工作日内开具。",
+    "required_evidence": [
+      "订单支付成功后可以申请电子发票。",
+      "发票开具时间为申请后的 2 个工作日内。"
+    ],
+    "category": "multiple_facts"
+  },
+  {
+    "id": "support_hours",
+    "question": "在线客服在什么时间提供服务？",
+    "answerable": true,
+    "expected_answer": "工作日 09:00—18:00。",
+    "required_evidence": [
+      "在线客服服务时间为工作日 09:00—18:00。"
+    ],
+    "category": "single_fact"
+  },
+  {
+    "id": "urgent_fault_channel",
+    "question": "遇到紧急故障可以通过什么渠道提交？",
+    "answerable": true,
+    "expected_answer": "可以通过工单提交。",
+    "required_evidence": [
+      "紧急故障可通过工单提交。"
+    ],
+    "category": "single_fact"
+  },
+  {
+    "id": "refund_and_invoice_time",
+    "question": "退款审核通过后的到账时间和发票申请后的开具时间分别是多少？",
+    "answerable": true,
+    "expected_answer": "退款审核通过后 3 个工作日内原路退回；发票申请后 2 个工作日内开具。",
+    "required_evidence": [
+      "审核通过后，退款将在 3 个工作日内原路退回。",
+      "发票开具时间为申请后的 2 个工作日内。"
+    ],
+    "category": "comparison"
+  },
+  {
+    "id": "support_phone_unknown",
+    "question": "客服电话号码是多少？",
+    "answerable": false,
+    "expected_answer": "资料未说明。",
+    "required_evidence": [],
+    "category": "unanswerable"
+  },
+  {
+    "id": "exchange_policy_unknown",
+    "question": "购买后可以申请换货吗？",
+    "answerable": false,
+    "expected_answer": "资料未说明。",
+    "required_evidence": [],
+    "category": "unanswerable"
+  }
+]

@@ -1,0 +1,60 @@
+{
+  "dataset_version": "v1",
+  "cases_sha256": "9004268fc205cbc983219f2a1c6c4c11ccd7c8bc70f698da33067818217e0bbb",
+  "corpus_sha256": "f46d689479eced71d5a6cfdcc9417766c9901dc3d28bacc5fc64986e64c20571",
+  "collection": "day6_oss_v1_bge_small_zh",
+  "collection_count": 53,
+  "case_count": 100,
+  "scored_count": 90,
+  "unanswerable_count": 10,
+  "baselines": [
+    {
+      "top_k": 1,
+      "average_coverage": 0.5611111111111111,
+      "category_summary": {
+        "single_hop": {
+          "scored_count": 40,
+          "average_coverage": 0.75
+        },
+        "multi_hop": {
+          "scored_count": 20,
+          "average_coverage": 0.25833333333333336
+        },
+        "comparison": {
+          "scored_count": 15,
+          "average_coverage": 0.3888888888888889
+        },
+        "table_numeric": {
+          "scored_count": 15,
+          "average_coverage": 0.6333333333333333
+        }
+      },
+      "report_path": "D:\\develop\\m2\\data\\eval_results\\day6_oss_v1_bge_small_zh_oss_cases_100_top1.json"
+    },
+    {
+      "top_k": 3,
+      "average_coverage": 0.8037037037037037,
+      "category_summary": {
+        "single_hop": {
+          "scored_count": 40,
+          "average_coverage": 0.925
+        },
+        "multi_hop": {
+          "scored_count": 20,
+          "average_coverage": 0.525
+        },
+        "comparison": {
+          "scored_count": 15,
+          "average_coverage": 0.7555555555555556
+        },
+        "table_numeric": {
+          "scored_count": 15,
+          "average_coverage": 0.9
+        }
+      },
+      "report_path": "D:\\develop\\m2\\data\\eval_results\\day6_oss_v1_bge_small_zh_oss_cases_100_top3.json"
+    }
+  ],
+  "generation_evaluated": false,
+  "review_status": "assistant_reviewed_and_programmatically_checked"
+}

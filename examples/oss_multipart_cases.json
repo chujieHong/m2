@@ -1,0 +1,155 @@
+[
+  {
+    "id": "part_number_range",
+    "question": "partNumber 的编号范围是什么，端点包括在内吗？",
+    "answerable": true,
+    "expected_answer": "1 到 10000，包含端点。",
+    "required_evidence": [
+      "| partNumber | 1～10000，包含端点 | 正整数编号 |"
+    ],
+    "category": "table_numeric"
+  },
+  {
+    "id": "part_number_zero",
+    "question": "只检查编号约束，partNumber=0 是否有效？",
+    "answerable": true,
+    "expected_answer": "无效，最小编号为 1。",
+    "required_evidence": [
+      "| partNumber | 1～10000，包含端点 | 正整数编号 |"
+    ],
+    "category": "table_numeric"
+  },
+  {
+    "id": "part_number_upper_boundary",
+    "question": "只检查编号约束，partNumber=10000 是否有效？",
+    "answerable": true,
+    "expected_answer": "有效，10000 是包含在内的上限。",
+    "required_evidence": [
+      "| partNumber | 1～10000，包含端点 | 正整数编号 |"
+    ],
+    "category": "table_numeric"
+  },
+  {
+    "id": "part_number_overflow",
+    "question": "只检查编号约束，partNumber=10001 是否有效？",
+    "answerable": true,
+    "expected_answer": "无效，超过 10000。",
+    "required_evidence": [
+      "| partNumber | 1～10000，包含端点 | 正整数编号 |"
+    ],
+    "category": "table_numeric"
+  },
+  {
+    "id": "ordinary_part_too_small",
+    "question": "只检查大小约束，一个不是最后一片的 50 KB Part 是否合规？",
+    "answerable": true,
+    "expected_answer": "不合规，普通 Part 至少 100 KB。",
+    "required_evidence": [
+      "| 普通 Part 最小值 | 100 KB | 除最后一片外 |"
+    ],
+    "category": "table_numeric"
+  },
+  {
+    "id": "ordinary_part_lower_boundary",
+    "question": "只检查大小约束，一个不是最后一片的 100 KB Part 是否达到最小值？",
+    "answerable": true,
+    "expected_answer": "达到最小值。",
+    "required_evidence": [
+      "| 普通 Part 最小值 | 100 KB | 除最后一片外 |"
+    ],
+    "category": "table_numeric"
+  },
+  {
+    "id": "last_part_exception",
+    "question": "仅就最小大小约束而言，最后一片为 50 KB 是否允许？",
+    "answerable": true,
+    "expected_answer": "允许，最后一片可以小于 100 KB。",
+    "required_evidence": [
+      "| 最后一片最小值 | 可以小于 100 KB | 仅最后一片 |"
+    ],
+    "category": "table_numeric"
+  },
+  {
+    "id": "part_too_large",
+    "question": "只检查大小约束，一个 6 GB Part 是否合规？",
+    "answerable": true,
+    "expected_answer": "不合规，单片上限为 5 GB。",
+    "required_evidence": [
+      "| 单片最大值 | 5 GB | 所有 Part |"
+    ],
+    "category": "table_numeric"
+  },
+  {
+    "id": "ordinary_part_size_range",
+    "question": "普通非末尾 Part 的最小和最大大小分别是多少？",
+    "answerable": true,
+    "expected_answer": "最小 100 KB，最大 5 GB。",
+    "required_evidence": [
+      "| 普通 Part 最小值 | 100 KB | 除最后一片外 |",
+      "| 单片最大值 | 5 GB | 所有 Part |"
+    ],
+    "category": "table_numeric"
+  },
+  {
+    "id": "listparts_page_limits",
+    "question": "ListParts 的 max-parts 默认值和最大值分别是多少？",
+    "answerable": true,
+    "expected_answer": "默认和最大都为 1000。",
+    "required_evidence": [
+      "| max-parts | 默认 1000，最大 1000 |"
+    ],
+    "category": "table_numeric"
+  },
+  {
+    "id": "listparts_page_overflow",
+    "question": "max-parts 能否设置为 1500 来一次列出更多 Part？",
+    "answerable": true,
+    "expected_answer": "不能，最大值为 1000。",
+    "required_evidence": [
+      "| max-parts | 默认 1000，最大 1000 |"
+    ],
+    "category": "table_numeric"
+  },
+  {
+    "id": "marker_excludes_equal",
+    "question": "part-number-marker=100 时，会返回编号恰好为 100 的 Part 吗？",
+    "answerable": true,
+    "expected_answer": "不会，只返回编号大于 100 的 Part。",
+    "required_evidence": [
+      "| part-number-marker | 只返回编号大于该值的 Part，不包含该编号本身 |"
+    ],
+    "category": "table_numeric"
+  },
+  {
+    "id": "listparts_sort_order",
+    "question": "若结果中有编号 9、2、5，ListParts 按什么次序返回？",
+    "answerable": true,
+    "expected_answer": "按编号升序，即 2、5、9。",
+    "required_evidence": [
+      "| 返回顺序 | 按 Part 编号升序 |"
+    ],
+    "category": "table_numeric"
+  },
+  {
+    "id": "listparts_next_page",
+    "question": "IsTruncated=true 时是否已经列举完？下一次请求使用哪个字段提供的标记？",
+    "answerable": true,
+    "expected_answer": "没有列举完；使用 NextPartNumberMarker 提供的标记。",
+    "required_evidence": [
+      "| IsTruncated=true | 本次没有返回全部结果 |",
+      "| NextPartNumberMarker | 未列举完时，用作下一次请求的起始标记 |"
+    ],
+    "category": "table_numeric"
+  },
+  {
+    "id": "number_vs_page_count",
+    "question": "partNumber 允许到 10000，是否意味着 ListParts 可以一次返回 10000 条？请给出一次返回上限。",
+    "answerable": true,
+    "expected_answer": "不意味着；一次返回最多 1000 条。",
+    "required_evidence": [
+      "| partNumber | 1～10000，包含端点 | 正整数编号 |",
+      "| max-parts | 默认 1000，最大 1000 |"
+    ],
+    "category": "table_numeric"
+  }
+]

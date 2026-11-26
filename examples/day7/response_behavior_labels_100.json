@@ -1,0 +1,708 @@
+{
+  "source_answers_sha256": "7dd1abef62d22c499ccbc3d96ccb1cf561e3a1299e378fdf91a60cc91c1df688",
+  "label_source": "assistant_reviewed",
+  "human_review_status": "pending_review",
+  "refusal_definition": "refused只统计完整拒答；只回答题目一部分的情况另标partial_answer；否定结论如不能写入不是拒答。",
+  "cases": [
+    {
+      "id": "single_hop_001",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": true,
+      "reason": "实际片段 [1] 明确给出 Bucket 默认 private，回答据此作答。"
+    },
+    {
+      "id": "single_hop_002",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "single_hop_003",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "single_hop_004",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "single_hop_005",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "single_hop_006",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "single_hop_007",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "single_hop_008",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "single_hop_009",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "single_hop_010",
+      "refused": true,
+      "response_behavior": "refused",
+      "context_sufficient": false,
+      "reason": "回答未给出所问结论。已核对实际片段缺少所问规则；不是仅依据覆盖率判定。"
+    },
+    {
+      "id": "single_hop_011",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "single_hop_012",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "single_hop_013",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "single_hop_014",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "single_hop_015",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "single_hop_016",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "single_hop_017",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "single_hop_018",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "single_hop_019",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "single_hop_020",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "single_hop_021",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "single_hop_022",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "single_hop_023",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "single_hop_024",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "single_hop_025",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "single_hop_026",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "single_hop_027",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "single_hop_028",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "single_hop_029",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "single_hop_030",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "single_hop_031",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "single_hop_032",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "single_hop_033",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "single_hop_034",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "single_hop_035",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "single_hop_036",
+      "refused": true,
+      "response_behavior": "refused",
+      "context_sufficient": false,
+      "reason": "回答未给出所问结论。已核对实际片段缺少所问规则；不是仅依据覆盖率判定。"
+    },
+    {
+      "id": "single_hop_037",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "single_hop_038",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "single_hop_039",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "single_hop_040",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "multi_hop_001",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "multi_hop_002",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "multi_hop_003",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "multi_hop_004",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "multi_hop_005",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "multi_hop_006",
+      "refused": true,
+      "response_behavior": "refused",
+      "context_sufficient": false,
+      "reason": "回答未给出所问结论。已核对实际片段缺少所问规则；不是仅依据覆盖率判定。"
+    },
+    {
+      "id": "multi_hop_007",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "multi_hop_008",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "multi_hop_009",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "multi_hop_010",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "multi_hop_011",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "multi_hop_012",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "multi_hop_013",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "multi_hop_014",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "multi_hop_015",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "multi_hop_016",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "multi_hop_017",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "multi_hop_018",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "multi_hop_019",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "multi_hop_020",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "comparison_001",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "comparison_002",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "comparison_003",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "comparison_004",
+      "refused": false,
+      "response_behavior": "partial_answer",
+      "context_sufficient": null,
+      "reason": "给出了比较对象的一部分事实，另一部分称资料未说明；标为部分回答，不并入完整拒答。"
+    },
+    {
+      "id": "comparison_005",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "comparison_006",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "comparison_007",
+      "refused": true,
+      "response_behavior": "refused",
+      "context_sufficient": false,
+      "reason": "回答未给出所问结论。已核对实际片段缺少所问规则；不是仅依据覆盖率判定。"
+    },
+    {
+      "id": "comparison_008",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "comparison_009",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "comparison_010",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "comparison_011",
+      "refused": false,
+      "response_behavior": "partial_answer",
+      "context_sufficient": null,
+      "reason": "给出了比较对象的一部分事实，另一部分称资料未说明；标为部分回答，不并入完整拒答。"
+    },
+    {
+      "id": "comparison_012",
+      "refused": false,
+      "response_behavior": "partial_answer",
+      "context_sufficient": null,
+      "reason": "给出了比较对象的一部分事实，另一部分称资料未说明；标为部分回答，不并入完整拒答。"
+    },
+    {
+      "id": "comparison_013",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "comparison_014",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "comparison_015",
+      "refused": false,
+      "response_behavior": "partial_answer",
+      "context_sufficient": null,
+      "reason": "给出了比较对象的一部分事实，另一部分称资料未说明；标为部分回答，不并入完整拒答。"
+    },
+    {
+      "id": "table_numeric_001",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "table_numeric_002",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "table_numeric_003",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "table_numeric_004",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "table_numeric_005",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "table_numeric_006",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "table_numeric_007",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "table_numeric_008",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "table_numeric_009",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "table_numeric_010",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "table_numeric_011",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "table_numeric_012",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "table_numeric_013",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "table_numeric_014",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "table_numeric_015",
+      "refused": false,
+      "response_behavior": "answered",
+      "context_sufficient": null,
+      "reason": "已阅读回答，给出了具体结论；不按是否出现资料未说明关键词判断拒答。资料充分性未在本次逐题独立审核。"
+    },
+    {
+      "id": "unanswerable_001",
+      "refused": true,
+      "response_behavior": "refused",
+      "context_sufficient": false,
+      "reason": "回答未给出所问结论。已核对实际片段缺少所问规则；不是仅依据覆盖率判定。"
+    },
+    {
+      "id": "unanswerable_002",
+      "refused": true,
+      "response_behavior": "refused",
+      "context_sufficient": false,
+      "reason": "回答未给出所问结论。已核对实际片段缺少所问规则；不是仅依据覆盖率判定。"
+    },
+    {
+      "id": "unanswerable_003",
+      "refused": true,
+      "response_behavior": "refused",
+      "context_sufficient": false,
+      "reason": "回答未给出所问结论。已核对实际片段缺少所问规则；不是仅依据覆盖率判定。"
+    },
+    {
+      "id": "unanswerable_004",
+      "refused": true,
+      "response_behavior": "refused",
+      "context_sufficient": false,
+      "reason": "回答未给出所问结论。已核对实际片段缺少所问规则；不是仅依据覆盖率判定。"
+    },
+    {
+      "id": "unanswerable_005",
+      "refused": true,
+      "response_behavior": "refused",
+      "context_sufficient": false,
+      "reason": "回答未给出所问结论。已核对实际片段缺少所问规则；不是仅依据覆盖率判定。"
+    },
+    {
+      "id": "unanswerable_006",
+      "refused": true,
+      "response_behavior": "refused",
+      "context_sufficient": false,
+      "reason": "回答未给出所问结论。已核对实际片段缺少所问规则；不是仅依据覆盖率判定。"
+    },
+    {
+      "id": "unanswerable_007",
+      "refused": true,
+      "response_behavior": "refused",
+      "context_sufficient": false,
+      "reason": "回答未给出所问结论。已核对实际片段缺少所问规则；不是仅依据覆盖率判定。"
+    },
+    {
+      "id": "unanswerable_008",
+      "refused": true,
+      "response_behavior": "refused",
+      "context_sufficient": false,
+      "reason": "回答未给出所问结论。已核对实际片段缺少所问规则；不是仅依据覆盖率判定。"
+    },
+    {
+      "id": "unanswerable_009",
+      "refused": true,
+      "response_behavior": "refused",
+      "context_sufficient": false,
+      "reason": "回答未给出所问结论。已核对实际片段缺少所问规则；不是仅依据覆盖率判定。"
+    },
+    {
+      "id": "unanswerable_010",
+      "refused": true,
+      "response_behavior": "refused",
+      "context_sufficient": false,
+      "reason": "回答未给出所问结论。已核对实际片段缺少所问规则；不是仅依据覆盖率判定。"
+    }
+  ]
+}

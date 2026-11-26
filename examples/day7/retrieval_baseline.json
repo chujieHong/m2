@@ -1,0 +1,35 @@
+{
+  "scored_count": 90,
+  "unscored_count": 10,
+  "label_basis": "必要事实对应的片段 ID 标注，非全部语义相关性穷尽标注",
+  "results": [
+    {
+      "k": 3,
+      "mean_recall": 0.8037037037037037,
+      "mrr": 0.787037037037037,
+      "mean_ndcg": 0.7507185573068412,
+      "report_path": "D:\\develop\\m2\\data\\eval_results\\day6_oss_v1_bge_small_zh_oss_cases_100_top3_metrics3.json"
+    },
+    {
+      "k": 5,
+      "mean_recall": 0.8962962962962964,
+      "mrr": 0.8031481481481482,
+      "mean_ndcg": 0.7943798639175816,
+      "report_path": "D:\\develop\\m2\\data\\eval_results\\day6_oss_v1_bge_small_zh_oss_cases_100_top5_metrics5.json"
+    },
+    {
+      "k": 10,
+      "mean_recall": 0.9537037037037036,
+      "mrr": 0.8057716049382716,
+      "mean_ndcg": 0.8172255063899463,
+      "report_path": "D:\\develop\\m2\\data\\eval_results\\day6_oss_v1_bge_small_zh_oss_cases_100_top10_metrics10.json"
+    },
+    {
+      "k": 20,
+      "mean_recall": 0.9833333333333333,
+      "mrr": 0.8057716049382716,
+      "mean_ndcg": 0.8267494993855702,
+      "report_path": "D:\\develop\\m2\\data\\eval_results\\day6_oss_v1_bge_small_zh_oss_cases_100_top20_metrics20.json"
+    }
+  ]
+}

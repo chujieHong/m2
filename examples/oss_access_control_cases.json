@@ -1,0 +1,105 @@
+[
+  {
+    "id": "object_acl_default",
+    "category": "single_fact",
+    "question": "Object ACL 的默认值是什么，它表示什么？",
+    "expected_answer": "default，表示继承所属 Bucket 的 ACL。",
+    "required_evidence": [
+      "Object ACL 的默认值是 default，其含义是继承所属 Bucket 的 ACL。"
+    ],
+    "answerable": true
+  },
+  {
+    "id": "acl_control_scope",
+    "category": "comparison",
+    "question": "Object ACL 和 Bucket ACL 的控制范围有什么区别？",
+    "expected_answer": "前者控制单个文件，后者控制存储空间级别权限。",
+    "required_evidence": [
+      "Object ACL 控制单个文件，而 Bucket ACL 控制存储空间级别的权限。"
+    ],
+    "answerable": true
+  },
+  {
+    "id": "acl_default_comparison",
+    "category": "comparison",
+    "question": "Bucket ACL 与 Object ACL 的默认权限值分别是什么？",
+    "expected_answer": "Bucket 为 private，Object 为 default。",
+    "required_evidence": [
+      "Bucket ACL 的默认权限值是 private。",
+      "Object ACL 的默认值是 default，其含义是继承所属 Bucket 的 ACL。"
+    ],
+    "answerable": true
+  },
+  {
+    "id": "object_public_override",
+    "category": "multi_hop",
+    "question": "假设阻止公共访问已关闭且没有其他限制：Bucket 为 private，但 Object ACL 独立设为 public-read。匿名用户能读取这个文件吗？",
+    "expected_answer": "能，独立 Object ACL 覆盖 Bucket ACL，public-read 给匿名用户读取资格。",
+    "required_evidence": [
+      "Object 设置了非 default 的 ACL 时，ACL 判定采用 Object 的设置，而不继承 Bucket ACL。",
+      "Object ACL 为 public-read 时，匿名用户有读取资格，但没有写入资格。"
+    ],
+    "answerable": true
+  },
+  {
+    "id": "public_object_blocked",
+    "category": "multi_hop",
+    "question": "Object ACL 已经是 public-read，如果其 Bucket 开启阻止公共访问，匿名用户还能读取吗？",
+    "expected_answer": "不能，已有公开权限被阻止公共访问忽略。",
+    "required_evidence": [
+      "Object ACL 为 public-read 时，匿名用户有读取资格，但没有写入资格。",
+      "开启阻止公共访问后，Bucket Policy 和 ACL 中已有的公共访问配置会被忽略，也不能创建新的公共访问权限。"
+    ],
+    "answerable": true
+  },
+  {
+    "id": "global_block_override",
+    "category": "single_fact",
+    "question": "OSS 全局开启阻止公共访问，单个 Bucket 关闭它，能放行公共访问吗？",
+    "expected_answer": "不能，上层开启时下层关闭不能放行。",
+    "required_evidence": [
+      "上层开启阻止公共访问时，下层关闭该功能也不能放行公共访问。"
+    ],
+    "answerable": true
+  },
+  {
+    "id": "access_point_requirements",
+    "category": "multiple_facts",
+    "question": "要解除某个接入点的公共访问阻止，需要关闭哪些层级的开关？关闭之后就一定有公开访问资格吗？",
+    "expected_answer": "关闭 OSS 全局、关联 Bucket 和该接入点的开关；仍需要权限配置授予公开访问。",
+    "required_evidence": [
+      "若要允许某个接入点的公共访问，需要关闭 OSS 全局、关联 Bucket 和该接入点的阻止公共访问。",
+      "关闭这些开关只是解除阻止；是否授予公开访问仍取决于权限配置。"
+    ],
+    "answerable": true
+  },
+  {
+    "id": "block_scope_count",
+    "category": "single_fact",
+    "question": "资料列出的阻止公共访问配置维度共有几个，分别是什么？",
+    "expected_answer": "四个：OSS 全局、Bucket、接入点、对象 FC 接入点。",
+    "required_evidence": [
+      "阻止公共访问可配置在 OSS 全局、Bucket、接入点、对象 FC 接入点这四个维度。"
+    ],
+    "answerable": true
+  },
+  {
+    "id": "copy_acl_and_access",
+    "category": "multiple_facts",
+    "question": "复制到开启阻止公共访问的 Bucket 时，Object 的公开 ACL 会被改为私有吗？能否据此认为匿名访问可用？",
+    "expected_answer": "复制不因此改变 ACL，但目标 Bucket 的阻止公共访问使该 Object 仍不能公共访问。",
+    "required_evidence": [
+      "复制时，源或目标 Bucket 是否开启阻止公共访问，不会改变复制前后的 Object ACL。",
+      "若目标 Bucket 开启阻止公共访问，即使复制得到的 Object ACL 为公开权限，仍不能公共访问。"
+    ],
+    "answerable": true
+  },
+  {
+    "id": "blocked_feature_price_unknown",
+    "category": "unanswerable",
+    "question": "阻止公共访问功能每月收取多少钱？",
+    "expected_answer": "这份资料未说明。",
+    "required_evidence": [],
+    "answerable": false
+  }
+]

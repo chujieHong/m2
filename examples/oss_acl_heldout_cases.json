@@ -1,0 +1,13 @@
+[
+  {
+    "id": "oss_inherited_private",
+    "question": "仅按资料中的 ACL 规则判断：Bucket ACL 为 private，上传 Object 时没有指定 ACL，匿名用户可以读取该 Object 吗？",
+    "answerable": true,
+    "expected_answer": "Object 继承 Bucket 的 private 权限，匿名用户没有读取资格。",
+    "required_evidence": [
+      "上传 Object 时没有指定它的 ACL，该 Object 的访问权限会继承 Bucket ACL。",
+      "private 表示私有权限，读写资格限于 Bucket 所有者及获得授权的用户。"
+    ],
+    "category": "multi_hop"
+  }
+]

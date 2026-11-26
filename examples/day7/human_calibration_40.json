@@ -1,0 +1,780 @@
+{
+  "source_answers": "D:\\develop\\m2\\data\\eval_results\\day7_answers_100_top3.json",
+  "source_answers_sha256": "7dd1abef62d22c499ccbc3d96ccb1cf561e3a1299e378fdf91a60cc91c1df688",
+  "source_judgments": "D:\\develop\\m2\\data\\eval_results\\day7_judge_100_top3_v2_format.json",
+  "source_judgments_sha256": "f4477f9d1430d1626c63540b78c81ce82db02730c88646bb0db89ec989cc569b",
+  "rubric_sha256": "ad50dc2ec1decd85de017c0d526888c170c1fa6ed0f9cfcbef27b880f9ebf8c0",
+  "human_review_status": "partial_review",
+  "sampling": "分类型选择典型及困难案例：12单跳、10多跳、8对比、5表格、5资料不足；不是随机生产抽样。",
+  "instructions": "每项填写整数0、1、2。null表示尚未评分，不能当0。先独立判断，不查看裁判分数；有争议可记录理由并保留null。",
+  "cases": [
+    {
+      "id": "single_hop_001",
+      "category": "single_hop",
+      "question": "Bucket ACL 默认是什么权限值？",
+      "assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+      "documents": [
+        "Day 6 OSS 评测资料 v1 > B01 Bucket 默认权限\nBucket ACL 的默认权限值是 private。\n来源：https://help.aliyun.com/zh/oss/user-guide/oss-bucket-acl",
+        "Day 6 OSS 评测资料 v1 > O01 Object 默认权限\nObject ACL 的默认值是 default，表示继承所属 Bucket 的 ACL。\n来源：https://help.aliyun.com/zh/oss/user-guide/object-acl",
+        "Day 6 OSS 评测资料 v1 > P01 阻止公开权限\n开启阻止公共访问后，Bucket Policy 和 ACL 中已有的公开访问权限会被忽略，也不能创建新的公开访问权限。\n来源：https://help.aliyun.com/zh/oss/user-guide/block-public-access/"
+      ],
+      "answer": "Bucket ACL 的默认权限值是 private。[1]",
+      "reference_answer": "private。",
+      "human_scores": {
+        "correctness": null,
+        "faithfulness": null,
+        "relevance": null
+      },
+      "human_notes": ""
+    },
+    {
+      "id": "single_hop_002",
+      "category": "single_hop",
+      "question": "上传 Object 时不指定它自己的 ACL，会采用什么权限？",
+      "assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+      "documents": [
+        "Day 6 OSS 评测资料 v1 > B02 Object 未指定 ACL\n上传 Object 时未指定自己的 ACL，它会继承所属 Bucket 的 ACL。\n来源：https://help.aliyun.com/zh/oss/user-guide/oss-bucket-acl",
+        "Day 6 OSS 评测资料 v1 > U05 上传分片权限\nUploadPart 对应的权限 Action 是 oss:PutObject。\n来源：https://help.aliyun.com/zh/oss/developer-reference/uploadpart",
+        "Day 6 OSS 评测资料 v1 > B01 Bucket 默认权限\nBucket ACL 的默认权限值是 private。\n来源：https://help.aliyun.com/zh/oss/user-guide/oss-bucket-acl"
+      ],
+      "answer": "上传 Object 时不指定它自己的 ACL，它会继承所属 Bucket 的 ACL [1]。",
+      "reference_answer": "继承所属 Bucket 的 ACL。",
+      "human_scores": {
+        "correctness": null,
+        "faithfulness": null,
+        "relevance": null
+      },
+      "human_notes": ""
+    },
+    {
+      "id": "single_hop_003",
+      "category": "single_hop",
+      "question": "按 private 的 ACL 定义，谁有 Bucket 内文件的读写资格？",
+      "assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+      "documents": [
+        "Day 6 OSS 评测资料 v1 > O03 Object 私有资格\nObject ACL 为 private 时，读写资格限于 Object 所有者及获得授权的用户。\n来源：https://help.aliyun.com/zh/oss/user-guide/object-acl",
+        "Day 6 OSS 评测资料 v1 > B03 Bucket 私有资格\nBucket ACL 为 private 时，读写资格限于 Bucket 所有者及获得授权的用户。\n来源：https://help.aliyun.com/zh/oss/user-guide/oss-bucket-acl",
+        "Day 6 OSS 评测资料 v1 > O04 Object 公共读资格\nObject ACL 为 public-read 时，匿名用户有读取资格，但没有写入资格。\n来源：https://help.aliyun.com/zh/oss/user-guide/object-acl"
+      ],
+      "answer": "按 private 的 ACL 定义，Bucket 内文件的读写资格限于 Bucket 所有者及获得授权的用户 [2]。",
+      "reference_answer": "Bucket 所有者及获得授权的用户。",
+      "human_scores": {
+        "correctness": null,
+        "faithfulness": null,
+        "relevance": null
+      },
+      "human_notes": ""
+    },
+    {
+      "id": "single_hop_004",
+      "category": "single_hop",
+      "question": "按 Bucket public-read 定义，匿名用户有哪些读写资格？",
+      "assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+      "documents": [
+        "Day 6 OSS 评测资料 v1 > B05 Bucket 公共读写资格\nBucket ACL 为 public-read-write 时，匿名用户具有读取和写入资格。\n来源：https://help.aliyun.com/zh/oss/user-guide/oss-bucket-acl",
+        "Day 6 OSS 评测资料 v1 > O05 Object 公共读写资格\nObject ACL 为 public-read-write 时，匿名用户具有读取和写入资格。\n来源：https://help.aliyun.com/zh/oss/user-guide/object-acl",
+        "Day 6 OSS 评测资料 v1 > B04 Bucket 公共读资格\nBucket ACL 为 public-read 时，匿名用户有读取资格，写入仍需要所有者或授权用户资格。\n来源：https://help.aliyun.com/zh/oss/user-guide/oss-bucket-acl"
+      ],
+      "answer": "按 Bucket ACL 为 public-read 的定义，匿名用户有读取资格，写入仍需要所有者或授权用户资格。[3]",
+      "reference_answer": "可以读取，但没有写入资格。",
+      "human_scores": {
+        "correctness": null,
+        "faithfulness": null,
+        "relevance": null
+      },
+      "human_notes": ""
+    },
+    {
+      "id": "single_hop_005",
+      "category": "single_hop",
+      "question": "按 Bucket public-read-write 定义，匿名用户有哪些读写资格？",
+      "assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+      "documents": [
+        "Day 6 OSS 评测资料 v1 > B05 Bucket 公共读写资格\nBucket ACL 为 public-read-write 时，匿名用户具有读取和写入资格。\n来源：https://help.aliyun.com/zh/oss/user-guide/oss-bucket-acl",
+        "Day 6 OSS 评测资料 v1 > O05 Object 公共读写资格\nObject ACL 为 public-read-write 时，匿名用户具有读取和写入资格。\n来源：https://help.aliyun.com/zh/oss/user-guide/object-acl",
+        "Day 6 OSS 评测资料 v1 > B04 Bucket 公共读资格\nBucket ACL 为 public-read 时，匿名用户有读取资格，写入仍需要所有者或授权用户资格。\n来源：https://help.aliyun.com/zh/oss/user-guide/oss-bucket-acl"
+      ],
+      "answer": "按 Bucket public-read-write 定义，匿名用户具有读取和写入资格。[1]",
+      "reference_answer": "读取和写入资格都具备。",
+      "human_scores": {
+        "correctness": null,
+        "faithfulness": null,
+        "relevance": null
+      },
+      "human_notes": ""
+    },
+    {
+      "id": "single_hop_006",
+      "category": "single_hop",
+      "question": "新建 Bucket 的默认阻止公共访问状态及此时允许的 Bucket ACL 是什么？",
+      "assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+      "documents": [
+        "Day 6 OSS 评测资料 v1 > B06 Bucket 初始阻止开关\n创建 Bucket 时默认开启阻止公共访问，Bucket ACL 此时只能设置为 private。\n来源：https://help.aliyun.com/zh/oss/user-guide/oss-bucket-acl",
+        "Day 6 OSS 评测资料 v1 > P08 目标 Bucket 的阻止规则\n目标 Bucket 开启阻止公共访问时，复制得到的 Object 即使带有公开 ACL，仍不能公共访问。\n来源：https://help.aliyun.com/zh/oss/user-guide/block-public-access/",
+        "Day 6 OSS 评测资料 v1 > O07 阻止开关下的 Object ACL\nBucket 开启阻止公共访问时，Object ACL 可以设置为 private 或 default；设置公开 ACL 前需先关闭阻止公共访问。\n来源：https://help.aliyun.com/zh/oss/user-guide/object-acl"
+      ],
+      "answer": "新建 Bucket 时默认开启阻止公共访问，此时 Bucket ACL 只能设置为 private。[1]",
+      "reference_answer": "默认开启，Bucket ACL 只能设置为 private。",
+      "human_scores": {
+        "correctness": null,
+        "faithfulness": null,
+        "relevance": null
+      },
+      "human_notes": ""
+    },
+    {
+      "id": "single_hop_007",
+      "category": "single_hop",
+      "question": "Object ACL 的默认值是什么，含义是什么？",
+      "assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+      "documents": [
+        "Day 6 OSS 评测资料 v1 > O01 Object 默认权限\nObject ACL 的默认值是 default，表示继承所属 Bucket 的 ACL。\n来源：https://help.aliyun.com/zh/oss/user-guide/object-acl",
+        "Day 6 OSS 评测资料 v1 > B01 Bucket 默认权限\nBucket ACL 的默认权限值是 private。\n来源：https://help.aliyun.com/zh/oss/user-guide/oss-bucket-acl",
+        "Day 6 OSS 评测资料 v1 > O04 Object 公共读资格\nObject ACL 为 public-read 时，匿名用户有读取资格，但没有写入资格。\n来源：https://help.aliyun.com/zh/oss/user-guide/object-acl"
+      ],
+      "answer": "Object ACL 的默认值是 default，表示继承所属 Bucket 的 ACL。[1]",
+      "reference_answer": "default，继承所属 Bucket 的 ACL。",
+      "human_scores": {
+        "correctness": null,
+        "faithfulness": null,
+        "relevance": null
+      },
+      "human_notes": ""
+    },
+    {
+      "id": "single_hop_008",
+      "category": "single_hop",
+      "question": "只给一个文件单独设置权限，应关注哪一种 ACL？",
+      "assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+      "documents": [
+        "Day 6 OSS 评测资料 v1 > O02 两种 ACL 的范围\nObject ACL 控制单个文件，Bucket ACL 控制存储空间级别的权限。\n来源：https://help.aliyun.com/zh/oss/user-guide/object-acl",
+        "Day 6 OSS 评测资料 v1 > A01 列举分片权限\nListParts 对应的权限 Action 是 oss:ListParts。\n来源：https://help.aliyun.com/zh/oss/developer-reference/listparts",
+        "Day 6 OSS 评测资料 v1 > B01 Bucket 默认权限\nBucket ACL 的默认权限值是 private。\n来源：https://help.aliyun.com/zh/oss/user-guide/oss-bucket-acl"
+      ],
+      "answer": "应关注 Object ACL，因为它控制单个文件的权限 [1]。",
+      "reference_answer": "Object ACL。",
+      "human_scores": {
+        "correctness": null,
+        "faithfulness": null,
+        "relevance": null
+      },
+      "human_notes": ""
+    },
+    {
+      "id": "single_hop_009",
+      "category": "single_hop",
+      "question": "按 Object private 定义，文件读写资格属于谁？",
+      "assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+      "documents": [
+        "Day 6 OSS 评测资料 v1 > O03 Object 私有资格\nObject ACL 为 private 时，读写资格限于 Object 所有者及获得授权的用户。\n来源：https://help.aliyun.com/zh/oss/user-guide/object-acl",
+        "Day 6 OSS 评测资料 v1 > B03 Bucket 私有资格\nBucket ACL 为 private 时，读写资格限于 Bucket 所有者及获得授权的用户。\n来源：https://help.aliyun.com/zh/oss/user-guide/oss-bucket-acl",
+        "Day 6 OSS 评测资料 v1 > O04 Object 公共读资格\nObject ACL 为 public-read 时，匿名用户有读取资格，但没有写入资格。\n来源：https://help.aliyun.com/zh/oss/user-guide/object-acl"
+      ],
+      "answer": "按 Object private 定义，读写资格限于 Object 所有者及获得授权的用户 [1]。",
+      "reference_answer": "Object 所有者及获得授权的用户。",
+      "human_scores": {
+        "correctness": null,
+        "faithfulness": null,
+        "relevance": null
+      },
+      "human_notes": ""
+    },
+    {
+      "id": "single_hop_010",
+      "category": "single_hop",
+      "question": "按 Object public-read 定义，匿名用户可以写入吗？",
+      "assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+      "documents": [
+        "Day 6 OSS 评测资料 v1 > O05 Object 公共读写资格\nObject ACL 为 public-read-write 时，匿名用户具有读取和写入资格。\n来源：https://help.aliyun.com/zh/oss/user-guide/object-acl",
+        "Day 6 OSS 评测资料 v1 > B05 Bucket 公共读写资格\nBucket ACL 为 public-read-write 时，匿名用户具有读取和写入资格。\n来源：https://help.aliyun.com/zh/oss/user-guide/oss-bucket-acl",
+        "Day 6 OSS 评测资料 v1 > B04 Bucket 公共读资格\nBucket ACL 为 public-read 时，匿名用户有读取资格，写入仍需要所有者或授权用户资格。\n来源：https://help.aliyun.com/zh/oss/user-guide/oss-bucket-acl"
+      ],
+      "answer": "资料未说明。",
+      "reference_answer": "不能写入，只有读取资格。",
+      "human_scores": {
+        "correctness": null,
+        "faithfulness": null,
+        "relevance": null
+      },
+      "human_notes": ""
+    },
+    {
+      "id": "single_hop_036",
+      "category": "single_hop",
+      "question": "版本控制开启时，不指定 versionId 的 DELETE 会怎样处理 Object？",
+      "assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+      "documents": [
+        "Day 6 OSS 评测资料 v1 > W04 保护下恢复开启\n已暂停版本控制的 Bucket 开启保留策略后，仍允许把版本控制恢复为开启。\n来源：https://help.aliyun.com/zh/oss/user-guide/oss-retention-policies",
+        "Day 6 OSS 评测资料 v1 > W03 锁定后暂停限制\n锁定保留策略后，版本控制不能从开启切换到暂停。\n来源：https://help.aliyun.com/zh/oss/user-guide/oss-retention-policies",
+        "Day 6 OSS 评测资料 v1 > V11 未开启时覆盖\n未开启版本控制时，同名 Object 被直接覆盖，旧内容不能通过版本控制恢复。\n来源：https://help.aliyun.com/zh/oss/user-guide/overview-78/"
+      ],
+      "answer": "资料未说明。",
+      "reference_answer": "添加删除标记作为当前版本，不永久删除原有数据版本。",
+      "human_scores": {
+        "correctness": null,
+        "faithfulness": null,
+        "relevance": null
+      },
+      "human_notes": ""
+    },
+    {
+      "id": "single_hop_040",
+      "category": "single_hop",
+      "question": "PutBucketLifecycle 是追加规则还是覆盖规则？",
+      "assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+      "documents": [
+        "Day 6 OSS 评测资料 v1 > L02 生命周期覆盖语义\nPutBucketLifecycle 覆盖已有规则；保留旧规则并追加新规则时，应先获取旧配置，再合并新规则，最后提交完整配置。\n来源：https://help.aliyun.com/zh/oss/lifecycle-rules-based-on-the-last-modified-time",
+        "Day 6 OSS 评测资料 v1 > L01 生命周期规则数量\n单个 Bucket 最多配置 1000 条生命周期规则。\n来源：https://help.aliyun.com/zh/oss/lifecycle-rules-based-on-the-last-modified-time",
+        "Day 6 OSS 评测资料 v1 > V03 开启后的覆盖\n版本控制开启时，覆盖同名 Object 会生成新版本，已有历史版本不受影响。\n来源：https://help.aliyun.com/zh/oss/user-guide/overview-78/"
+      ],
+      "answer": "PutBucketLifecycle 是覆盖已有规则。[1]",
+      "reference_answer": "覆盖；追加时需先获取旧配置并合并后提交。",
+      "human_scores": {
+        "correctness": null,
+        "faithfulness": null,
+        "relevance": null
+      },
+      "human_notes": ""
+    },
+    {
+      "id": "multi_hop_001",
+      "category": "multi_hop",
+      "question": "假设阻止公共访问已关闭且没有其他限制：Bucket 为 public-read，Object 未指定 ACL，匿名用户能写入这个 Object 吗？",
+      "assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+      "documents": [
+        "Day 6 OSS 评测资料 v1 > O07 阻止开关下的 Object ACL\nBucket 开启阻止公共访问时，Object ACL 可以设置为 private 或 default；设置公开 ACL 前需先关闭阻止公共访问。\n来源：https://help.aliyun.com/zh/oss/user-guide/object-acl",
+        "Day 6 OSS 评测资料 v1 > P08 目标 Bucket 的阻止规则\n目标 Bucket 开启阻止公共访问时，复制得到的 Object 即使带有公开 ACL，仍不能公共访问。\n来源：https://help.aliyun.com/zh/oss/user-guide/block-public-access/",
+        "Day 6 OSS 评测资料 v1 > B06 Bucket 初始阻止开关\n创建 Bucket 时默认开启阻止公共访问，Bucket ACL 此时只能设置为 private。\n来源：https://help.aliyun.com/zh/oss/user-guide/oss-bucket-acl"
+      ],
+      "answer": "不能。资料未说明匿名用户可写入该 Object；在给定资料中，Bucket 为 public-read 只涉及 Bucket ACL，Object 未指定 ACL 时也没有资料说明其允许匿名写入。 [1][3]",
+      "reference_answer": "不能；Object 继承 public-read，只给匿名用户读取资格。",
+      "human_scores": {
+        "correctness": null,
+        "faithfulness": null,
+        "relevance": null
+      },
+      "human_notes": ""
+    },
+    {
+      "id": "multi_hop_002",
+      "category": "multi_hop",
+      "question": "只按 ACL 规则判断：Bucket 使用默认 ACL，Object 也未指定自己的 ACL，匿名用户能读取它吗？",
+      "assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+      "documents": [
+        "Day 6 OSS 评测资料 v1 > O04 Object 公共读资格\nObject ACL 为 public-read 时，匿名用户有读取资格，但没有写入资格。\n来源：https://help.aliyun.com/zh/oss/user-guide/object-acl",
+        "Day 6 OSS 评测资料 v1 > B04 Bucket 公共读资格\nBucket ACL 为 public-read 时，匿名用户有读取资格，写入仍需要所有者或授权用户资格。\n来源：https://help.aliyun.com/zh/oss/user-guide/oss-bucket-acl",
+        "Day 6 OSS 评测资料 v1 > B03 Bucket 私有资格\nBucket ACL 为 private 时，读写资格限于 Bucket 所有者及获得授权的用户。\n来源：https://help.aliyun.com/zh/oss/user-guide/oss-bucket-acl"
+      ],
+      "answer": "不能。Bucket 使用默认 ACL 时，按资料 [3] 属于 private，读写资格限于 Bucket 所有者及获得授权的用户；Object 未指定自己的 ACL，不能依据 [1] 的 public-read 获得匿名读取资格。资料未说明默认 ACL 下匿名用户可读取。",
+      "reference_answer": "不能；Bucket 默认 private，Object 继承它，private 不给匿名用户读取资格。",
+      "human_scores": {
+        "correctness": null,
+        "faithfulness": null,
+        "relevance": null
+      },
+      "human_notes": ""
+    },
+    {
+      "id": "multi_hop_003",
+      "category": "multi_hop",
+      "question": "假设公共访问未被阻止且没有其他限制：Bucket 是 public-read-write，Object ACL 为 default，匿名用户可以读写它吗？",
+      "assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+      "documents": [
+        "Day 6 OSS 评测资料 v1 > B05 Bucket 公共读写资格\nBucket ACL 为 public-read-write 时，匿名用户具有读取和写入资格。\n来源：https://help.aliyun.com/zh/oss/user-guide/oss-bucket-acl",
+        "Day 6 OSS 评测资料 v1 > O05 Object 公共读写资格\nObject ACL 为 public-read-write 时，匿名用户具有读取和写入资格。\n来源：https://help.aliyun.com/zh/oss/user-guide/object-acl",
+        "Day 6 OSS 评测资料 v1 > O04 Object 公共读资格\nObject ACL 为 public-read 时，匿名用户有读取资格，但没有写入资格。\n来源：https://help.aliyun.com/zh/oss/user-guide/object-acl"
+      ],
+      "answer": "可以。Bucket ACL 为 public-read-write 时，匿名用户具有读取和写入资格 [1]；Object ACL 为 default 不改变该 Bucket 公共读写资格，因此匿名用户可以读写它。",
+      "reference_answer": "可以；default 继承 Bucket 的公开读写资格。",
+      "human_scores": {
+        "correctness": 1,
+        "faithfulness": 2,
+        "relevance": 2
+      },
+      "human_notes": "初次评分1/2/2及其理由保留在human_scores中。讨论后用户认可建议2/1/2：结论符合参考答案，default继承关系缺少实际片段支持。初次评分与讨论后评分不得混为独立一致率。",
+      "discussion_status": "user_agreed_after_explanation",
+      "discussion_scores": {
+        "correctness": 2,
+        "faithfulness": 1,
+        "relevance": 2
+      },
+      "discussion_score_source": "用户在助手解释后认可建议；不是独立初次评分",
+      "user_followup": "我理解你的意思了，感觉你的判断比我更正确一些"
+    },
+    {
+      "id": "multi_hop_004",
+      "category": "multi_hop",
+      "question": "假设公共访问未被阻止且没有其他限制：Bucket private，但 Object 独立设为 public-read，匿名用户可以读取文件吗？",
+      "assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+      "documents": [
+        "Day 6 OSS 评测资料 v1 > O04 Object 公共读资格\nObject ACL 为 public-read 时，匿名用户有读取资格，但没有写入资格。\n来源：https://help.aliyun.com/zh/oss/user-guide/object-acl",
+        "Day 6 OSS 评测资料 v1 > B04 Bucket 公共读资格\nBucket ACL 为 public-read 时，匿名用户有读取资格，写入仍需要所有者或授权用户资格。\n来源：https://help.aliyun.com/zh/oss/user-guide/oss-bucket-acl",
+        "Day 6 OSS 评测资料 v1 > O07 阻止开关下的 Object ACL\nBucket 开启阻止公共访问时，Object ACL 可以设置为 private 或 default；设置公开 ACL 前需先关闭阻止公共访问。\n来源：https://help.aliyun.com/zh/oss/user-guide/object-acl"
+      ],
+      "answer": "可以。Object ACL 为 public-read 时，匿名用户有读取资格 [1]；题面假设公共访问未被阻止且没有其他限制，因此该 Object 的 public-read 设置可生效，匿名用户可以读取该文件。",
+      "reference_answer": "可以；独立 Object ACL 生效，public-read 给匿名用户读取资格。",
+      "human_scores": {
+        "correctness": null,
+        "faithfulness": null,
+        "relevance": null
+      },
+      "human_notes": ""
+    },
+    {
+      "id": "multi_hop_005",
+      "category": "multi_hop",
+      "question": "假设没有其他授权或限制：Bucket public-read，但 Object 独立设为 private，匿名用户可以读这个文件吗？",
+      "assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+      "documents": [
+        "Day 6 OSS 评测资料 v1 > O03 Object 私有资格\nObject ACL 为 private 时，读写资格限于 Object 所有者及获得授权的用户。\n来源：https://help.aliyun.com/zh/oss/user-guide/object-acl",
+        "Day 6 OSS 评测资料 v1 > B03 Bucket 私有资格\nBucket ACL 为 private 时，读写资格限于 Bucket 所有者及获得授权的用户。\n来源：https://help.aliyun.com/zh/oss/user-guide/oss-bucket-acl",
+        "Day 6 OSS 评测资料 v1 > B04 Bucket 公共读资格\nBucket ACL 为 public-read 时，匿名用户有读取资格，写入仍需要所有者或授权用户资格。\n来源：https://help.aliyun.com/zh/oss/user-guide/oss-bucket-acl"
+      ],
+      "answer": "不可以。Bucket 为 public-read 时，匿名用户有读取资格 [3]；但该 Object 独立设为 private 时，读写资格限于 Object 所有者及获得授权的用户 [1]。题面假设没有其他授权，因此匿名用户不能读这个文件。",
+      "reference_answer": "不能；独立 Object ACL 为 private，不给匿名用户读取资格。",
+      "human_scores": {
+        "correctness": null,
+        "faithfulness": null,
+        "relevance": null
+      },
+      "human_notes": ""
+    },
+    {
+      "id": "multi_hop_006",
+      "category": "multi_hop",
+      "question": "Object 已设为 public-read，但其 Bucket 开启阻止公共访问，匿名读取是否仍可用？",
+      "assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+      "documents": [
+        "Day 6 OSS 评测资料 v1 > O07 阻止开关下的 Object ACL\nBucket 开启阻止公共访问时，Object ACL 可以设置为 private 或 default；设置公开 ACL 前需先关闭阻止公共访问。\n来源：https://help.aliyun.com/zh/oss/user-guide/object-acl",
+        "Day 6 OSS 评测资料 v1 > B04 Bucket 公共读资格\nBucket ACL 为 public-read 时，匿名用户有读取资格，写入仍需要所有者或授权用户资格。\n来源：https://help.aliyun.com/zh/oss/user-guide/oss-bucket-acl",
+        "Day 6 OSS 评测资料 v1 > B06 Bucket 初始阻止开关\n创建 Bucket 时默认开启阻止公共访问，Bucket ACL 此时只能设置为 private。\n来源：https://help.aliyun.com/zh/oss/user-guide/oss-bucket-acl"
+      ],
+      "answer": "资料未说明。资料仅说明 Bucket 开启阻止公共访问时，Object ACL 可以设置为 private 或 default，设置公开 ACL 前需先关闭阻止公共访问 [1]；未说明 Object 已设为 public-read 且 Bucket 开启阻止公共访问时匿名读取是否仍可用。",
+      "reference_answer": "不可用；public-read 的公开读取权限被阻止公共访问忽略。",
+      "human_scores": {
+        "correctness": null,
+        "faithfulness": null,
+        "relevance": null
+      },
+      "human_notes": ""
+    },
+    {
+      "id": "multi_hop_007",
+      "category": "multi_hop",
+      "question": "Object 为 public-read，Bucket 关闭阻止开关但 OSS 全局开关仍开启，匿名读取可以放行吗？",
+      "assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+      "documents": [
+        "Day 6 OSS 评测资料 v1 > O07 阻止开关下的 Object ACL\nBucket 开启阻止公共访问时，Object ACL 可以设置为 private 或 default；设置公开 ACL 前需先关闭阻止公共访问。\n来源：https://help.aliyun.com/zh/oss/user-guide/object-acl",
+        "Day 6 OSS 评测资料 v1 > B06 Bucket 初始阻止开关\n创建 Bucket 时默认开启阻止公共访问，Bucket ACL 此时只能设置为 private。\n来源：https://help.aliyun.com/zh/oss/user-guide/oss-bucket-acl",
+        "Day 6 OSS 评测资料 v1 > P05 Bucket 放行前提\n若要允许单个 Bucket 的公共访问，需要同时关闭 OSS 全局和该 Bucket 的阻止公共访问。\n来源：https://help.aliyun.com/zh/oss/user-guide/block-public-access/"
+      ],
+      "answer": "不可以放行。资料说明，若要允许单个 Bucket 的公共访问，需要同时关闭 OSS 全局和该 Bucket 的阻止公共访问 [3]。题面中 OSS 全局开关仍开启，因此不满足放行前提。",
+      "reference_answer": "不能；上层阻止开关覆盖下层放行，即使 ACL 有公开读取资格。",
+      "human_scores": {
+        "correctness": null,
+        "faithfulness": null,
+        "relevance": null
+      },
+      "human_notes": ""
+    },
+    {
+      "id": "multi_hop_008",
+      "category": "multi_hop",
+      "question": "Object 为 public-read，全局和 Bucket 阻止开关已关闭，但访问所用接入点仍开启阻止公共访问，经此接入点能匿名读吗？",
+      "assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+      "documents": [
+        "Day 6 OSS 评测资料 v1 > B06 Bucket 初始阻止开关\n创建 Bucket 时默认开启阻止公共访问，Bucket ACL 此时只能设置为 private。\n来源：https://help.aliyun.com/zh/oss/user-guide/oss-bucket-acl",
+        "Day 6 OSS 评测资料 v1 > O07 阻止开关下的 Object ACL\nBucket 开启阻止公共访问时，Object ACL 可以设置为 private 或 default；设置公开 ACL 前需先关闭阻止公共访问。\n来源：https://help.aliyun.com/zh/oss/user-guide/object-acl",
+        "Day 6 OSS 评测资料 v1 > P06 接入点放行前提\n若要允许单个接入点的公共访问，需要关闭 OSS 全局、关联 Bucket 和该接入点的阻止公共访问。\n来源：https://help.aliyun.com/zh/oss/user-guide/block-public-access/"
+      ],
+      "answer": "不能。资料未说明该接入点会放行匿名读；相反，接入点放行公共访问的前提是关闭 OSS 全局、关联 Bucket 和该接入点的阻止公共访问 [3]。当前该接入点仍开启阻止公共访问，因此经此接入点不能匿名读。",
+      "reference_answer": "不能；接入点放行还需关闭它自身的阻止开关。",
+      "human_scores": {
+        "correctness": null,
+        "faithfulness": null,
+        "relevance": null
+      },
+      "human_notes": ""
+    },
+    {
+      "id": "multi_hop_009",
+      "category": "multi_hop",
+      "question": "public-read Object 被复制到开启阻止公共访问的目标 Bucket；既然复制没改 ACL，匿名读取一定仍可用吗？",
+      "assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+      "documents": [
+        "Day 6 OSS 评测资料 v1 > P08 目标 Bucket 的阻止规则\n目标 Bucket 开启阻止公共访问时，复制得到的 Object 即使带有公开 ACL，仍不能公共访问。\n来源：https://help.aliyun.com/zh/oss/user-guide/block-public-access/",
+        "Day 6 OSS 评测资料 v1 > P07 复制时 ACL 保留\n复制时，源或目标 Bucket 是否开启阻止公共访问，不会改变复制前后的 Object ACL。\n来源：https://help.aliyun.com/zh/oss/user-guide/block-public-access/",
+        "Day 6 OSS 评测资料 v1 > O04 Object 公共读资格\nObject ACL 为 public-read 时，匿名用户有读取资格，但没有写入资格。\n来源：https://help.aliyun.com/zh/oss/user-guide/object-acl"
+      ],
+      "answer": "不一定。复制不会改变 Object ACL，因此复制后该 Object 的 ACL 仍为 public-read [2]；但目标 Bucket 开启阻止公共访问时，即使 Object 带有公开 ACL，仍不能公共访问 [1]。所以匿名读取并非一定仍可用。",
+      "reference_answer": "不一定且本条件下不可用；ACL 保留为公开读，但公开资格被目标阻止开关忽略。",
+      "human_scores": {
+        "correctness": null,
+        "faithfulness": null,
+        "relevance": null
+      },
+      "human_notes": ""
+    },
+    {
+      "id": "multi_hop_010",
+      "category": "multi_hop",
+      "question": "某 public-read Object 先被公共访问开关阻止，随后所有相关阻止开关都关闭；假设无其他限制，匿名读取会恢复吗？",
+      "assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+      "documents": [
+        "Day 6 OSS 评测资料 v1 > B06 Bucket 初始阻止开关\n创建 Bucket 时默认开启阻止公共访问，Bucket ACL 此时只能设置为 private。\n来源：https://help.aliyun.com/zh/oss/user-guide/oss-bucket-acl",
+        "Day 6 OSS 评测资料 v1 > O07 阻止开关下的 Object ACL\nBucket 开启阻止公共访问时，Object ACL 可以设置为 private 或 default；设置公开 ACL 前需先关闭阻止公共访问。\n来源：https://help.aliyun.com/zh/oss/user-guide/object-acl",
+        "Day 6 OSS 评测资料 v1 > P02 关闭阻止开关\n关闭阻止公共访问后，已有公开权限配置恢复生效，并允许创建新的公开访问权限。\n来源：https://help.aliyun.com/zh/oss/user-guide/block-public-access/"
+      ],
+      "answer": "会恢复。关闭阻止公共访问后，已有公开权限配置恢复生效 [3]，因此该 public-read Object 的匿名读取会恢复。",
+      "reference_answer": "会；关闭开关恢复公开配置，public-read 提供匿名读取资格。",
+      "human_scores": {
+        "correctness": null,
+        "faithfulness": null,
+        "relevance": null
+      },
+      "human_notes": ""
+    },
+    {
+      "id": "comparison_001",
+      "category": "comparison",
+      "question": "Bucket ACL 和 Object ACL 默认值有何不同？",
+      "assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+      "documents": [
+        "Day 6 OSS 评测资料 v1 > O01 Object 默认权限\nObject ACL 的默认值是 default，表示继承所属 Bucket 的 ACL。\n来源：https://help.aliyun.com/zh/oss/user-guide/object-acl",
+        "Day 6 OSS 评测资料 v1 > B01 Bucket 默认权限\nBucket ACL 的默认权限值是 private。\n来源：https://help.aliyun.com/zh/oss/user-guide/oss-bucket-acl",
+        "Day 6 OSS 评测资料 v1 > O06 Object 独立 ACL\nObject 设置了非 default 的 ACL 时，ACL 判定采用 Object 的设置，而不继承 Bucket ACL。\n来源：https://help.aliyun.com/zh/oss/user-guide/object-acl"
+      ],
+      "answer": "Bucket ACL 的默认权限值是 private [2]；Object ACL 的默认值是 default，表示继承所属 Bucket 的 ACL [1]。",
+      "reference_answer": "Bucket 默认 private，Object 默认 default 并继承 Bucket。",
+      "human_scores": {
+        "correctness": null,
+        "faithfulness": null,
+        "relevance": null
+      },
+      "human_notes": ""
+    },
+    {
+      "id": "comparison_003",
+      "category": "comparison",
+      "question": "按 ACL 定义，Bucket public-read 与 public-read-write 对匿名写入资格有什么区别？",
+      "assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+      "documents": [
+        "Day 6 OSS 评测资料 v1 > B05 Bucket 公共读写资格\nBucket ACL 为 public-read-write 时，匿名用户具有读取和写入资格。\n来源：https://help.aliyun.com/zh/oss/user-guide/oss-bucket-acl",
+        "Day 6 OSS 评测资料 v1 > O05 Object 公共读写资格\nObject ACL 为 public-read-write 时，匿名用户具有读取和写入资格。\n来源：https://help.aliyun.com/zh/oss/user-guide/object-acl",
+        "Day 6 OSS 评测资料 v1 > B04 Bucket 公共读资格\nBucket ACL 为 public-read 时，匿名用户有读取资格，写入仍需要所有者或授权用户资格。\n来源：https://help.aliyun.com/zh/oss/user-guide/oss-bucket-acl"
+      ],
+      "answer": "按 ACL 定义，Bucket ACL 为 public-read 时，匿名用户有读取资格，写入仍需要所有者或授权用户资格 [3]；Bucket ACL 为 public-read-write 时，匿名用户具有读取和写入资格 [1]。因此区别是：public-read 下匿名用户没有写入资格，public-read-write 下匿名用户有写入资格。",
+      "reference_answer": "public-read 不允许匿名写入，public-read-write 允许。",
+      "human_scores": {
+        "correctness": null,
+        "faithfulness": null,
+        "relevance": null
+      },
+      "human_notes": ""
+    },
+    {
+      "id": "comparison_004",
+      "category": "comparison",
+      "question": "按 ACL 定义，Object public-read 和 public-read-write 对匿名用户的权限有何不同？",
+      "assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+      "documents": [
+        "Day 6 OSS 评测资料 v1 > B05 Bucket 公共读写资格\nBucket ACL 为 public-read-write 时，匿名用户具有读取和写入资格。\n来源：https://help.aliyun.com/zh/oss/user-guide/oss-bucket-acl",
+        "Day 6 OSS 评测资料 v1 > O05 Object 公共读写资格\nObject ACL 为 public-read-write 时，匿名用户具有读取和写入资格。\n来源：https://help.aliyun.com/zh/oss/user-guide/object-acl",
+        "Day 6 OSS 评测资料 v1 > B04 Bucket 公共读资格\nBucket ACL 为 public-read 时，匿名用户有读取资格，写入仍需要所有者或授权用户资格。\n来源：https://help.aliyun.com/zh/oss/user-guide/oss-bucket-acl"
+      ],
+      "answer": "按 ACL 定义，资料未说明 Object ACL 为 public-read 时匿名用户的权限；资料仅说明 Object ACL 为 public-read-write 时，匿名用户具有读取和写入资格 [2]。因此，无法依据本次资料比较 Object public-read 与 public-read-write 对匿名用户权限的不同。",
+      "reference_answer": "前者只读，后者可读写。",
+      "human_scores": {
+        "correctness": null,
+        "faithfulness": null,
+        "relevance": null
+      },
+      "human_notes": ""
+    },
+    {
+      "id": "comparison_007",
+      "category": "comparison",
+      "question": "OSS 全局阻止开关和 Bucket 开关不一致时，哪个层级优先？",
+      "assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+      "documents": [
+        "Day 6 OSS 评测资料 v1 > B06 Bucket 初始阻止开关\n创建 Bucket 时默认开启阻止公共访问，Bucket ACL 此时只能设置为 private。\n来源：https://help.aliyun.com/zh/oss/user-guide/oss-bucket-acl",
+        "Day 6 OSS 评测资料 v1 > O07 阻止开关下的 Object ACL\nBucket 开启阻止公共访问时，Object ACL 可以设置为 private 或 default；设置公开 ACL 前需先关闭阻止公共访问。\n来源：https://help.aliyun.com/zh/oss/user-guide/object-acl",
+        "Day 6 OSS 评测资料 v1 > P02 关闭阻止开关\n关闭阻止公共访问后，已有公开权限配置恢复生效，并允许创建新的公开访问权限。\n来源：https://help.aliyun.com/zh/oss/user-guide/block-public-access/"
+      ],
+      "answer": "资料未说明。",
+      "reference_answer": "OSS 全局优先；上层开启不能靠下层关闭放行。",
+      "human_scores": {
+        "correctness": null,
+        "faithfulness": null,
+        "relevance": null
+      },
+      "human_notes": ""
+    },
+    {
+      "id": "comparison_008",
+      "category": "comparison",
+      "question": "解除 Bucket 与接入点的公共访问阻止，所需关闭的层级有什么区别？",
+      "assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+      "documents": [
+        "Day 6 OSS 评测资料 v1 > P04 配置层级\n阻止公共访问从高到低的层级为 OSS 全局、Bucket、接入点、对象 FC 接入点；上层开启时，下层关闭也不能放行公共访问。\n来源：https://help.aliyun.com/zh/oss/user-guide/block-public-access/",
+        "Day 6 OSS 评测资料 v1 > P06 接入点放行前提\n若要允许单个接入点的公共访问，需要关闭 OSS 全局、关联 Bucket 和该接入点的阻止公共访问。\n来源：https://help.aliyun.com/zh/oss/user-guide/block-public-access/",
+        "Day 6 OSS 评测资料 v1 > O07 阻止开关下的 Object ACL\nBucket 开启阻止公共访问时，Object ACL 可以设置为 private 或 default；设置公开 ACL 前需先关闭阻止公共访问。\n来源：https://help.aliyun.com/zh/oss/user-guide/object-acl"
+      ],
+      "answer": "解除 Bucket 与接入点的公共访问阻止，所需关闭的层级区别是：\n\n- 解除 Bucket 的公共访问阻止：资料未单独说明仅关闭哪些层级，但按层级规则，上层（OSS 全局）开启时，下层（Bucket）关闭也不能放行公共访问 [1]。\n- 解除接入点的公共访问阻止：需要关闭 OSS 全局、关联 Bucket 和该接入点的阻止公共访问 [2]。\n\n因此，接入点放行比 Bucket 放行多要求关闭“该接入点”这一层级；两者都受 OSS 全局层级约束 [1][2]。",
+      "reference_answer": "Bucket 需关闭全局和 Bucket；接入点还需关闭接入点本身。",
+      "human_scores": {
+        "correctness": null,
+        "faithfulness": null,
+        "relevance": null
+      },
+      "human_notes": ""
+    },
+    {
+      "id": "comparison_011",
+      "category": "comparison",
+      "question": "开启与暂停版本控制时，再次上传同名文件的版本行为有何区别？",
+      "assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+      "documents": [
+        "Day 6 OSS 评测资料 v1 > V04 暂停后的覆盖\n版本控制暂停时，新上传的 Object 使用 null 版本；再次上传同名文件会覆盖暂停期的同名版本，但保留暂停前的历史版本。\n来源：https://help.aliyun.com/zh/oss/user-guide/overview-78/",
+        "Day 6 OSS 评测资料 v1 > W04 保护下恢复开启\n已暂停版本控制的 Bucket 开启保留策略后，仍允许把版本控制恢复为开启。\n来源：https://help.aliyun.com/zh/oss/user-guide/oss-retention-policies",
+        "Day 6 OSS 评测资料 v1 > W03 锁定后暂停限制\n锁定保留策略后，版本控制不能从开启切换到暂停。\n来源：https://help.aliyun.com/zh/oss/user-guide/oss-retention-policies"
+      ],
+      "answer": "开启版本控制时，再次上传同名文件的行为资料未说明；暂停版本控制时，新上传的 Object 使用 null 版本，再次上传同名文件会覆盖暂停期的同名版本，但保留暂停前的历史版本 [1]。",
+      "reference_answer": "开启生成新的唯一版本；暂停期同名 null 版本会被后续上传覆盖，暂停前历史仍保留。",
+      "human_scores": {
+        "correctness": null,
+        "faithfulness": null,
+        "relevance": null
+      },
+      "human_notes": ""
+    },
+    {
+      "id": "comparison_012",
+      "category": "comparison",
+      "question": "开启版本控制时，未指定版本的普通 DELETE 与指定数据版本的 DELETE 有何区别？",
+      "assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+      "documents": [
+        "Day 6 OSS 评测资料 v1 > V11 未开启时覆盖\n未开启版本控制时，同名 Object 被直接覆盖，旧内容不能通过版本控制恢复。\n来源：https://help.aliyun.com/zh/oss/user-guide/overview-78/",
+        "Day 6 OSS 评测资料 v1 > V06 普通删除与标记\n版本控制开启时，DELETE 未指定 versionId 会添加删除标记作为当前版本，原有数据版本不被该操作永久删除。\n来源：https://help.aliyun.com/zh/oss/manage-objects-in-a-versioning-enabled-bucket",
+        "Day 6 OSS 评测资料 v1 > V03 开启后的覆盖\n版本控制开启时，覆盖同名 Object 会生成新版本，已有历史版本不受影响。\n来源：https://help.aliyun.com/zh/oss/user-guide/overview-78/"
+      ],
+      "answer": "开启版本控制时，未指定版本的普通 DELETE 会添加删除标记作为当前版本，原有数据版本不会被该操作永久删除 [2]；而指定数据版本的 DELETE 与未指定版本的普通 DELETE 的区别，资料未说明。",
+      "reference_answer": "前者产生删除标记并保留数据；后者永久删除指定版本。",
+      "human_scores": {
+        "correctness": null,
+        "faithfulness": null,
+        "relevance": null
+      },
+      "human_notes": ""
+    },
+    {
+      "id": "comparison_015",
+      "category": "comparison",
+      "question": "UploadPart 与 ListParts 所需的权限 Action 有何不同？",
+      "assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+      "documents": [
+        "Day 6 OSS 评测资料 v1 > A01 列举分片权限\nListParts 对应的权限 Action 是 oss:ListParts。\n来源：https://help.aliyun.com/zh/oss/developer-reference/listparts",
+        "Day 6 OSS 评测资料 v1 > B01 Bucket 默认权限\nBucket ACL 的默认权限值是 private。\n来源：https://help.aliyun.com/zh/oss/user-guide/oss-bucket-acl",
+        "Day 6 OSS 评测资料 v1 > P01 阻止公开权限\n开启阻止公共访问后，Bucket Policy 和 ACL 中已有的公开访问权限会被忽略，也不能创建新的公开访问权限。\n来源：https://help.aliyun.com/zh/oss/user-guide/block-public-access/"
+      ],
+      "answer": "资料仅说明 ListParts 对应的权限 Action 是 `oss:ListParts` [1]，未说明 UploadPart 所需的权限 Action，因此无法比较两者不同。",
+      "reference_answer": "UploadPart 用 oss:PutObject；ListParts 用 oss:ListParts。",
+      "human_scores": {
+        "correctness": null,
+        "faithfulness": null,
+        "relevance": null
+      },
+      "human_notes": ""
+    },
+    {
+      "id": "table_numeric_001",
+      "category": "table_numeric",
+      "question": "partNumber 的编号范围是什么，端点包括在内吗？",
+      "assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+      "documents": [
+        "Day 6 OSS 评测资料 v1 > U07 编号越界错误\npartNumber 超出 1～10000 时，UploadPart 的错误码为 InvalidArgument，HTTP 状态码为 400。\n来源：https://help.aliyun.com/zh/oss/developer-reference/uploadpart",
+        "Day 6 OSS 评测资料 v1 > TL ListParts 参数与返回字段\n| 参数或字段 | 定义 |\n| --- | --- |\n| max-parts | 默认 1000，最大 1000 |\n| part-number-marker | 只返回编号大于该值的 Part，不包含该编号本身 |\n| 返回顺序 | 按 Part 编号升序 |\n| IsTruncated=true | 本次没有返回全部结果 |\n| NextPartNumberMarker | 未列举完时，用作下一次请求的起始标记 |\n来源：https://help.aliyun.com/zh/oss/developer-reference/listparts",
+        "Day 6 OSS 评测资料 v1 > P06 接入点放行前提\n若要允许单个接入点的公共访问，需要关闭 OSS 全局、关联 Bucket 和该接入点的阻止公共访问。\n来源：https://help.aliyun.com/zh/oss/user-guide/block-public-access/"
+      ],
+      "answer": "partNumber 的编号范围是 1～10000，端点包括在内（即 1 和 10000 都属于有效范围）[1]。",
+      "reference_answer": "1 到 10000，包含端点。",
+      "human_scores": {
+        "correctness": null,
+        "faithfulness": null,
+        "relevance": null
+      },
+      "human_notes": ""
+    },
+    {
+      "id": "table_numeric_002",
+      "category": "table_numeric",
+      "question": "只检查编号约束，partNumber=0 是否有效？",
+      "assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+      "documents": [
+        "Day 6 OSS 评测资料 v1 > U07 编号越界错误\npartNumber 超出 1～10000 时，UploadPart 的错误码为 InvalidArgument，HTTP 状态码为 400。\n来源：https://help.aliyun.com/zh/oss/developer-reference/uploadpart",
+        "Day 6 OSS 评测资料 v1 > TU UploadPart 数值约束\n| 项目 | 要求 | 适用范围 |\n| --- | --- | --- |\n| partNumber | 1～10000，包含端点 | 正整数编号 |\n| 普通 Part 最小值 | 100 KB | 除最后一片外 |\n| 最后一片最小值 | 可以小于 100 KB | 仅最后一片 |\n| 单片最大值 | 5 GB | 所有 Part |\n来源：https://help.aliyun.com/zh/oss/developer-reference/uploadpart",
+        "Day 6 OSS 评测资料 v1 > P08 目标 Bucket 的阻止规则\n目标 Bucket 开启阻止公共访问时，复制得到的 Object 即使带有公开 ACL，仍不能公共访问。\n来源：https://help.aliyun.com/zh/oss/user-guide/block-public-access/"
+      ],
+      "answer": "无效。partNumber 的有效范围是 1～10000（包含端点），0 不在该范围内；超出时 UploadPart 返回 InvalidArgument、HTTP 400。[1][2]",
+      "reference_answer": "无效，最小编号为 1。",
+      "human_scores": {
+        "correctness": null,
+        "faithfulness": null,
+        "relevance": null
+      },
+      "human_notes": ""
+    },
+    {
+      "id": "table_numeric_005",
+      "category": "table_numeric",
+      "question": "只检查大小约束，一个不是最后一片的 50 KB Part 是否合规？",
+      "assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+      "documents": [
+        "Day 6 OSS 评测资料 v1 > TU UploadPart 数值约束\n| 项目 | 要求 | 适用范围 |\n| --- | --- | --- |\n| partNumber | 1～10000，包含端点 | 正整数编号 |\n| 普通 Part 最小值 | 100 KB | 除最后一片外 |\n| 最后一片最小值 | 可以小于 100 KB | 仅最后一片 |\n| 单片最大值 | 5 GB | 所有 Part |\n来源：https://help.aliyun.com/zh/oss/developer-reference/uploadpart",
+        "Day 6 OSS 评测资料 v1 > U04 大小校验阶段\nUploadPart 阶段不立即校验分片大小，CompleteMultipartUpload 阶段才做该校验。\n来源：https://help.aliyun.com/zh/oss/developer-reference/uploadpart",
+        "Day 6 OSS 评测资料 v1 > L01 生命周期规则数量\n单个 Bucket 最多配置 1000 条生命周期规则。\n来源：https://help.aliyun.com/zh/oss/lifecycle-rules-based-on-the-last-modified-time"
+      ],
+      "answer": "不合规。不是最后一片的普通 Part 最小值为 100 KB，50 KB 小于该最小值 [1]。",
+      "reference_answer": "不合规，普通 Part 至少 100 KB。",
+      "human_scores": {
+        "correctness": null,
+        "faithfulness": null,
+        "relevance": null
+      },
+      "human_notes": ""
+    },
+    {
+      "id": "table_numeric_007",
+      "category": "table_numeric",
+      "question": "仅就最小大小约束而言，最后一片为 50 KB 是否允许？",
+      "assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+      "documents": [
+        "Day 6 OSS 评测资料 v1 > TU UploadPart 数值约束\n| 项目 | 要求 | 适用范围 |\n| --- | --- | --- |\n| partNumber | 1～10000，包含端点 | 正整数编号 |\n| 普通 Part 最小值 | 100 KB | 除最后一片外 |\n| 最后一片最小值 | 可以小于 100 KB | 仅最后一片 |\n| 单片最大值 | 5 GB | 所有 Part |\n来源：https://help.aliyun.com/zh/oss/developer-reference/uploadpart",
+        "Day 6 OSS 评测资料 v1 > U04 大小校验阶段\nUploadPart 阶段不立即校验分片大小，CompleteMultipartUpload 阶段才做该校验。\n来源：https://help.aliyun.com/zh/oss/developer-reference/uploadpart",
+        "Day 6 OSS 评测资料 v1 > P05 Bucket 放行前提\n若要允许单个 Bucket 的公共访问，需要同时关闭 OSS 全局和该 Bucket 的阻止公共访问。\n来源：https://help.aliyun.com/zh/oss/user-guide/block-public-access/"
+      ],
+      "answer": "允许。仅就最小大小约束而言，最后一片可以小于 100 KB，因此 50 KB 允许。[1]",
+      "reference_answer": "允许，最后一片可以小于 100 KB。",
+      "human_scores": {
+        "correctness": null,
+        "faithfulness": null,
+        "relevance": null
+      },
+      "human_notes": ""
+    },
+    {
+      "id": "table_numeric_015",
+      "category": "table_numeric",
+      "question": "partNumber 允许到 10000，是否意味着 ListParts 可以一次返回 10000 条？请给出一次返回上限。",
+      "assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+      "documents": [
+        "Day 6 OSS 评测资料 v1 > TL ListParts 参数与返回字段\n| 参数或字段 | 定义 |\n| --- | --- |\n| max-parts | 默认 1000，最大 1000 |\n| part-number-marker | 只返回编号大于该值的 Part，不包含该编号本身 |\n| 返回顺序 | 按 Part 编号升序 |\n| IsTruncated=true | 本次没有返回全部结果 |\n| NextPartNumberMarker | 未列举完时，用作下一次请求的起始标记 |\n来源：https://help.aliyun.com/zh/oss/developer-reference/listparts",
+        "Day 6 OSS 评测资料 v1 > V02 不可回到未开启\n版本控制开启后不能返回未开启状态；可以暂停，但还需满足保留策略等对状态变更的限制。\n来源：https://help.aliyun.com/zh/oss/user-guide/overview-78/",
+        "Day 6 OSS 评测资料 v1 > L01 生命周期规则数量\n单个 Bucket 最多配置 1000 条生命周期规则。\n来源：https://help.aliyun.com/zh/oss/lifecycle-rules-based-on-the-last-modified-time"
+      ],
+      "answer": "不是。ListParts 的 max-parts 默认 1000，最大 1000，因此一次返回上限为 1000 条 [1]。",
+      "reference_answer": "不意味着；一次返回最多 1000 条。",
+      "human_scores": {
+        "correctness": null,
+        "faithfulness": null,
+        "relevance": null
+      },
+      "human_notes": ""
+    },
+    {
+      "id": "unanswerable_001",
+      "category": "unanswerable",
+      "question": "OSS 标准存储在杭州每 GB 每月的具体价格是多少？",
+      "assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+      "documents": [
+        "Day 6 OSS 评测资料 v1 > O02 两种 ACL 的范围\nObject ACL 控制单个文件，Bucket ACL 控制存储空间级别的权限。\n来源：https://help.aliyun.com/zh/oss/user-guide/object-acl",
+        "Day 6 OSS 评测资料 v1 > TU UploadPart 数值约束\n| 项目 | 要求 | 适用范围 |\n| --- | --- | --- |\n| partNumber | 1～10000，包含端点 | 正整数编号 |\n| 普通 Part 最小值 | 100 KB | 除最后一片外 |\n| 最后一片最小值 | 可以小于 100 KB | 仅最后一片 |\n| 单片最大值 | 5 GB | 所有 Part |\n来源：https://help.aliyun.com/zh/oss/developer-reference/uploadpart",
+        "Day 6 OSS 评测资料 v1 > O01 Object 默认权限\nObject ACL 的默认值是 default，表示继承所属 Bucket 的 ACL。\n来源：https://help.aliyun.com/zh/oss/user-guide/object-acl"
+      ],
+      "answer": "资料未说明。",
+      "reference_answer": "资料未说明。",
+      "human_scores": {
+        "correctness": null,
+        "faithfulness": null,
+        "relevance": null
+      },
+      "human_notes": ""
+    },
+    {
+      "id": "unanswerable_003",
+      "category": "unanswerable",
+      "question": "所有账号允许的最大并发 UploadPart 数是多少？",
+      "assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+      "documents": [
+        "Day 6 OSS 评测资料 v1 > TL ListParts 参数与返回字段\n| 参数或字段 | 定义 |\n| --- | --- |\n| max-parts | 默认 1000，最大 1000 |\n| part-number-marker | 只返回编号大于该值的 Part，不包含该编号本身 |\n| 返回顺序 | 按 Part 编号升序 |\n| IsTruncated=true | 本次没有返回全部结果 |\n| NextPartNumberMarker | 未列举完时，用作下一次请求的起始标记 |\n来源：https://help.aliyun.com/zh/oss/developer-reference/listparts",
+        "Day 6 OSS 评测资料 v1 > TU UploadPart 数值约束\n| 项目 | 要求 | 适用范围 |\n| --- | --- | --- |\n| partNumber | 1～10000，包含端点 | 正整数编号 |\n| 普通 Part 最小值 | 100 KB | 除最后一片外 |\n| 最后一片最小值 | 可以小于 100 KB | 仅最后一片 |\n| 单片最大值 | 5 GB | 所有 Part |\n来源：https://help.aliyun.com/zh/oss/developer-reference/uploadpart",
+        "Day 6 OSS 评测资料 v1 > U07 编号越界错误\npartNumber 超出 1～10000 时，UploadPart 的错误码为 InvalidArgument，HTTP 状态码为 400。\n来源：https://help.aliyun.com/zh/oss/developer-reference/uploadpart"
+      ],
+      "answer": "资料未说明。",
+      "reference_answer": "资料未说明。",
+      "human_scores": {
+        "correctness": null,
+        "faithfulness": null,
+        "relevance": null
+      },
+      "human_notes": ""
+    },
+    {
+      "id": "unanswerable_005",
+      "category": "unanswerable",
+      "question": "预签名 URL 的最大允许有效期是多少秒？",
+      "assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+      "documents": [
+        "Day 6 OSS 评测资料 v1 > O08 私有文件临时分享\n可用具有指定有效期的预签名 URL 临时分享私有 Object，无需修改 Object ACL。\n来源：https://help.aliyun.com/zh/oss/user-guide/object-acl",
+        "Day 6 OSS 评测资料 v1 > L03 当前文件过期起点\n基于最后修改时间的生命周期规则中，当前版本的过期天数从 Object 最后修改时间开始计算。\n来源：https://help.aliyun.com/zh/oss/lifecycle-rules-based-on-the-last-modified-time",
+        "Day 6 OSS 评测资料 v1 > L01 生命周期规则数量\n单个 Bucket 最多配置 1000 条生命周期规则。\n来源：https://help.aliyun.com/zh/oss/lifecycle-rules-based-on-the-last-modified-time"
+      ],
+      "answer": "资料未说明。",
+      "reference_answer": "资料未说明。",
+      "human_scores": {
+        "correctness": null,
+        "faithfulness": null,
+        "relevance": null
+      },
+      "human_notes": ""
+    },
+    {
+      "id": "unanswerable_008",
+      "category": "unanswerable",
+      "question": "一个 Object 最多能保留多少个历史版本？",
+      "assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+      "documents": [
+        "Day 6 OSS 评测资料 v1 > W01 保护期数据版本\n保留策略保护期内的 Object 数据版本不能被修改或删除，生命周期也不能删除这些受保护版本；允许上传同名 Object 生成受保护的新版本。\n来源：https://help.aliyun.com/zh/oss/user-guide/oss-retention-policies",
+        "Day 6 OSS 评测资料 v1 > V04 暂停后的覆盖\n版本控制暂停时，新上传的 Object 使用 null 版本；再次上传同名文件会覆盖暂停期的同名版本，但保留暂停前的历史版本。\n来源：https://help.aliyun.com/zh/oss/user-guide/overview-78/",
+        "Day 6 OSS 评测资料 v1 > V03 开启后的覆盖\n版本控制开启时，覆盖同名 Object 会生成新版本，已有历史版本不受影响。\n来源：https://help.aliyun.com/zh/oss/user-guide/overview-78/"
+      ],
+      "answer": "资料未说明。",
+      "reference_answer": "资料未说明。",
+      "human_scores": {
+        "correctness": null,
+        "faithfulness": null,
+        "relevance": null
+      },
+      "human_notes": ""
+    },
+    {
+      "id": "unanswerable_010",
+      "category": "unanswerable",
+      "question": "昨天是哪位用户修改了我的 Object ACL？",
+      "assumptions": "配置、上传、删除操作已满足操作权限；匿名访问不额外假设其他策略授权；按题面保留策略与版本状态判断。",
+      "documents": [
+        "Day 6 OSS 评测资料 v1 > V08 删除标记后恢复\n已有数据历史版本时，指定 versionId 删除当前删除标记后，最近的数据历史版本成为当前版本，Object 恢复可访问。\n来源：https://help.aliyun.com/zh/oss/user-guide/delete-marker",
+        "Day 6 OSS 评测资料 v1 > V11 未开启时覆盖\n未开启版本控制时，同名 Object 被直接覆盖，旧内容不能通过版本控制恢复。\n来源：https://help.aliyun.com/zh/oss/user-guide/overview-78/",
+        "Day 6 OSS 评测资料 v1 > B06 Bucket 初始阻止开关\n创建 Bucket 时默认开启阻止公共访问，Bucket ACL 此时只能设置为 private。\n来源：https://help.aliyun.com/zh/oss/user-guide/oss-bucket-acl"
+      ],
+      "answer": "资料未说明。",
+      "reference_answer": "资料未说明。",
+      "human_scores": {
+        "correctness": null,
+        "faithfulness": null,
+        "relevance": null
+      },
+      "human_notes": ""
+    }
+  ]
+}

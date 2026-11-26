@@ -1,0 +1,32 @@
+{
+  "case_id": "comparison_015",
+  "question": "UploadPart 与 ListParts 所需的权限 Action 有何不同？",
+  "scope": "purposefully selected single teaching case where top5 restores missing evidence; not a 100-case generation comparison",
+  "selection_basis": "top3 lacks oss:PutObject source, top5 retrieves it at rank4",
+  "reviews": [
+    {
+      "top_k": 3,
+      "source_report": "D:\\develop\\m2\\data\\eval_results\\day8\\rag_batch_1791861204939858200.json",
+      "answer": "资料仅说明 ListParts 对应的权限 Action 是 `oss:ListParts` [1]，未说明 UploadPart 所需的权限 Action，因此无法比较两者不同。",
+      "assistant_scores": {
+        "correctness": 1,
+        "faithfulness": 2,
+        "relevance": 1
+      },
+      "reason": "Partial answer: correctly states ListParts Action and explicitly identifies missing UploadPart information in supplied context."
+    },
+    {
+      "top_k": 5,
+      "source_report": "D:\\develop\\m2\\data\\eval_results\\day8\\rag_batch_1791861232231541700.json",
+      "answer": "UploadPart 对应的权限 Action 是 oss:PutObject [4]；ListParts 对应的权限 Action 是 oss:ListParts [1]。",
+      "assistant_scores": {
+        "correctness": 2,
+        "faithfulness": 2,
+        "relevance": 2
+      },
+      "reason": "Both Actions answered correctly with matching supplied source citations."
+    }
+  ],
+  "reviewer_type": "assistant",
+  "not_independent_human_calibration": true
+}

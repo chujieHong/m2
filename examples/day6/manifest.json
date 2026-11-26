@@ -1,0 +1,35 @@
+{
+  "dataset_version": "v1",
+  "collected_on": "2026-10-12",
+  "case_count": 100,
+  "category_counts": {
+    "single_hop": 40,
+    "multi_hop": 20,
+    "comparison": 15,
+    "table_numeric": 15,
+    "unanswerable": 10
+  },
+  "sources": {
+    "bucket": "https://help.aliyun.com/zh/oss/user-guide/oss-bucket-acl",
+    "object": "https://help.aliyun.com/zh/oss/user-guide/object-acl",
+    "block": "https://help.aliyun.com/zh/oss/user-guide/block-public-access/",
+    "upload": "https://help.aliyun.com/zh/oss/developer-reference/uploadpart",
+    "list": "https://help.aliyun.com/zh/oss/developer-reference/listparts",
+    "version": "https://help.aliyun.com/zh/oss/user-guide/overview-78/",
+    "marker": "https://help.aliyun.com/zh/oss/user-guide/delete-marker",
+    "suspended": "https://help.aliyun.com/zh/oss/user-guide/manage-objects-in-a-versioning-suspended-bucket",
+    "enabled": "https://help.aliyun.com/zh/oss/manage-objects-in-a-versioning-enabled-bucket",
+    "lifecycle": "https://help.aliyun.com/zh/oss/lifecycle-rules-based-on-the-last-modified-time",
+    "worm": "https://help.aliyun.com/zh/oss/user-guide/oss-retention-policies"
+  },
+  "corpus_sha256": "f46d689479eced71d5a6cfdcc9417766c9901dc3d28bacc5fc64986e64c20571",
+  "cases_sha256": "9004268fc205cbc983219f2a1c6c4c11ccd7c8bc70f698da33067818217e0bbb",
+  "review": "助手逐题编排并核对参考答案、条件和引用；非独立人工或外部评审。",
+  "usage": "开发/回归集，不声称独立测试泛化；边界题共享规则，样本并非独立同分布。",
+  "limitations": [
+    "依据是整理摘记而非官方全文",
+    "没有评测生成和拒答表现",
+    "原文包含覆盖率不是标准 Recall 或语义判定",
+    "未执行云端写操作"
+  ]
+}

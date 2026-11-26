@@ -1,0 +1,112 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "chujie-rag-kb"
+version = "0.1.0"
+description = "企业知识库问答系统（RAG）"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [{name = "chujieHong"}]
+keywords = ["rag", "llm", "knowledge-base", "retrieval"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    # ---- M1：模型调用层（本项目的上游依赖）----
+    # 开发期通过 tool.uv.sources 使用本地 M1，稳定后再发布并验证 PyPI 依赖。
+    "chujie-llm-toolkit",
+    # ---- 向量存储 ----
+    "chromadb",
+    # ---- 文档解析 ----
+    "pypdf",
+    "pdfplumber",
+    "python-docx",
+    # ---- 中文分词（BM25 用）----
+    "jieba",
+    # ---- Web 服务 ----
+    "fastapi",
+    "uvicorn[standard]",
+    # ---- 配置 ----
+    "python-dotenv",
+    "pyyaml",
+    "fastembed>=0.9.0",
+    "numpy>=2.2.6",
+    "rapidocr>=3.10.0",
+    "onnxruntime>=1.23.2",
+    "python-multipart>=0.0.32",
+]
+
+[project.optional-dependencies]
+evaluation = [
+    "ragas==0.4.3",
+    # RAGAS 0.4.3 导入旧 ChatVertexAI 接口，community 0.4 已移除此模块。
+    "langchain-community<0.4",
+]
+
+# Embedding 使用 fastembed + 本地 BGE-small，避免引入 PyTorch。
+# NumPy 用于检查向量、计算相似度；API Embedding 可在后续作为备选。
+
+[dependency-groups]
+dev = [
+    "httpx",
+    "mypy>=2.3.1",
+    "pyright>=1.1.414",
+    "pytest>=9.1.1",
+    "pytest-cov>=7.1.0",
+]
+
+[[tool.uv.index]]
+url = "https://mirrors.aliyun.com/pypi/simple"
+default = true
+
+[tool.uv.sources]
+chujie-llm-toolkit = { path = "../m1", editable = true }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+kb = ["py.typed"]
+
+# ============================================================
+# 以下全部抄自 M1 —— 这些配置里的注释记录了踩坑经过，不要删
+# ============================================================
+
+[tool.mypy]
+# 和 requires-python 对齐：按 3.10 检查，防止无意中用了 3.11+ 才有的东西
+python_version = "3.10"
+show_error_codes = true
+pretty = true
+warn_unused_configs = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+# 严格化：函数必须有完整参数/返回标注
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+
+[tool.pyright]
+# pyright 是【第二个】类型检查器，不是替代品。
+# M1 时它抓到了 mypy 漏掉的 @asynccontextmanager 弃用标注。
+include = ["src"]
+typeCheckingMode = "standard"
+reportDeprecated = "warning"
+reportMissingTypeStubs = "none"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# 默认就带覆盖率报告（方便随时看进度），但【故意不在这里设 fail_under】：
+# 设了的话 `pytest tests/test_xxx.py` 这种【单文件运行】会因为
+# "整个包的覆盖率不够"而失败 —— 非常反直觉，也让人不敢单独跑测试。
+# 门槛只在 CI 和 scripts/ci.py 里用 --cov-fail-under=60 显式打开。
+addopts = "--cov --cov-branch --cov-report=term-missing"
+
+[tool.coverage.run]
+source = ["kb"]
+branch = true
+
+[tool.coverage.report]
+show_missing = true
